@@ -1,0 +1,13 @@
+19:11:10 s768_200k k=1024 rs-cpu                 s1000 (warm-up): train 2.05s load 0.37s la 9.3 -> ok
+19:11:11 s768_200k k=1024 rs-metal-fused         s1000 (warm-up): train 0.74s load 0.24s la 9.3 -> ok
+19:11:13 s768_200k k=1024 rs-cpu                 s1: train 1.20s load 0.15s la 9.5 -> ok
+19:11:14 s768_200k k=1024 rs-metal-fused         s1: train 0.74s load 0.18s la 9.5 -> ok
+19:11:15 s768_200k k=1024 rs-metal-fused         s2: train 0.73s load 0.15s la 9.5 -> ok
+19:11:16 s768_200k k=1024 rs-cpu                 s2: train 1.07s load 0.15s la 9.5 -> ok
+19:11:18 s768_200k k=1024 rs-cpu                 s3: train 1.13s load 0.15s la 10.1 -> ok
+19:11:19 s768_200k k=1024 rs-metal-fused         s3: train 0.73s load 0.14s la 10.1 -> ok
+19:11:20 s768_200k k=1024 rs-metal-fused         s4: train 0.75s load 0.16s la 10.1 -> ok
+19:11:21 s768_200k k=1024 rs-cpu                 s4: train 1.13s load 0.15s la 10.1 -> ok
+19:11:23 s768_200k k=1024 rs-cpu                 s5: train 1.34s load 0.16s la 10.1 -> ok
+19:11:24 s768_200k k=1024 rs-metal-fused         s5: train 0.74s load 0.15s la 10.1 -> ok
+DONE

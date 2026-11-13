@@ -1,0 +1,5 @@
+runtime wgpu<msl> on Wgpu(WgpuDevice { kind: DefaultDevice, backend: Auto }), n 200000, d 768
+bind 1745.6 ms
+f64 reference k=64: 1.0 s
+f64 reference k=256: 6.2 s
+f64 reference k=1024: 36.9 s

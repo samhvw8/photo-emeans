@@ -1,0 +1,22 @@
+{
+ "case": "st:mps:f32",
+ "batch": 8,
+ "cmd": [
+  "~/workspace/tools/emeans/bench/compare/py/.venv/bin/python",
+  "~/workspace/tools/emeans/bench/compare/py/embed_py.py",
+  "mps",
+  "f32",
+  "8",
+  "64",
+  "~/workspace/tools/emeans/bench/compare/results/mac/embed/st_mps_f32_b8"
+ ],
+ "loadavg_before": [
+  23.57080078125,
+  34.9423828125,
+  34.84765625
+ ],
+ "peak_rss_bytes": 3054829568,
+ "peak_footprint_bytes": 11932338024,
+ "ok": false,
+ "error": "killed by hand after 16 min: peak memory footprint 11.9 GB on the 16 GB Mac, process swapping (RSS 4 MB, state U); not a speed result"
+}

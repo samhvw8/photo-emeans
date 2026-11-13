@@ -1,0 +1,273 @@
+=== 18:43:47 threads, load 3.73 22.22 31.53
+--- RAYON_NUM_THREADS=64 | load 3.73 22.22 31.53
+normalize         1.591 ms
+top1             24.615 ms
+top1-dense       23.326 ms
+scatter_add       5.394 ms
+ema_update        0.655 ms
+loop           2134.517 ms (65 steps)
+--- RAYON_NUM_THREADS=32 | load 3.63 21.59 31.22
+normalize         1.257 ms
+top1             23.318 ms
+top1-dense       21.533 ms
+scatter_add       4.137 ms
+ema_update        0.385 ms
+loop           1794.154 ms (65 steps)
+--- RAYON_NUM_THREADS=16 | load 4.25 19.69 30.23
+normalize         0.911 ms
+top1             35.049 ms
+top1-dense       32.889 ms
+scatter_add       4.213 ms
+ema_update        0.609 ms
+loop           2765.111 ms (65 steps)
+--- RAYON_NUM_THREADS=8 | load 3.55 16.59 28.50
+normalize         1.080 ms
+top1             58.840 ms
+top1-dense       60.634 ms
+scatter_add       3.922 ms
+ema_update        0.428 ms
+loop           4174.919 ms (65 steps)
+--- RAYON_NUM_THREADS=64 | load 3.55 15.94 28.09
+normalize         1.286 ms
+top1            265.252 ms
+top1-dense      264.932 ms
+scatter_add       5.511 ms
+ema_update        0.601 ms
+loop           16720.192 ms (65 steps)
+--- RAYON_NUM_THREADS=32 | load 20.92 18.91 28.74
+normalize         1.353 ms
+top1            472.306 ms
+top1-dense      469.587 ms
+scatter_add       4.058 ms
+ema_update        0.470 ms
+loop           29126.012 ms (65 steps)
+--- RAYON_NUM_THREADS=64 | load 22.14 19.43 28.45
+normalize         1.508 ms
+top1            291.312 ms
+top1-dense      275.209 ms
+scatter_add       5.346 ms
+ema_update        0.531 ms
+loop           18429.526 ms (65 steps)
+--- RAYON_NUM_THREADS=32 | load 16.21 18.29 27.79
+normalize         0.964 ms
+top1            325.744 ms
+top1-dense      314.692 ms
+scatter_add       4.451 ms
+ema_update        0.424 ms
+loop           20051.084 ms (65 steps)
+--- RAYON_NUM_THREADS=64 | load 12.54 16.72 26.69
+normalize         0.316 ms
+top1              3.828 ms
+top1-dense        3.140 ms
+scatter_add       4.126 ms
+ema_update        0.091 ms
+loop            802.475 ms (125 steps)
+--- RAYON_NUM_THREADS=32 | load 5.49 13.93 25.10
+normalize         0.131 ms
+top1              3.862 ms
+top1-dense        3.013 ms
+scatter_add       2.896 ms
+ema_update        0.081 ms
+loop            581.171 ms (125 steps)
+--- RAYON_NUM_THREADS=16 | load 4.42 13.14 24.60
+normalize         0.119 ms
+top1              4.467 ms
+top1-dense        3.701 ms
+scatter_add       2.879 ms
+ema_update        0.059 ms
+loop            596.405 ms (125 steps)
+--- RAYON_NUM_THREADS=8 | load 3.33 12.18 23.98
+normalize         0.101 ms
+top1              7.343 ms
+top1-dense        5.877 ms
+scatter_add       2.362 ms
+ema_update        0.038 ms
+loop            710.161 ms (125 steps)
+--- RAYON_NUM_THREADS=64 | load 3.12 11.44 23.42
+normalize         0.180 ms
+top1             19.685 ms
+top1-dense       19.002 ms
+scatter_add       4.205 ms
+ema_update        0.134 ms
+loop           1601.296 ms (125 steps)
+--- RAYON_NUM_THREADS=32 | load 7.50 11.66 23.17
+normalize         0.134 ms
+top1             32.600 ms
+top1-dense       31.728 ms
+scatter_add       2.991 ms
+ema_update        0.078 ms
+loop           2268.737 ms (125 steps)
+--- RAYON_NUM_THREADS=64 | load 7.97 11.37 22.76
+normalize         0.261 ms
+top1             72.086 ms
+top1-dense       67.104 ms
+scatter_add       4.953 ms
+ema_update        0.133 ms
+loop           3655.716 ms (125 steps)
+--- RAYON_NUM_THREADS=32 | load 10.35 11.44 22.41
+normalize         0.124 ms
+top1             66.414 ms
+top1-dense       48.712 ms
+scatter_add       3.134 ms
+ema_update        0.067 ms
+loop           2195.377 ms (125 steps)
+--- RAYON_NUM_THREADS=1 | load 7.42 10.66 21.86
+normalize         2.827 ms
+top1            407.258 ms
+top1-dense      362.115 ms
+scatter_add       8.612 ms
+ema_update        0.470 ms
+loop           6455.567 ms (65 steps)
+=== 18:52:45 tiles (k=1024), load 5.45 9.93 21.33
+--- RAYON_NUM_THREADS=32 EMEANS_CPU_TILES=96,128,256 | load 5.45 9.93 21.33
+normalize         0.966 ms
+top1             26.751 ms
+top1-dense       24.739 ms
+scatter_add       4.910 ms
+ema_update        0.450 ms
+loop           2015.245 ms (65 steps)
+--- RAYON_NUM_THREADS=32 EMEANS_CPU_TILES=48,128,256 | load 6.18 9.59 20.84
+normalize         1.193 ms
+top1             23.385 ms
+top1-dense       22.296 ms
+scatter_add       5.087 ms
+ema_update        0.498 ms
+loop           1794.937 ms (65 steps)
+--- RAYON_NUM_THREADS=32 EMEANS_CPU_TILES=144,128,256 | load 6.17 8.78 19.85
+normalize         0.926 ms
+top1             26.818 ms
+top1-dense       21.973 ms
+scatter_add       4.127 ms
+ema_update        0.457 ms
+loop           2001.251 ms (65 steps)
+--- RAYON_NUM_THREADS=32 EMEANS_CPU_TILES=96,64,256 | load 3.24 7.46 18.70
+normalize         1.513 ms
+top1             26.300 ms
+top1-dense       22.879 ms
+scatter_add       4.489 ms
+ema_update        0.580 ms
+loop           1772.358 ms (65 steps)
+--- RAYON_NUM_THREADS=32 EMEANS_CPU_TILES=96,256,256 | load 1.90 6.30 17.60
+normalize         1.554 ms
+top1             28.779 ms
+top1-dense       24.971 ms
+scatter_add       3.989 ms
+ema_update        0.514 ms
+loop           1938.484 ms (65 steps)
+--- RAYON_NUM_THREADS=32 EMEANS_CPU_TILES=96,128,128 | load 1.51 5.38 16.57
+normalize         0.922 ms
+top1             26.139 ms
+top1-dense       20.696 ms
+scatter_add       4.350 ms
+ema_update        0.399 ms
+loop           1703.742 ms (65 steps)
+--- RAYON_NUM_THREADS=32 EMEANS_CPU_TILES=96,128,384 | load 4.04 5.71 16.50
+normalize         0.899 ms
+top1             29.322 ms
+top1-dense       24.942 ms
+scatter_add       4.053 ms
+ema_update        0.549 ms
+loop           1942.946 ms (65 steps)
+--- RAYON_NUM_THREADS=32 EMEANS_CPU_TILES=96,128,768 | load 6.05 6.07 16.50
+normalize         0.900 ms
+top1             29.548 ms
+top1-dense       27.664 ms
+scatter_add       3.956 ms
+ema_update        0.508 ms
+loop           2007.035 ms (65 steps)
+--- RAYON_NUM_THREADS=32 EMEANS_CPU_TILES=192,128,256 | load 7.24 6.29 16.34
+normalize         1.000 ms
+top1             29.810 ms
+top1-dense       25.390 ms
+scatter_add       4.102 ms
+ema_update        0.469 ms
+loop           2095.970 ms (65 steps)
+--- RAYON_NUM_THREADS=32 EMEANS_CPU_TILES=48,256,384 | load 6.00 6.06 16.11
+normalize         0.840 ms
+top1             27.830 ms
+top1-dense       25.487 ms
+scatter_add       4.147 ms
+ema_update        0.584 ms
+loop           1854.048 ms (65 steps)
+--- RAYON_NUM_THREADS=64 EMEANS_CPU_TILES=96,128,256 | load 4.44 5.68 15.72
+normalize         1.854 ms
+top1             24.392 ms
+top1-dense       23.523 ms
+scatter_add       5.570 ms
+ema_update        0.515 ms
+loop           2037.970 ms (65 steps)
+--- RAYON_NUM_THREADS=64 EMEANS_CPU_TILES=48,128,256 | load 8.13 6.32 15.65
+normalize         1.854 ms
+top1             23.252 ms
+top1-dense       20.003 ms
+scatter_add       5.602 ms
+ema_update        0.517 ms
+loop           1811.437 ms (65 steps)
+--- RAYON_NUM_THREADS=64 EMEANS_CPU_TILES=144,128,256 | load 6.25 6.01 15.35
+normalize         1.339 ms
+top1             26.118 ms
+top1-dense       23.808 ms
+scatter_add       5.460 ms
+ema_update        0.497 ms
+loop           2204.985 ms (65 steps)
+--- RAYON_NUM_THREADS=64 EMEANS_CPU_TILES=96,64,256 | load 9.45 6.62 15.25
+normalize         1.945 ms
+top1             24.854 ms
+top1-dense       22.470 ms
+scatter_add       5.073 ms
+ema_update        0.547 ms
+loop           1947.103 ms (65 steps)
+--- RAYON_NUM_THREADS=64 EMEANS_CPU_TILES=96,256,256 | load 7.34 6.32 14.96
+normalize         1.420 ms
+top1             24.395 ms
+top1-dense       23.236 ms
+scatter_add       5.404 ms
+ema_update        0.518 ms
+loop           2009.043 ms (65 steps)
+--- RAYON_NUM_THREADS=64 EMEANS_CPU_TILES=96,128,128 | load 5.39 5.94 14.61
+normalize         1.482 ms
+top1             21.805 ms
+top1-dense       19.587 ms
+scatter_add       5.626 ms
+ema_update        0.490 ms
+loop           2059.065 ms (65 steps)
+--- RAYON_NUM_THREADS=64 EMEANS_CPU_TILES=96,128,384 | load 5.06 5.83 14.43
+normalize         1.512 ms
+top1             24.452 ms
+top1-dense       23.283 ms
+scatter_add       5.323 ms
+ema_update        0.610 ms
+loop           2031.922 ms (65 steps)
+--- RAYON_NUM_THREADS=64 EMEANS_CPU_TILES=96,128,768 | load 9.64 6.75 14.64
+normalize         1.414 ms
+top1             22.979 ms
+top1-dense       22.557 ms
+scatter_add       5.222 ms
+ema_update        0.505 ms
+loop           1984.039 ms (65 steps)
+--- RAYON_NUM_THREADS=64 EMEANS_CPU_TILES=192,128,256 | load 8.47 6.60 14.50
+normalize         1.384 ms
+top1             30.858 ms
+top1-dense       29.562 ms
+scatter_add       5.567 ms
+ema_update        0.504 ms
+loop           2597.685 ms (65 steps)
+--- RAYON_NUM_THREADS=64 EMEANS_CPU_TILES=48,256,384 | load 12.39 7.48 14.66
+normalize         1.502 ms
+top1             23.854 ms
+top1-dense       22.775 ms
+scatter_add       5.122 ms
+ema_update        0.458 ms
+loop           1889.068 ms (65 steps)
+=== 19:01:38 numa (k=1024)
+--- interleave T=32
+top1             26.203 ms
+top1-dense       20.153 ms
+scatter_add       5.138 ms
+loop           1915.091 ms (65 steps)
+--- interleave T=64
+top1             24.031 ms
+top1-dense       21.040 ms
+scatter_add       5.560 ms
+loop           2047.848 ms (65 steps)
+=== 19:02:01 DONE

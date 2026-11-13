@@ -1,0 +1,84 @@
+=== 19:56:02 build, load 34.49 38.90 30.17
+    Finished `release` profile [optimized + debuginfo] target(s) in 6.73s
+=== 19:56:09 rerun 200k, load 32.13 38.34 30.03
+19:56:11 s768_200k k=256 rs-cpu-fused           s1000 (warm-up): train 0.81s load 0.85s la 32.1 -> ok
+19:56:18 s768_200k k=256 rs-cpu-blocked         s1000 (warm-up): train 5.38s load 0.86s la 32.1 -> ok
+19:56:20 s768_200k k=256 rs-cpu-fused           s1: train 0.78s load 0.97s la 33.0 -> ok
+19:56:26 s768_200k k=256 rs-cpu-blocked         s1: train 4.53s load 0.94s la 33.0 -> ok
+19:56:32 s768_200k k=256 rs-cpu-blocked         s2: train 4.49s load 0.85s la 35.6 -> ok
+19:56:33 s768_200k k=256 rs-cpu-fused           s2: train 0.75s load 0.86s la 30.6 -> ok
+19:56:35 s768_200k k=256 rs-cpu-fused           s3: train 0.74s load 0.89s la 30.6 -> ok
+19:56:41 s768_200k k=256 rs-cpu-blocked         s3: train 4.51s load 0.92s la 30.6 -> ok
+19:56:44 s768_200k k=1024 rs-cpu-fused           s1000 (warm-up): train 1.80s load 0.85s la 28.2 -> ok
+19:57:03 s768_200k k=1024 rs-cpu-blocked         s1000 (warm-up): train 16.61s load 0.85s la 26.1 -> ok
+19:57:06 s768_200k k=1024 rs-cpu-fused           s1: train 1.88s load 0.88s la 33.2 -> ok
+19:57:25 s768_200k k=1024 rs-cpu-blocked         s1: train 16.65s load 0.87s la 33.2 -> ok
+19:57:44 s768_200k k=1024 rs-cpu-blocked         s2: train 16.50s load 0.86s la 34.8 -> ok
+19:57:47 s768_200k k=1024 rs-cpu-fused           s2: train 1.79s load 0.85s la 35.3 -> ok
+19:57:50 s768_200k k=1024 rs-cpu-fused           s3: train 1.83s load 0.85s la 32.6 -> ok
+19:58:09 s768_200k k=1024 rs-cpu-blocked         s3: train 16.52s load 0.87s la 32.6 -> ok
+DONE
+=== 19:58:09 rerun 1m, load 37.86 37.36 30.61
+19:58:21 s768_1m k=1024 rs-cpu-fused           s1000 (warm-up): train 6.77s load 4.27s la 37.9 -> ok
+19:59:43 s768_1m k=1024 rs-cpu-blocked         s1000 (warm-up): train 76.01s load 4.22s la 34.9 -> ok
+19:59:55 s768_1m k=1024 rs-cpu-fused           s1: train 6.94s load 4.29s la 54.1 -> ok
+20:01:17 s768_1m k=1024 rs-cpu-blocked         s1: train 76.12s load 4.21s la 48.4 -> ok
+20:02:39 s768_1m k=1024 rs-cpu-blocked         s2: train 76.02s load 4.22s la 54.1 -> ok
+20:02:51 s768_1m k=1024 rs-cpu-fused           s2: train 6.92s load 4.22s la 59.6 -> ok
+20:03:02 s768_1m k=1024 rs-cpu-fused           s3: train 6.74s load 4.22s la 53.2 -> ok
+20:04:24 s768_1m k=1024 rs-cpu-blocked         s3: train 76.06s load 4.26s la 46.4 -> ok
+DONE
+=== 20:04:24 evaluate
+Train s, median of 5 seeds:
+
+| n | k | py-numpy | py-torch-cpu | rs-cpu-blocked | rs-cpu-fused |
+|---|---|---|---|---|---|
+| 200,000 | 256 | 7.56 | 1.98 | 4.51 | 0.75 |
+| 200,000 | 1024 | 12.83 | 3.73 | 16.52 | 1.83 |
+| 1,000,000 | 1024 | 63.29 | 18.31 | 76.06 | 6.92 |
+
+Objective, mean of 5 seeds:
+
+| n | k | py-numpy | py-torch-cpu | rs-cpu-blocked | rs-cpu-fused |
+|---|---|---|---|---|---|
+| 200,000 | 256 | 0.46835 | 0.46195 | 0.47165 | 0.47248 |
+| 200,000 | 1024 | 0.28522 | 0.28515 | 0.28517 | 0.28489 |
+| 1,000,000 | 1024 | 0.30322 | 0.30344 | 0.30303 | 0.30315 |
+
+ARI vs py-numpy (same seed), mean of 5 seeds:
+
+| n | k | py-numpy | py-torch-cpu | rs-cpu-blocked | rs-cpu-fused |
+|---|---|---|---|---|---|
+| 200,000 | 256 | 1.000 | 0.818 | 0.974 | 0.964 |
+| 200,000 | 1024 | 1.000 | 0.416 | 0.435 | 0.426 |
+| 1,000,000 | 1024 | 1.000 | 0.673 | 0.702 | 0.701 |
+
+ARI noise floor (py-numpy seed s vs seed s+1, mean of 4 pairs):
+
+| n | k | ARI |
+|---|---|---|
+| 200,000 | 256 | 0.812 |
+| 200,000 | 1024 | 0.416 |
+| 1,000,000 | 1024 | 0.674 |
+
+Peak memory GiB, RSS / GPU (Linux, nvidia-smi) or footprint (macOS):
+
+| n | k | py-numpy | py-torch-cpu | rs-cpu-blocked | rs-cpu-fused |
+|---|---|---|---|---|---|
+| 200,000 | 256 | 0.76 / - | 1.24 / - | 1.15 / - | 1.15 / - |
+| 200,000 | 1024 | 0.79 / - | 1.28 / - | 1.15 / - | 1.15 / - |
+| 1,000,000 | 1024 | 3.37 / - | 3.58 / - | 5.73 / - | 5.73 / - |
+
+=== 20:06:15 checks
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 19.31s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 9.96s
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.18s
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 7.09s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.63s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.29s
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.22s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+=== 20:07:04 DONE

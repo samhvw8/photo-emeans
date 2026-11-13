@@ -1,0 +1,76 @@
+=== 19:29:06 build, load 0.71 2.01 4.84
+    Finished `release` profile [optimized + debuginfo] target(s) in 55.03s
+=== 19:30:01 sweep 200k, load 2.98 2.47 4.83
+19:30:03 s768_200k k=256 rs-cpu-fused           s1000 (warm-up): train 0.89s load 0.88s la 3.0 -> ok
+19:30:12 s768_200k k=256 rs-cpu-blocked         s1000 (warm-up): train 7.82s load 0.88s la 3.5 -> ok
+19:30:16 s768_200k k=256 py-torch-cpu           s1000 (warm-up): train 1.98s load 1.63s la 8.0 -> ok
+19:30:25 s768_200k k=256 py-numpy               s1000 (warm-up): train 7.94s load 0.23s la 7.4 -> ok
+19:30:27 s768_200k k=256 rs-cpu-fused           s1: train 0.81s load 0.88s la 6.9 -> ok
+19:30:36 s768_200k k=256 rs-cpu-blocked         s1: train 7.77s load 0.90s la 8.0 -> ok
+19:30:41 s768_200k k=256 py-torch-cpu           s1: train 1.98s load 1.72s la 11.7 -> ok
+19:30:49 s768_200k k=256 py-numpy               s1: train 7.38s load 0.23s la 11.7 -> ok
+19:30:58 s768_200k k=256 rs-cpu-blocked         s2: train 7.74s load 0.85s la 15.3 -> ok
+19:31:03 s768_200k k=256 py-torch-cpu           s2: train 2.01s load 1.72s la 17.9 -> ok
+19:31:11 s768_200k k=256 py-numpy               s2: train 7.56s load 0.24s la 19.0 -> ok
+19:31:13 s768_200k k=256 rs-cpu-fused           s2: train 0.76s load 0.85s la 22.7 -> ok
+19:31:17 s768_200k k=256 py-torch-cpu           s3: train 1.89s load 1.63s la 21.0 -> ok
+19:31:26 s768_200k k=256 py-numpy               s3: train 8.59s load 0.23s la 22.0 -> ok
+19:31:28 s768_200k k=256 rs-cpu-fused           s3: train 0.77s load 0.85s la 23.9 -> ok
+19:31:37 s768_200k k=256 rs-cpu-blocked         s3: train 7.73s load 0.86s la 23.9 -> ok
+19:31:41 s768_200k k=1024 rs-cpu-fused           s1000 (warm-up): train 1.85s load 0.86s la 25.2 -> ok
+19:32:13 s768_200k k=1024 rs-cpu-blocked         s1000 (warm-up): train 29.15s load 0.87s la 25.2 -> ok
+19:32:19 s768_200k k=1024 py-torch-cpu           s1000 (warm-up): train 3.81s load 1.62s la 26.8 -> ok
+19:32:32 s768_200k k=1024 py-numpy               s1000 (warm-up): train 12.34s load 0.23s la 24.8 -> ok
+19:32:35 s768_200k k=1024 rs-cpu-fused           s1: train 1.87s load 0.84s la 24.2 -> ok
+19:33:07 s768_200k k=1024 rs-cpu-blocked         s1: train 29.10s load 0.84s la 24.2 -> ok
+19:33:13 s768_200k k=1024 py-torch-cpu           s1: train 3.73s load 1.63s la 26.5 -> ok
+19:33:27 s768_200k k=1024 py-numpy               s1: train 12.84s load 0.24s la 26.9 -> ok
+19:33:59 s768_200k k=1024 rs-cpu-blocked         s2: train 29.13s load 0.86s la 26.5 -> ok
+19:34:06 s768_200k k=1024 py-torch-cpu           s2: train 3.79s load 1.77s la 28.8 -> ok
+19:34:19 s768_200k k=1024 py-numpy               s2: train 12.55s load 0.23s la 29.0 -> ok
+19:34:22 s768_200k k=1024 rs-cpu-fused           s2: train 1.84s load 0.85s la 31.9 -> ok
+19:34:28 s768_200k k=1024 py-torch-cpu           s3: train 3.68s load 1.66s la 31.9 -> ok
+19:34:42 s768_200k k=1024 py-numpy               s3: train 12.83s load 0.23s la 31.9 -> ok
+19:34:45 s768_200k k=1024 rs-cpu-fused           s3: train 1.84s load 0.87s la 34.0 -> ok
+19:35:17 s768_200k k=1024 rs-cpu-blocked         s3: train 29.14s load 0.88s la 34.0 -> ok
+DONE
+=== 19:35:17 sweep 1m, load 32.40 20.82 12.10
+19:35:29 s768_1m k=1024 rs-cpu-fused           s1000 (warm-up): train 6.76s load 4.25s la 32.4 -> ok
+19:37:59 s768_1m k=1024 rs-cpu-blocked         s1000 (warm-up): train 142.64s load 4.29s la 30.1 -> ok
+19:38:20 s768_1m k=1024 py-torch-cpu           s1000 (warm-up): train 17.66s load 2.58s la 32.2 -> ok
+19:39:24 s768_1m k=1024 py-numpy               s1000 (warm-up): train 62.24s load 1.11s la 30.3 -> ok
+19:39:35 s768_1m k=1024 rs-cpu-fused           s1: train 6.32s load 4.22s la 31.9 -> ok
+19:42:04 s768_1m k=1024 rs-cpu-blocked         s1: train 142.76s load 4.22s la 29.8 -> ok
+19:42:26 s768_1m k=1024 py-torch-cpu           s1: train 18.31s load 2.58s la 31.2 -> ok
+19:43:31 s768_1m k=1024 py-numpy               s1: train 63.29s load 1.19s la 27.4 -> ok
+19:46:00 s768_1m k=1024 rs-cpu-blocked         s2: train 142.77s load 4.20s la 36.6 -> ok
+19:46:22 s768_1m k=1024 py-torch-cpu           s2: train 17.97s load 2.54s la 32.1 -> ok
+19:47:27 s768_1m k=1024 py-numpy               s2: train 63.18s load 1.19s la 28.1 -> ok
+19:47:38 s768_1m k=1024 rs-cpu-fused           s2: train 6.59s load 4.20s la 32.8 -> ok
+19:48:02 s768_1m k=1024 py-torch-cpu           s3: train 20.30s load 2.60s la 30.6 -> ok
+19:49:09 s768_1m k=1024 py-numpy               s3: train 65.24s load 1.17s la 28.5 -> ok
+19:49:21 s768_1m k=1024 rs-cpu-fused           s3: train 6.74s load 4.21s la 38.8 -> ok
+19:51:50 s768_1m k=1024 rs-cpu-blocked         s3: train 142.74s load 4.29s la 35.5 -> ok
+DONE
+=== 19:51:50 evaluate
+| 200,000 | 256 | 1.000 | 0.818 | 0.974 | 0.964 |
+| 200,000 | 1024 | 1.000 | 0.416 | 0.435 | 0.426 |
+| 1,000,000 | 1024 | 1.000 | 0.673 | 0.702 | 0.701 |
+
+ARI noise floor (py-numpy seed s vs seed s+1, mean of 4 pairs):
+
+| n | k | ARI |
+|---|---|---|
+| 200,000 | 256 | 0.812 |
+| 200,000 | 1024 | 0.416 |
+| 1,000,000 | 1024 | 0.674 |
+
+Peak memory GiB, RSS / GPU (Linux, nvidia-smi) or footprint (macOS):
+
+| n | k | py-numpy | py-torch-cpu | rs-cpu-blocked | rs-cpu-fused |
+|---|---|---|---|---|---|
+| 200,000 | 256 | 0.76 / - | 1.24 / - | 1.15 / - | 1.15 / - |
+| 200,000 | 1024 | 0.79 / - | 1.28 / - | 1.15 / - | 1.15 / - |
+| 1,000,000 | 1024 | 3.37 / - | 3.58 / - | 5.73 / - | 5.73 / - |
+
+=== 19:55:38 DONE

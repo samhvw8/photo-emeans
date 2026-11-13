@@ -1,0 +1,44 @@
+{
+ "case": "candle:metal:f32",
+ "batch": 1,
+ "cmd": [
+  "~/workspace/tools/emeans/target/bench/release/embed-compare",
+  "metal",
+  "f32",
+  "1",
+  "64",
+  "~/workspace/tools/emeans/bench/compare/results/mac/embed/candle_metal_f32_b1"
+ ],
+ "loadavg_before": [
+  11.27392578125,
+  43.9208984375,
+  37.0693359375
+ ],
+ "peak_rss_bytes": 1271349248,
+ "peak_footprint_bytes": 2749318584,
+ "ok": true,
+ "device": "metal",
+ "dtype": "f32",
+ "files": [
+  "astronaut.png",
+  "camera.png",
+  "cat.png",
+  "cat_small.png",
+  "coffee.png",
+  "coffee_wide.png",
+  "coins.png",
+  "grass.png",
+  "horse.png",
+  "hubble.png",
+  "logo.png",
+  "page.png",
+  "page_strip.png",
+  "rocket.png",
+  "rocket_tall.png"
+ ],
+ "images_per_s": 1.4306044702598548,
+ "impl": "candle",
+ "load_s": 1.435083666,
+ "n": 64,
+ "seconds": 44.736334417
+}

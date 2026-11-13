@@ -1,0 +1,46 @@
+=== 17:32:11 round 1 candle:cuda:bf16 (ubuntu-idle-r1-flash) load 4.38 1.58 4.32
+17:32:20 candle:cuda:bf16 b1 9.67 img/s
+17:32:29 candle:cuda:bf16 b8 10.40 img/s
+=== 17:32:29 round 1 st:cuda:bf16 (ubuntu-idle-r1-st) load 4.07 1.65 4.29
+17:32:56 st:cuda:bf16 b1 5.41 img/s
+17:33:17 st:cuda:bf16 b8 9.25 img/s
+=== 17:33:17 round 1 candle:cuda:f32 (ubuntu-idle-r1-flash) load 2.71 1.64 4.15
+17:33:40 candle:cuda:f32 b1 3.25 img/s
+17:34:04 candle:cuda:f32 b8 3.28 img/s
+=== 17:34:04 round 1 st:cuda:f32 (ubuntu-idle-r1-st) load 2.04 1.61 4.02
+17:34:42 st:cuda:f32 b1 3.00 img/s
+17:35:23 st:cuda:f32 b8 3.14 img/s
+=== 17:35:23 round 1 candle:cuda:bf16 (ubuntu-idle-r1-noflash) load 4.72 2.63 4.18
+17:35:42 candle:cuda:bf16 b1 3.80 img/s
+17:36:03 candle:cuda:bf16 b8 3.86 img/s
+=== 17:36:04 round 2 st:cuda:bf16 (ubuntu-idle-r2-st) load 3.21 2.50 4.07
+17:36:27 st:cuda:bf16 b1 6.20 img/s
+17:36:48 st:cuda:bf16 b8 9.23 img/s
+=== 17:36:48 round 2 candle:cuda:f32 (ubuntu-idle-r2-flash) load 2.58 2.42 3.96
+17:37:11 candle:cuda:f32 b1 3.23 img/s
+17:37:35 candle:cuda:f32 b8 3.27 img/s
+=== 17:37:35 round 2 st:cuda:f32 (ubuntu-idle-r2-st) load 2.73 2.43 3.88
+17:38:11 st:cuda:f32 b1 2.93 img/s
+17:38:48 st:cuda:f32 b8 3.16 img/s
+=== 17:38:48 round 2 candle:cuda:bf16 (ubuntu-idle-r2-noflash) load 2.53 2.44 3.78
+17:39:08 candle:cuda:bf16 b1 3.79 img/s
+17:39:29 candle:cuda:bf16 b8 3.86 img/s
+=== 17:39:29 round 2 candle:cuda:bf16 (ubuntu-idle-r2-flash) load 2.12 2.35 3.69
+17:39:38 candle:cuda:bf16 b1 9.42 img/s
+17:39:48 candle:cuda:bf16 b8 10.31 img/s
+=== 17:39:48 round 3 candle:cuda:f32 (ubuntu-idle-r3-flash) load 1.96 2.29 3.64
+17:40:10 candle:cuda:f32 b1 3.23 img/s
+17:40:35 candle:cuda:f32 b8 3.26 img/s
+=== 17:40:35 round 3 st:cuda:f32 (ubuntu-idle-r3-st) load 1.81 2.20 3.55
+17:41:10 st:cuda:f32 b1 3.04 img/s
+17:41:46 st:cuda:f32 b8 3.16 img/s
+=== 17:41:47 round 3 candle:cuda:bf16 (ubuntu-idle-r3-noflash) load 1.97 2.21 3.44
+17:42:06 candle:cuda:bf16 b1 3.78 img/s
+17:42:27 candle:cuda:bf16 b8 3.87 img/s
+=== 17:42:28 round 3 candle:cuda:bf16 (ubuntu-idle-r3-flash) load 1.65 2.10 3.35
+17:42:37 candle:cuda:bf16 b1 9.77 img/s
+17:42:46 candle:cuda:bf16 b8 10.30 img/s
+=== 17:42:46 round 3 st:cuda:bf16 (ubuntu-idle-r3-st) load 1.62 2.06 3.31
+17:43:11 st:cuda:bf16 b1 5.36 img/s
+17:43:34 st:cuda:bf16 b8 9.25 img/s
+DONE

@@ -1,0 +1,44 @@
+# Rust
+/target/
+
+# Personal data: photo copies, embeddings, cluster runs. Never commit.
+/data/
+
+# Bend build outputs, synthetic test data and run outputs
+/bend/*.gpu
+/bend/build/
+/bend/testdata/
+/bend/out/
+
+# Python reference envs and caches
+.venv/
+__pycache__/
+*.pyc
+
+# Local env
+.env
+.env.*
+.DS_Store
+
+# Synthetic benchmark data (regenerate with bench/py/gen_data.py)
+/bench/data/
+
+# EmbeddingGemma 2 parity: test images and reference outputs (regenerate with bench/gemma/reference.py)
+/bench/gemma/images/
+/bench/gemma/ref/
+
+# bench/compare: fetched upstream package, centroids and labels of runs
+/bench/compare/.upstream/
+/bench/compare/results/**/*.f32
+/bench/compare/results/**/*.i32
+/bench/compare/py/.venv/
+
+# Spike build outputs
+/bench/spikes/*/target/
+
+# Raw per-run benchmark folders (summary.json and table.md keep the numbers)
+/bench/compare/results/*/runs/
+
+# Raw per-run output of the embedding comparison (run.json and embed.json keep the numbers)
+/bench/compare/results/**/stderr.txt
+/bench/compare/results/**/stdout.txt

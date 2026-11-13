@@ -1,0 +1,56 @@
+[
+ {
+  "data": "s768_200k",
+  "n": 200000,
+  "k": 1024,
+  "impl": "rs-cpu",
+  "runs_ok": 3,
+  "runs_failed": 0,
+  "errors": [],
+  "objective_mean": 0.28489189856853653,
+  "objective_sd": 0.000438903337287573,
+  "train_s_median": 1.4825009169999999,
+  "train_s_iqr": 0.09755768749999993,
+  "load_s_median": 0.166466167,
+  "peak_rss_bytes_max": 1403600896,
+  "peak_footprint_bytes_max": 1400194512,
+  "gpu_peak_bytes_max": null,
+  "ari_mean": null,
+  "ari_sd": null,
+  "ari_seed_floor": null,
+  "loadavg_1m_range": [
+   19.94189453125,
+   20.5869140625
+  ],
+  "threads": {
+   "rayon": 10
+  }
+ },
+ {
+  "data": "s768_200k",
+  "n": 200000,
+  "k": 1024,
+  "impl": "rs-metal-fused",
+  "runs_ok": 3,
+  "runs_failed": 0,
+  "errors": [],
+  "objective_mean": 0.28489189856853653,
+  "objective_sd": 0.000438903337287573,
+  "train_s_median": 0.66455525,
+  "train_s_iqr": 0.005494583499999983,
+  "load_s_median": 0.165677542,
+  "peak_rss_bytes_max": 1334902784,
+  "peak_footprint_bytes_max": 1331971656,
+  "gpu_peak_bytes_max": null,
+  "ari_mean": null,
+  "ari_sd": null,
+  "ari_seed_floor": null,
+  "loadavg_1m_range": [
+   19.94189453125,
+   20.5869140625
+  ],
+  "threads": {
+   "rayon": 10
+  }
+ }
+]

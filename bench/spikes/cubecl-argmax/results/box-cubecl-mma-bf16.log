@@ -1,0 +1,5 @@
+runtime cuda on Cuda(Cuda(0)), n 200000, d 768
+bind 1693.6 ms
+f64 reference k=64: 0.3 s
+f64 reference k=256: 0.9 s
+f64 reference k=1024: 2.5 s

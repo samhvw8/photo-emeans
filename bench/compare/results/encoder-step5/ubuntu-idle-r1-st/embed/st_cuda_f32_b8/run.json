@@ -1,0 +1,52 @@
+{
+ "case": "st:cuda:f32",
+ "batch": 8,
+ "cmd": [
+  "~/workspace/tools/emeans/bench/compare/py/.venv/bin/python",
+  "~/workspace/tools/emeans/bench/compare/py/embed_py.py",
+  "cuda",
+  "f32",
+  "8",
+  "64",
+  "~/workspace/tools/emeans/bench/compare/results/ubuntu-idle-r1-st/embed/st_cuda_f32_b8"
+ ],
+ "loadavg_before": [
+  2.19921875,
+  1.71044921875,
+  3.95068359375
+ ],
+ "gpu_peak_bytes": 3500146688,
+ "peak_rss_bytes": 3506728960,
+ "ok": true,
+ "impl": "sentence-transformers",
+ "device": "cuda",
+ "dtype": "f32",
+ "n": 64,
+ "load_s": 10.257569468001748,
+ "seconds": 20.36474202699901,
+ "images_per_s": 3.142686507648885,
+ "files": [
+  "astronaut.png",
+  "camera.png",
+  "cat.png",
+  "cat_small.png",
+  "coffee.png",
+  "coffee_wide.png",
+  "coins.png",
+  "grass.png",
+  "horse.png",
+  "hubble.png",
+  "logo.png",
+  "page.png",
+  "page_strip.png",
+  "rocket.png",
+  "rocket_tall.png"
+ ],
+ "threads": 32,
+ "versions": {
+  "torch": "2.11.0+cu130",
+  "transformers": "5.22.2",
+  "sentence_transformers": "6.3.0"
+ },
+ "gpu_peak_allocated_bytes": 2959671296
+}

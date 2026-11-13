@@ -1,0 +1,79 @@
+faiss 1.16.0, threads 10; bend cpu
+  n20k_d16 k=16 seed=1: ref obj 14882.59 final 14837.10 0.20s | bend obj 14767.92 final 14724.19 train 0.09s wall 0.22s | batch 128 alpha0 2 ulp | splits 0/0 labels agree 0.989/0.988 (20000 labelled)
+  n20k_d16 k=16 seed=2: ref obj 14762.21 final 14716.48 0.17s | bend obj 14835.11 final 14790.20 train 0.16s wall 0.25s | batch 128 alpha0 2 ulp | splits 0/0 labels agree 0.987/0.988 (20000 labelled)
+  n20k_d16 k=16 seed=3: ref obj 14801.28 final 14755.44 0.18s | bend obj 14835.68 final 14791.18 train 0.10s wall 0.53s | batch 128 alpha0 2 ulp | splits 0/0 labels agree 0.986/0.985 (20000 labelled)
+  n20k_d16 k=16 seed=4: ref obj 14899.77 final 14856.54 0.17s | bend obj 14901.94 final 14857.64 train 0.09s wall 0.17s | batch 128 alpha0 2 ulp | splits 0/0 labels agree 0.988/0.988 (20000 labelled)
+  n20k_d16 k=16 seed=5: ref obj 14877.36 final 14832.86 0.17s | bend obj 14767.66 final 14724.60 train 0.10s wall 0.18s | batch 128 alpha0 2 ulp | splits 0/0 labels agree 0.986/0.988 (20000 labelled)
+  n20k_d16 k=64 seed=1: ref obj 9033.87 final 8974.03 0.18s | bend obj 9041.26 final 8981.21 train 0.13s wall 0.21s | batch 128 alpha0 1 ulp | splits 2/5 labels agree 0.994/0.994 (20000 labelled)
+  n20k_d16 k=64 seed=2: ref obj 9025.81 final 8966.47 0.19s | bend obj 8996.37 final 8937.14 train 0.13s wall 0.20s | batch 128 alpha0 1 ulp | splits 2/3 labels agree 0.994/0.993 (20000 labelled)
+  n20k_d16 k=64 seed=3: ref obj 9008.44 final 8943.75 0.19s | bend obj 8983.31 final 8924.33 train 0.13s wall 0.22s | batch 128 alpha0 1 ulp | splits 2/5 labels agree 0.992/0.994 (20000 labelled)
+  n20k_d16 k=64 seed=4: ref obj 8998.55 final 8938.89 0.19s | bend obj 8973.43 final 8914.53 train 0.13s wall 0.22s | batch 128 alpha0 1 ulp | splits 2/0 labels agree 0.994/0.993 (20000 labelled)
+  n20k_d16 k=64 seed=5: ref obj 8982.21 final 8922.11 0.19s | bend obj 8965.36 final 8905.65 train 0.14s wall 0.23s | batch 128 alpha0 1 ulp | splits 1/4 labels agree 0.994/0.994 (20000 labelled)
+  n20k_d16 k=256 seed=1: ref obj 7274.67 final 7170.08 0.12s | bend obj 7264.58 final 7159.63 train 0.20s wall 0.28s | batch 256 alpha0 2 ulp | splits 73/79 labels agree 0.987/0.986 (20000 labelled)
+  n20k_d16 k=256 seed=2: ref obj 7260.90 final 7156.86 0.12s | bend obj 7282.27 final 7175.17 train 0.18s wall 0.26s | batch 256 alpha0 2 ulp | splits 85/83 labels agree 0.987/0.985 (20000 labelled)
+  n20k_d16 k=256 seed=3: ref obj 7265.58 final 7161.01 0.12s | bend obj 7278.19 final 7173.64 train 0.19s wall 0.27s | batch 256 alpha0 2 ulp | splits 68/86 labels agree 0.987/0.987 (20000 labelled)
+  n20k_d16 k=256 seed=4: ref obj 7269.33 final 7164.09 0.12s | bend obj 7269.06 final 7164.77 train 0.19s wall 0.27s | batch 256 alpha0 2 ulp | splits 66/73 labels agree 0.987/0.986 (20000 labelled)
+  n20k_d16 k=256 seed=5: ref obj 7265.43 final 7159.78 0.12s | bend obj 7277.19 final 7172.61 train 0.18s wall 0.27s | batch 256 alpha0 2 ulp | splits 77/79 labels agree 0.987/0.986 (20000 labelled)
+  n20k_d768 k=16 seed=1: ref obj 22723.67 final 22649.98 0.52s | bend obj 22335.30 final 22270.29 train 0.11s wall 0.70s | batch 1024 alpha0 0 ulp | splits 0/0 labels agree 0.999/0.999 (20000 labelled)
+  n20k_d768 k=16 seed=2: ref obj 22413.86 final 22350.21 0.53s | bend obj 22510.95 final 22442.64 train 0.11s wall 0.73s | batch 1024 alpha0 0 ulp | splits 0/0 labels agree 0.999/0.999 (20000 labelled)
+  n20k_d768 k=16 seed=3: ref obj 22450.98 final 22384.74 0.53s | bend obj 22569.77 final 22500.76 train 0.19s wall 0.80s | batch 1024 alpha0 0 ulp | splits 0/0 labels agree 0.998/0.999 (20000 labelled)
+  n20k_d768 k=16 seed=4: ref obj 22756.42 final 22688.21 0.54s | bend obj 22488.36 final 22417.95 train 0.13s wall 0.74s | batch 1024 alpha0 0 ulp | splits 0/0 labels agree 0.999/0.998 (20000 labelled)
+  n20k_d768 k=16 seed=5: ref obj 22741.54 final 22670.22 0.54s | bend obj 22887.15 final 22818.34 train 0.15s wall 0.74s | batch 1024 alpha0 0 ulp | splits 0/0 labels agree 0.999/0.999 (20000 labelled)
+  n20k_d768 k=64 seed=1: ref obj 11490.52 final 11401.23 0.56s | bend obj 11197.08 final 11121.55 train 0.50s wall 1.13s | batch 1024 alpha0 1 ulp | splits 30/22 labels agree 1.000/1.000 (20000 labelled)
+  n20k_d768 k=64 seed=2: ref obj 11320.47 final 11246.94 0.57s | bend obj 11276.98 final 11194.21 train 0.48s wall 1.09s | batch 1024 alpha0 1 ulp | splits 30/23 labels agree 1.000/0.997 (20000 labelled)
+  n20k_d768 k=64 seed=3: ref obj 11114.68 final 11044.05 0.54s | bend obj 11174.25 final 11100.92 train 0.39s wall 1.32s | batch 1024 alpha0 1 ulp | splits 30/21 labels agree 1.000/1.000 (20000 labelled)
+  n20k_d768 k=64 seed=4: ref obj 11127.20 final 11056.48 0.54s | bend obj 11035.25 final 10940.67 train 0.46s wall 1.06s | batch 1024 alpha0 1 ulp | splits 19/30 labels agree 1.000/0.999 (20000 labelled)
+  n20k_d768 k=64 seed=5: ref obj 11334.52 final 11262.96 0.54s | bend obj 11084.60 final 11013.61 train 0.35s wall 0.94s | batch 1024 alpha0 1 ulp | splits 27/29 labels agree 1.000/1.000 (20000 labelled)
+  n20k_d768 k=256 seed=1: ref obj 9189.89 final 9068.61 0.58s | bend obj 9203.29 final 9076.13 train 1.28s wall 1.88s | batch 2048 alpha0 2 ulp | splits 505/523 labels agree 0.999/0.998 (20000 labelled)
+  n20k_d768 k=256 seed=2: ref obj 9200.29 final 9073.50 0.58s | bend obj 9216.09 final 9091.91 train 1.37s wall 1.98s | batch 2048 alpha0 2 ulp | splits 513/514 labels agree 0.997/0.998 (20000 labelled)
+  n20k_d768 k=256 seed=3: ref obj 9214.47 final 9091.29 0.58s | bend obj 9210.78 final 9088.53 train 1.24s wall 1.83s | batch 2048 alpha0 2 ulp | splits 515/505 labels agree 0.998/0.999 (20000 labelled)
+  n20k_d768 k=256 seed=4: ref obj 9205.23 final 9086.12 0.58s | bend obj 9202.70 final 9080.16 train 1.33s wall 1.94s | batch 2048 alpha0 2 ulp | splits 528/509 labels agree 0.998/0.998 (20000 labelled)
+  n20k_d768 k=256 seed=5: ref obj 9209.30 final 9077.24 0.59s | bend obj 9190.95 final 9067.42 train 1.66s wall 2.28s | batch 2048 alpha0 2 ulp | splits 525/519 labels agree 0.997/0.998 (20000 labelled)
+  n100k_d16 k=16 seed=1: ref obj 74065.49 final 73983.70 0.89s | bend obj 74368.56 final 74288.29 train 0.56s wall 0.72s | batch 512 alpha0 1 ulp | splits 0/0 labels agree 0.987/0.987 (100000 labelled)
+  n100k_d16 k=16 seed=2: ref obj 74228.25 final 74145.30 0.38s | bend obj 74405.97 final 74322.73 train 0.29s wall 0.43s | batch 512 alpha0 1 ulp | splits 0/0 labels agree 0.987/0.986 (100000 labelled)
+  n100k_d16 k=16 seed=3: ref obj 74313.71 final 74235.54 0.89s | bend obj 73852.20 final 73770.83 train 0.54s wall 0.70s | batch 512 alpha0 1 ulp | splits 0/0 labels agree 0.988/0.988 (100000 labelled)
+  n100k_d16 k=16 seed=4: ref obj 74299.72 final 74216.64 0.89s | bend obj 74332.21 final 74252.09 train 0.73s wall 0.97s | batch 512 alpha0 1 ulp | splits 0/0 labels agree 0.987/0.986 (100000 labelled)
+  n100k_d16 k=16 seed=5: ref obj 74473.19 final 74389.00 0.92s | bend obj 74966.95 final 74883.77 train 0.71s wall 0.91s | batch 512 alpha0 1 ulp | splits 0/0 labels agree 0.988/0.987 (100000 labelled)
+  n100k_d16 k=64 seed=1: ref obj 45748.86 final 45641.51 0.54s | bend obj 45967.52 final 45860.54 train 0.38s wall 0.51s | batch 512 alpha0 1 ulp | splits 0/1 labels agree 0.993/0.990 (100000 labelled)
+  n100k_d16 k=64 seed=2: ref obj 45482.30 final 45374.06 0.37s | bend obj 45884.92 final 45776.21 train 0.34s wall 0.47s | batch 512 alpha0 1 ulp | splits 0/0 labels agree 0.992/0.992 (100000 labelled)
+  n100k_d16 k=64 seed=3: ref obj 45436.36 final 45330.00 0.33s | bend obj 45724.42 final 45617.04 train 0.47s wall 0.66s | batch 512 alpha0 1 ulp | splits 1/0 labels agree 0.993/0.994 (100000 labelled)
+  n100k_d16 k=64 seed=4: ref obj 45633.33 final 45526.45 0.35s | bend obj 45425.95 final 45311.99 train 0.39s wall 0.56s | batch 512 alpha0 1 ulp | splits 0/0 labels agree 0.992/0.992 (100000 labelled)
+  n100k_d16 k=64 seed=5: ref obj 45734.42 final 45627.06 0.32s | bend obj 45362.32 final 45256.89 train 0.33s wall 0.47s | batch 512 alpha0 1 ulp | splits 0/0 labels agree 0.992/0.992 (100000 labelled)
+  n100k_d16 k=256 seed=1: ref obj 37282.42 final 37073.87 0.28s | bend obj 37259.61 final 37051.66 train 0.65s wall 0.79s | batch 1024 alpha0 1 ulp | splits 26/27 labels agree 0.975/0.975 (100000 labelled)
+  n100k_d16 k=256 seed=2: ref obj 37310.39 final 37100.57 0.28s | bend obj 37311.31 final 37101.11 train 0.74s wall 0.87s | batch 1024 alpha0 1 ulp | splits 24/17 labels agree 0.975/0.975 (100000 labelled)
+  n100k_d16 k=256 seed=3: ref obj 37297.45 final 37087.90 0.27s | bend obj 37312.57 final 37102.01 train 0.65s wall 0.84s | batch 1024 alpha0 1 ulp | splits 20/23 labels agree 0.974/0.976 (100000 labelled)
+  n100k_d16 k=256 seed=4: ref obj 37347.75 final 37139.47 0.29s | bend obj 37283.05 final 37073.90 train 0.62s wall 0.77s | batch 1024 alpha0 1 ulp | splits 23/19 labels agree 0.977/0.976 (100000 labelled)
+  n100k_d16 k=256 seed=5: ref obj 37278.01 final 37070.27 0.28s | bend obj 37260.51 final 37053.54 train 0.64s wall 0.79s | batch 1024 alpha0 1 ulp | splits 21/17 labels agree 0.976/0.975 (100000 labelled)
+  n100k_d768 k=16 seed=1: ref obj 111738.21 final 111655.83 2.81s | bend obj 113036.94 final 112960.45 train 0.85s wall 4.33s | batch 4096 alpha0 0 ulp | splits 0/0 labels agree 0.999/0.999 (100000 labelled)
+  n100k_d768 k=16 seed=2: ref obj 112494.67 final 112412.57 2.76s | bend obj 112901.67 final 112821.72 train 0.64s wall 3.63s | batch 4096 alpha0 0 ulp | splits 0/0 labels agree 0.999/0.999 (100000 labelled)
+  n100k_d768 k=16 seed=3: ref obj 112593.47 final 112514.27 2.62s | bend obj 112884.65 final 112805.21 train 0.71s wall 4.20s | batch 4096 alpha0 0 ulp | splits 0/0 labels agree 0.999/0.999 (100000 labelled)
+  n100k_d768 k=16 seed=4: ref obj 115879.28 final 115796.80 2.96s | bend obj 114446.34 final 114363.19 train 0.78s wall 5.42s | batch 4096 alpha0 0 ulp | splits 0/0 labels agree 0.999/0.999 (100000 labelled)
+  n100k_d768 k=16 seed=5: ref obj 113067.60 final 112984.48 3.43s | bend obj 113746.88 final 113662.67 train 0.61s wall 4.12s | batch 4096 alpha0 0 ulp | splits 0/0 labels agree 0.999/0.999 (100000 labelled)
+  n100k_d768 k=64 seed=1: ref obj 56075.53 final 55945.71 4.04s | bend obj 57113.50 final 56984.60 train 2.56s wall 6.43s | batch 4096 alpha0 0 ulp | splits 21/19 labels agree 1.000/0.999 (100000 labelled)
+  n100k_d768 k=64 seed=2: ref obj 56525.08 final 56394.11 2.95s | bend obj 56360.12 final 56232.96 train 2.08s wall 5.40s | batch 4096 alpha0 0 ulp | splits 20/15 labels agree 0.997/0.999 (100000 labelled)
+  n100k_d768 k=64 seed=3: ref obj 55841.76 final 55711.61 2.63s | bend obj 57004.11 final 56873.08 train 2.00s wall 4.82s | batch 4096 alpha0 0 ulp | splits 8/19 labels agree 1.000/0.998 (100000 labelled)
+  n100k_d768 k=64 seed=4: ref obj 56976.43 final 56504.80 6.08s | bend obj 56263.53 final 56134.35 train 2.80s wall 11.11s | batch 4096 alpha0 0 ulp | splits 39/9 labels agree 0.995/1.000 (100000 labelled)
+  n100k_d768 k=64 seed=5: ref obj 57808.96 final 57681.26 3.06s | bend obj 57323.46 final 57196.56 train 3.37s wall 6.52s | batch 4096 alpha0 0 ulp | splits 15/20 labels agree 0.996/1.000 (100000 labelled)
+  n100k_d768 k=256 seed=1: ref obj 46278.61 final 46062.23 3.12s | bend obj 46243.31 final 45993.70 train 6.91s wall 9.95s | batch 8192 alpha0 0 ulp | splits 831/815 labels agree 0.969/0.972 (100000 labelled)
+  n100k_d768 k=256 seed=2: ref obj 46208.83 final 45949.71 2.80s | bend obj 46255.82 final 46008.77 train 7.89s wall 10.74s | batch 8192 alpha0 0 ulp | splits 822/827 labels agree 0.971/0.965 (100000 labelled)
+  n100k_d768 k=256 seed=3: ref obj 46220.39 final 45963.90 3.54s | bend obj 46240.10 final 46008.92 train 8.51s wall 11.92s | batch 8192 alpha0 0 ulp | splits 817/823 labels agree 0.976/0.976 (100000 labelled)
+  n100k_d768 k=256 seed=4: ref obj 46208.22 final 45975.97 3.28s | bend obj 46293.10 final 46065.47 train 10.86s wall 14.61s | batch 8192 alpha0 0 ulp | splits 824/801 labels agree 0.967/0.976 (100000 labelled)
+  n100k_d768 k=256 seed=5: ref obj 46232.61 final 45967.48 2.78s | bend obj 46226.19 final 45980.84 train 6.20s wall 8.92s | batch 8192 alpha0 0 ulp | splits 830/815 labels agree 0.973/0.970 (100000 labelled)
+
+nepochs 5, 5 seeds, spherical, Bend backend: C, CPU threads
+| dataset | k | batch | alpha0 | Bend last-pass obj | faiss last-pass obj | gap | Bend final obj | faiss final obj | gap | Bend train s | Bend wall s | faiss train s |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| n20k_d16 | 16 | 128 | 0.177351 | 14821.7 ± 56.2 | 14844.6 ± 59.6 | -0.15% | 14777.6 ± 55.7 | 14799.7 ± 60.4 | -0.15% | 0.11 ± 0.03 | 0.27 ± 0.15 | 0.18 ± 0.01 |
+| n20k_d16 | 64 | 128 | 0.0935107 | 8991.9 ± 29.9 | 9009.8 ± 20.8 | -0.20% | 8932.6 ± 29.6 | 8949.1 ± 21.1 | -0.18% | 0.13 ± 0.01 | 0.21 ± 0.01 | 0.19 ± 0.00 |
+| n20k_d16 | 256 | 256 | 0.0920254 | 7274.3 ± 7.2 | 7267.2 ± 5.1 | +0.10% | 7169.2 ± 6.7 | 7162.4 ± 5.0 | +0.09% | 0.19 ± 0.01 | 0.27 ± 0.01 | 0.12 ± 0.00 |
+| n20k_d768 | 16 | 1024 | 1 | 22558.3 ± 203.2 | 22617.3 ± 169.7 | -0.26% | 22490.0 ± 202.3 | 22548.7 ± 166.4 | -0.26% | 0.14 ± 0.03 | 0.74 ± 0.04 | 0.53 ± 0.01 |
+| n20k_d768 | 64 | 1024 | 0.608014 | 11153.6 ± 95.3 | 11277.5 ± 157.8 | -1.10% | 11074.2 ± 98.6 | 11202.3 ± 151.3 | -1.14% | 0.44 ± 0.06 | 1.11 ± 0.14 | 0.55 ± 0.01 |
+| n20k_d768 | 256 | 2048 | 0.598356 | 9204.8 ± 9.5 | 9203.8 ± 9.4 | +0.01% | 9080.8 ± 9.8 | 9079.4 ± 9.3 | +0.02% | 1.38 ± 0.17 | 1.98 ± 0.18 | 0.58 ± 0.01 |
+| n100k_d16 | 16 | 512 | 0.299551 | 74385.2 ± 395.6 | 74276.1 ± 147.9 | +0.15% | 74303.5 ± 394.9 | 74194.0 ± 147.4 | +0.15% | 0.57 ± 0.18 | 0.75 ± 0.21 | 0.79 ± 0.23 |
+| n100k_d16 | 64 | 512 | 0.157943 | 45673.0 ± 270.1 | 45607.1 ± 142.9 | +0.14% | 45564.5 ± 270.9 | 45499.8 ± 142.9 | +0.14% | 0.38 ± 0.05 | 0.54 ± 0.08 | 0.38 ± 0.09 |
+| n100k_d16 | 256 | 1024 | 0.155434 | 37285.4 ± 26.0 | 37303.2 ± 28.0 | -0.05% | 37076.4 ± 24.5 | 37094.4 ± 27.9 | -0.05% | 0.66 ± 0.05 | 0.81 ± 0.04 | 0.28 ± 0.01 |
+| n100k_d768 | 16 | 4096 | 1 | 113403.3 ± 682.1 | 113154.6 ± 1595.9 | +0.22% | 113322.6 ± 679.7 | 113072.8 ± 1595.6 | +0.22% | 0.72 ± 0.10 | 4.34 ± 0.66 | 2.92 ± 0.31 |
+| n100k_d768 | 64 | 4096 | 1 | 56812.9 ± 472.9 | 56645.6 ± 782.4 | +0.30% | 56684.3 ± 472.9 | 56447.5 ± 761.8 | +0.42% | 2.56 ± 0.56 | 6.86 ± 2.48 | 3.75 ± 1.41 |
+| n100k_d768 | 256 | 8192 | 1 | 46251.7 ± 25.4 | 46229.7 ± 29.1 | +0.05% | 46011.5 ± 32.3 | 45983.9 ± 44.8 | +0.06% | 8.07 ± 1.79 | 11.23 ± 2.19 | 3.11 ± 0.32 |
+
+PASS

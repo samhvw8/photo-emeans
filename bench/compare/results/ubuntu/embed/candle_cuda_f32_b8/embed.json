@@ -1,0 +1,27 @@
+{
+  "batch": 8,
+  "device": "cuda",
+  "dtype": "f32",
+  "files": [
+    "astronaut.png",
+    "camera.png",
+    "cat.png",
+    "cat_small.png",
+    "coffee.png",
+    "coffee_wide.png",
+    "coins.png",
+    "grass.png",
+    "horse.png",
+    "hubble.png",
+    "logo.png",
+    "page.png",
+    "page_strip.png",
+    "rocket.png",
+    "rocket_tall.png"
+  ],
+  "images_per_s": 3.2825179923111056,
+  "impl": "candle",
+  "load_s": 1.3847743829999999,
+  "n": 64,
+  "seconds": 19.497227479
+}

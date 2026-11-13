@@ -1,0 +1,22 @@
+[package]
+name = "cubecl-argmax"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+publish = false
+
+# Standalone: keep the root workspace from claiming this crate.
+[workspace]
+
+[features]
+default = []
+metal-native = ["cubecl/metal-native"]
+wgpu-msl = ["cubecl/metal"]
+wgpu = ["cubecl/wgpu"]
+vulkan = ["cubecl/vulkan"]
+cuda = ["cubecl/cuda"]
+
+[dependencies]
+cubecl = { version = "=0.11.4", default-features = false, features = ["std", "stdlib"] }
+anyhow = "1"
+half = "2"

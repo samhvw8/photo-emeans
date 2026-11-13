@@ -1,0 +1,71 @@
+=== 16:30:51 build bench flash and no-flash (cached)
+    Finished `release` profile [optimized + debuginfo] target(s) in 11.95s
+    Finished `release` profile [optimized + debuginfo] target(s) in 11.77s
+=== 16:31:15 encoder unit tests with flash-attn (GPU)
+    Finished `release` profile [optimized + debuginfo] target(s) in 2.96s
+test attention::tests::mask_blocks_padding_and_the_window ... ok
+test attention::tests::no_query_row_is_fully_blocked ... ok
+test families::embeddinggemma2::config::tests::missing_per_layer_config_uses_global_defaults ... ok
+test families::embeddinggemma2::config::tests::per_layer_config_overrides_full_layers ... ok
+test families::embeddinggemma2::preprocess::tests::extreme_aspect_uses_the_fallback_branch ... ok
+test families::embeddinggemma2::preprocess::tests::soft_tokens_need_a_grid_of_threes ... ok
+test families::embeddinggemma2::preprocess::tests::target_sizes_match_reference ... ok
+test mlp::tests::unknown_activation_is_refused ... ok
+test pool::tests::grid_sum_adds_each_block ... ok
+test pool::tests::mean_ignores_padding ... ok
+test preprocess::tests::from_raw_checks_the_length ... ok
+test preprocess::tests::patch_layout_is_row_major_py_px_channel ... ok
+test rope::tests::axial_rope_rotates_each_half_by_its_own_axis ... ok
+test rope::tests::frequencies_match_transformers ... ok
+test preprocess::tests::resize_keeps_a_flat_image_flat ... ok
+test attention::tests::gqa_attention_matches_repeated_kv ... ok
+max |diff| vs f32: flash 0.01521492, plain bf16 0.12015879
+test attention::tests::flash_is_as_close_to_f32_as_plain_bf16 ... ok
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.54s
+=== 16:41:55 parity cuda f32 (exact path) and bf16 (flash), batch 8
+    Finished `release` profile [optimized + debuginfo] target(s) in 11.58s
+loaded google/embeddinggemma-2 on Cuda(CudaDevice(DeviceId(1))) F32 in 2.8s
+image model-only cos min 1.000000 mean 1.000000 | image e2e cos min 1.000000 mean 1.000000 | text cos min 1.000000 mean 1.000000 | max |diff| 3.42e-6 | pixel maxdiff max 0.0 mean 0.00 /255 | token ids match true | retrieval 13/15 (reference 13/15)
+parity run 11.0s
+loaded google/embeddinggemma-2 on Cuda(CudaDevice(DeviceId(1))) BF16 in 2.5s
+image model-only cos min 0.999816 mean 0.999937 | image e2e cos min 0.999816 mean 0.999937 | text cos min 0.999882 mean 0.999972 | max |diff| 2.68e-3 | pixel maxdiff max 0.0 mean 0.00 /255 | token ids match true | retrieval 13/15 (reference 13/15)
+parity run 4.2s
+=== 16:46:45 parity cuda bf16 without flash, batch 8
+    Finished `release` profile [optimized + debuginfo] target(s) in 16.60s
+loaded google/embeddinggemma-2 on Cuda(CudaDevice(DeviceId(1))) BF16 in 2.5s
+image model-only cos min 0.999614 mean 0.999917 | image e2e cos min 0.999614 mean 0.999917 | text cos min 0.999882 mean 0.999972 | max |diff| 3.52e-3 | pixel maxdiff max 0.0 mean 0.00 /255 | token ids match true | retrieval 13/15 (reference 13/15)
+parity run 9.0s
+=== 16:47:14 throughput: flash build (candle bf16/f32) + same-day sentence-transformers
+16:47:27 candle:cuda:bf16 b1 7.22 img/s
+16:47:39 candle:cuda:bf16 b8 8.27 img/s
+16:48:04 candle:cuda:f32 b1 3.00 img/s
+16:48:31 candle:cuda:f32 b8 3.01 img/s
+16:49:08 st:cuda:bf16 b1 4.06 img/s
+16:49:38 st:cuda:bf16 b8 7.01 img/s
+16:50:28 st:cuda:f32 b1 2.42 img/s
+16:51:14 st:cuda:f32 b8 2.92 img/s
+| impl | device | dtype | batch | images/s | load s | peak RSS GiB | peak footprint / GPU GiB | cos vs ST f32 (min) | cos vs CPU ref (min) |
+|---|---|---|---|---|---|---|---|---|---|
+| candle | cuda | bf16 | 1 | 7.22 | 2.6 | 1.02 | 0.82 | 0.999819 | 0.999819 |
+| candle | cuda | bf16 | 8 | 8.27 | 2.2 | 1.02 | 0.98 | 0.999817 | 0.999816 |
+| candle | cuda | f32 | 1 | 3.00 | 1.8 | 1.02 | 2.03 | 1.000000 | 1.000000 |
+| candle | cuda | f32 | 8 | 3.01 | 2.2 | 1.02 | 3.06 | 1.000000 | 1.000000 |
+| sentence-transformers | cuda | bf16 | 1 | 4.06 | 9.7 | 2.04 | 1.08 | 0.999791 | 0.999791 |
+| sentence-transformers | cuda | bf16 | 8 | 7.01 | 7.5 | 2.19 | 1.85 | 0.999847 | 0.999847 |
+| sentence-transformers | cuda | f32 | 1 | 2.42 | 10.8 | 3.28 | 1.99 | 1.000000 | 1.000000 |
+| sentence-transformers | cuda | f32 | 8 | 2.92 | 8.9 | 3.27 | 3.26 | 1.000000 | 1.000000 |
+
+=== 16:51:14 throughput: no-flash build, same day
+16:51:38 candle:cuda:bf16 b1 3.28 img/s
+16:52:03 candle:cuda:bf16 b8 3.42 img/s
+16:52:52 st:cuda:f32 b1 2.35 img/s
+16:53:39 st:cuda:f32 b8 2.93 img/s
+| impl | device | dtype | batch | images/s | load s | peak RSS GiB | peak footprint / GPU GiB | cos vs ST f32 (min) | cos vs CPU ref (min) |
+|---|---|---|---|---|---|---|---|---|---|
+| candle | cuda | bf16 | 1 | 3.28 | 2.8 | 1.02 | 1.60 | 0.999627 | 0.999627 |
+| candle | cuda | bf16 | 8 | 3.42 | 2.8 | 1.02 | 3.04 | 0.999615 | 0.999614 |
+| sentence-transformers | cuda | f32 | 1 | 2.35 | 8.9 | 3.27 | 1.99 | 1.000000 | 1.000000 |
+| sentence-transformers | cuda | f32 | 8 | 2.93 | 9.6 | 3.27 | 3.26 | 1.000000 | 1.000000 |
+
+=== 16:53:39 DONE
+DONE

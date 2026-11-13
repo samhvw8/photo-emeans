@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>emeans vs faiss e-means</title>
+<style>
+:root{--bg:#fbfaf7;--fg:#1d1d1b;--muted:#6b6a63;--line:#e4e1d8;--card:#ffffff;--accent:#2f6b4f;--accent-bg:#e8f2ec;--warn:#8a5a12}
+@media (prefers-color-scheme:dark){:root{--bg:#141413;--fg:#ecebe6;--muted:#a3a198;--line:#2c2b28;--card:#1c1c1a;--accent:#7fc8a2;--accent-bg:#1d2a23;--warn:#e0b169}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif}
+main{max-width:980px;margin:0 auto;padding:40px 16px 64px}
+h1{font-size:30px;line-height:1.2;margin:0 0 8px;letter-spacing:-.01em}
+.lede{color:var(--muted);margin:0 0 32px;max-width:720px}
+h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:40px 0 12px;font-weight:600}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.num{display:inline-block;margin-top:10px;font-weight:600;color:var(--accent);background:var(--accent-bg);border-radius:6px;padding:2px 8px;font-size:14px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:15px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.us{font-weight:600;color:var(--accent);white-space:nowrap}
+td.them{color:var(--muted);white-space:nowrap}
+.wrap{overflow-x:auto}
+.note{color:var(--muted);font-size:14px;margin-top:10px}
+.steps{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));margin-top:12px}
+.step{border-left:3px solid var(--accent);padding:4px 0 4px 12px}
+.step b{display:block}
+.step span{color:var(--muted);font-size:14px}
+footer{margin-top:48px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<main>
+<h1>What emeans improves and adds to faiss e-means</h1>
+<p class="lede">emeans is a Rust port of faiss <code>contrib/e_means</code>. It keeps the same recipe and random stream (results within 0.43% of faiss), and improves and adds the parts below. Measured on an M1 Pro Mac and an RTX 3060 box.</p>
+
+<h2>Improved: speed on every device</h2>
+<div class="wrap">
+<table>
+<tr><th>200k × 768, k = 1024 (train time)</th><th>faiss e-means</th><th>emeans</th></tr>
+<tr><td>Mac, CPU</td><td class="them">1.80 s (torch)</td><td class="us">≈1.0–1.2 s</td></tr>
+<tr><td>Mac, GPU</td><td class="them">does not run</td><td class="us">0.74 s</td></tr>
+<tr><td>Xeon box, CPU</td><td class="them">3.73 s (torch)</td><td class="us">1.83 s</td></tr>
+<tr><td>RTX 3060, exact FP32</td><td class="them">0.31 s (Triton)</td><td class="us">0.16 s</td></tr>
+<tr><td>RTX 3060, BF16 (lossy)</td><td class="them">0.15 s (Triton)</td><td class="us">0.10 s</td></tr>
+</table>
+</div>
+<p class="note">Same clustering quality as faiss. CPU, Metal and CUDA give the same result for the same seed (Metal bit-identical, CUDA within 6e-11).</p>
+
+<h2>Improved: how it works</h2>
+<div class="grid">
+<div class="card"><h3>Runs on the Mac GPU</h3><p>faiss fails on Apple's GPU (MPS has no float64). emeans has its own Metal kernels.</p><span class="num">0.74 s vs no run</span></div>
+<div class="card"><h3>Exact and fast on CUDA</h3><p>A tensor-core screen picks candidate centroids, then an exact FP32 re-check. Proven bit-equal to plain FP32.</p><span class="num">2× faiss FP32</span></div>
+<div class="card"><h3>Fast exact CPU on x86</h3><p>A fused AVX2 kernel finds the best centroid inside the matrix multiply. No new dependency.</p><span class="num">2× faiss torch CPU</span></div>
+<div class="card"><h3>Training stays on the GPU</h3><p>Data, centroids and statistics stay on the device; the host joins only at revival checks and epoch ends.</p><span class="num">1.20 → 0.16 s on CUDA</span></div>
+<div class="card"><h3>One tested contract</h3><p>Every backend implements one op set, checked against an f64 reference, near-ties and a production-size case.</p><span class="num">CPU = Metal = CUDA</span></div>
+<div class="card"><h3>BF16 only when asked</h3><p>faiss defaults to BF16, which changes some labels. emeans stays exact unless you opt in.</p><span class="num">exact by default</span></div>
+</div>
+
+<h2>Added</h2>
+<div class="grid">
+<div class="card"><h3>Automatic k</h3><p>Picks the number of clusters in two levels; re-splits clusters that are too big; stays flat when the data has no broad structure.</p></div>
+<div class="card"><h3>Near-duplicate groups</h3><p>Bursts and retakes are grouped first (exact kNN, optional capture-time limit), so they do not distort the clusters.</p><span class="num">~16k photos → ~2/3 as many groups</span></div>
+<div class="card"><h3>Robust outlier flag</h3><p>Flags rows far below their cluster's typical similarity (median − 3 MAD), not a fixed 2% of every cluster.</p></div>
+<div class="card"><h3>Built-in embeddings</h3><p>EmbeddingGemma 2 for images and text, exact against transformers; flash attention on CUDA.</p><span class="num">2.6× faster bf16</span></div>
+<div class="card"><h3>Photos and videos</h3><p>Fetches resized copies from Photos and iCloud, embeds video frames, and clusters photos and videos together.</p></div>
+<div class="card"><h3>Review before albums</h3><p>A local gallery; albums are created in Photos only for the clusters you approve.</p></div>
+</div>
+
+<h2>Added: incremental training with stable ids</h2>
+<div class="card">
+<p>Add new photos without starting over. Old cluster ids never change.</p>
+<div class="steps">
+<div class="step"><b>1 · Assign</b><span>Each new item joins its nearest cluster; far-off items wait as pending.</span></div>
+<div class="step"><b>2 · Grow</b><span>A coherent group of ≥ 20 pending items becomes a new cluster.</span></div>
+<div class="step"><b>3 · Update</b><span>One short e-means pass from the current state.</span></div>
+<div class="step"><b>4 · Retrain</b><span>Only after large growth; ids carried over by matching.</span></div>
+</div>
+<span class="num">100% ids kept · 0.6 s vs 38.5 s full retrain · +0.37% objective (synthetic)</span>
+</div>
+
+<footer>photo-emeans · github.com/samhvw8/photo-emeans · details in .okf/results/improvements-over-faiss.md</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,42 @@
+# Benchmark binaries for bench/compare. A separate workspace, so the main
+# workspace (and its macOS-only photos crate) is never built on Linux.
+[workspace]
+
+[package]
+name = "emeans-compare"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[features]
+# The candle baselines (cpu-candle-gemm, metal-unfused, cuda-unfused) that run.py
+# names live in emeans-bench since the library split; on by default so every
+# backend name of run.py keeps working.
+default = ["baselines"]
+baselines = ["emeans-bench/baselines"]
+cuda = ["emeans/cuda", "emeans-bench/cuda", "candle-core?/cuda", "encoder?/cuda"]
+# The candle CUDA baseline `cuda-unfused`. candle's CUDA links the CUDA libraries
+# at load time, which makes CPU backends in the same binary ~10% slower on the
+# box; box_build.sh builds emeans-compare without it (and without `embed`).
+cuda-baselines = ["cuda", "emeans-bench/cuda-baselines"]
+embed = ["dep:encoder", "dep:candle-core"]
+# FlashAttention-2 for bf16 vision attention on CUDA (encoder recipe step 5).
+flash-attn = ["embed", "cuda", "encoder?/flash-attn"]
+
+[dependencies]
+# The libraries' own repos, pinned by commit.
+emeans = { git = "https://github.com/samhvw8/emeans", rev = "2e7233b15bc22bb5c8af080fdfca9ffb64622cad" }
+emeans-bench = { git = "https://github.com/samhvw8/emeans", rev = "2e7233b15bc22bb5c8af080fdfca9ffb64622cad" }
+encoder = { package = "candle-embeddings", git = "https://github.com/samhvw8/candle-embeddings", rev = "65f8a8c39df3e07471514b570884f0161d9e364c", optional = true }
+candle-core = { version = "0.11.1", optional = true }
+anyhow = "1"
+serde_json = "1"
+rayon = "1"
+
+[[bin]]
+name = "embed-compare"
+required-features = ["embed"]
+
+[profile.release]
+debug = 1

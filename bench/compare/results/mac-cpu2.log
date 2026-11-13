@@ -1,0 +1,216 @@
+=== 20:25:27 start, load { 12.46 29.29 32.18 }
+20:25:27 s768_16k k=64 rs-cpu                 s1000 (warm-up): train 0.06s load 0.02s la 12.5 -> ok
+20:25:29 s768_16k k=64 py-torch-cpu           s1000 (warm-up): train 0.17s load 1.08s la 12.5 -> ok
+20:25:29 s768_16k k=64 py-numpy               s1000 (warm-up): train 0.08s load 0.01s la 11.6 -> ok
+20:25:29 s768_16k k=64 rs-cpu                 s1: train 0.07s load 0.01s la 11.6 -> ok
+20:25:31 s768_16k k=64 py-torch-cpu           s1: train 0.20s load 0.77s la 11.6 -> ok
+20:25:32 s768_16k k=64 py-numpy               s1: train 0.21s load 0.01s la 11.6 -> ok
+20:25:34 s768_16k k=64 py-torch-cpu           s2: train 0.35s load 1.43s la 11.6 -> ok
+20:25:35 s768_16k k=64 py-numpy               s2: train 0.14s load 0.01s la 12.2 -> ok
+20:25:35 s768_16k k=64 rs-cpu                 s2: train 0.12s load 0.02s la 12.2 -> ok
+20:25:35 s768_16k k=64 py-numpy               s3: train 0.14s load 0.01s la 12.2 -> ok
+20:25:36 s768_16k k=64 rs-cpu                 s3: train 0.10s load 0.02s la 12.2 -> ok
+20:25:37 s768_16k k=64 py-torch-cpu           s3: train 0.18s load 0.72s la 12.2 -> ok
+20:25:37 s768_16k k=256 rs-cpu                 s1000 (warm-up): train 0.17s load 0.02s la 12.2 -> ok
+20:25:39 s768_16k k=256 py-torch-cpu           s1000 (warm-up): train 0.34s load 1.15s la 12.2 -> ok
+20:25:40 s768_16k k=256 py-numpy               s1000 (warm-up): train 0.24s load 0.01s la 12.9 -> ok
+20:25:40 s768_16k k=256 rs-cpu                 s1: train 0.08s load 0.01s la 12.9 -> ok
+20:25:41 s768_16k k=256 py-torch-cpu           s1: train 0.23s load 0.65s la 12.9 -> ok
+20:25:41 s768_16k k=256 py-numpy               s1: train 0.16s load 0.01s la 12.9 -> ok
+20:25:42 s768_16k k=256 py-torch-cpu           s2: train 0.21s load 0.67s la 12.9 -> ok
+20:25:43 s768_16k k=256 py-numpy               s2: train 0.17s load 0.01s la 12.9 -> ok
+20:25:43 s768_16k k=256 rs-cpu                 s2: train 0.07s load 0.01s la 12.9 -> ok
+20:25:43 s768_16k k=256 py-numpy               s3: train 0.16s load 0.01s la 12.9 -> ok
+20:25:43 s768_16k k=256 rs-cpu                 s3: train 0.08s load 0.01s la 12.1 -> ok
+20:25:45 s768_16k k=256 py-torch-cpu           s3: train 0.22s load 0.62s la 12.1 -> ok
+20:25:45 s768_16k k=1024 rs-cpu                 s1000 (warm-up): train 0.13s load 0.01s la 12.1 -> ok
+20:25:46 s768_16k k=1024 py-torch-cpu           s1000 (warm-up): train 0.28s load 0.60s la 12.1 -> ok
+20:25:47 s768_16k k=1024 py-numpy               s1000 (warm-up): train 0.42s load 0.01s la 12.1 -> ok
+20:25:47 s768_16k k=1024 rs-cpu                 s1: train 0.18s load 0.01s la 12.1 -> ok
+20:25:49 s768_16k k=1024 py-torch-cpu           s1: train 0.78s load 0.80s la 12.1 -> ok
+20:25:50 s768_16k k=1024 py-numpy               s1: train 0.35s load 0.01s la 12.4 -> ok
+20:25:51 s768_16k k=1024 py-torch-cpu           s2: train 0.31s load 0.70s la 12.4 -> ok
+20:25:52 s768_16k k=1024 py-numpy               s2: train 0.31s load 0.01s la 12.4 -> ok
+20:25:52 s768_16k k=1024 rs-cpu                 s2: train 0.13s load 0.01s la 12.4 -> ok
+20:25:53 s768_16k k=1024 py-numpy               s3: train 0.32s load 0.01s la 12.4 -> ok
+20:25:53 s768_16k k=1024 rs-cpu                 s3: train 0.15s load 0.01s la 12.4 -> ok
+20:25:54 s768_16k k=1024 py-torch-cpu           s3: train 0.29s load 0.59s la 12.4 -> ok
+DONE
+=== 20:25:54 s768_16k done, load { 11.60 27.49 31.42 }
+20:25:55 s768_100k k=64 rs-cpu                 s1000 (warm-up): train 0.47s load 0.35s la 11.6 -> ok
+20:25:57 s768_100k k=64 py-torch-cpu           s1000 (warm-up): train 0.61s load 0.70s la 11.6 -> ok
+20:25:58 s768_100k k=64 py-numpy               s1000 (warm-up): train 0.52s load 0.04s la 11.6 -> ok
+20:25:58 s768_100k k=64 rs-cpu                 s1: train 0.25s load 0.12s la 11.6 -> ok
+20:26:00 s768_100k k=64 py-torch-cpu           s1: train 0.57s load 0.69s la 11.6 -> ok
+20:26:00 s768_100k k=64 py-numpy               s1: train 0.53s load 0.04s la 12.4 -> ok
+20:26:02 s768_100k k=64 py-torch-cpu           s2: train 0.75s load 0.69s la 12.4 -> ok
+20:26:03 s768_100k k=64 py-numpy               s2: train 0.51s load 0.04s la 12.4 -> ok
+20:26:03 s768_100k k=64 rs-cpu                 s2: train 0.21s load 0.11s la 12.4 -> ok
+20:26:04 s768_100k k=64 py-numpy               s3: train 0.50s load 0.04s la 12.0 -> ok
+20:26:05 s768_100k k=64 rs-cpu                 s3: train 0.23s load 0.10s la 12.0 -> ok
+20:26:06 s768_100k k=64 py-torch-cpu           s3: train 0.73s load 0.62s la 12.0 -> ok
+20:26:07 s768_100k k=256 rs-cpu                 s1000 (warm-up): train 0.34s load 0.13s la 12.0 -> ok
+20:26:09 s768_100k k=256 py-torch-cpu           s1000 (warm-up): train 0.69s load 0.68s la 12.0 -> ok
+20:26:10 s768_100k k=256 py-numpy               s1000 (warm-up): train 0.83s load 0.07s la 12.5 -> ok
+20:26:10 s768_100k k=256 rs-cpu                 s1: train 0.25s load 0.10s la 12.5 -> ok
+20:26:12 s768_100k k=256 py-torch-cpu           s1: train 0.61s load 0.64s la 12.5 -> ok
+20:26:13 s768_100k k=256 py-numpy               s1: train 0.75s load 0.04s la 12.5 -> ok
+20:26:15 s768_100k k=256 py-torch-cpu           s2: train 0.85s load 1.09s la 12.5 -> ok
+20:26:16 s768_100k k=256 py-numpy               s2: train 0.72s load 0.04s la 12.7 -> ok
+20:26:17 s768_100k k=256 rs-cpu                 s2: train 0.41s load 0.11s la 12.7 -> ok
+20:26:18 s768_100k k=256 py-numpy               s3: train 0.85s load 0.04s la 12.7 -> ok
+20:26:19 s768_100k k=256 rs-cpu                 s3: train 0.37s load 0.12s la 12.7 -> ok
+20:26:22 s768_100k k=256 py-torch-cpu           s3: train 1.77s load 1.22s la 14.2 -> ok
+20:26:23 s768_100k k=1024 rs-cpu                 s1000 (warm-up): train 0.98s load 0.20s la 14.2 -> ok
+20:26:26 s768_100k k=1024 py-torch-cpu           s1000 (warm-up): train 1.30s load 0.83s la 14.7 -> ok
+20:26:28 s768_100k k=1024 py-numpy               s1000 (warm-up): train 1.93s load 0.05s la 14.7 -> ok
+20:26:29 s768_100k k=1024 rs-cpu                 s1: train 0.91s load 0.11s la 14.4 -> ok
+20:26:32 s768_100k k=1024 py-torch-cpu           s1: train 1.29s load 0.72s la 14.4 -> ok
+20:26:34 s768_100k k=1024 py-numpy               s1: train 1.77s load 0.05s la 14.4 -> ok
+20:26:37 s768_100k k=1024 py-torch-cpu           s2: train 1.55s load 0.67s la 13.6 -> ok
+20:26:40 s768_100k k=1024 py-numpy               s2: train 2.60s load 0.04s la 13.6 -> ok
+20:26:41 s768_100k k=1024 rs-cpu                 s2: train 0.93s load 0.13s la 13.4 -> ok
+20:26:43 s768_100k k=1024 py-numpy               s3: train 1.83s load 0.04s la 13.4 -> ok
+20:26:44 s768_100k k=1024 rs-cpu                 s3: train 0.94s load 0.13s la 13.4 -> ok
+20:26:47 s768_100k k=1024 py-torch-cpu           s3: train 1.49s load 0.91s la 13.4 -> ok
+DONE
+=== 20:26:47 s768_100k done, load { 13.40 25.60 30.50 }
+20:26:49 s768_200k k=64 rs-cpu                 s1000 (warm-up): train 0.99s load 0.86s la 13.4 -> ok
+20:26:53 s768_200k k=64 py-torch-cpu           s1000 (warm-up): train 1.69s load 1.00s la 14.3 -> ok
+20:26:57 s768_200k k=64 py-numpy               s1000 (warm-up): train 3.18s load 0.18s la 14.3 -> ok
+20:27:00 s768_200k k=64 rs-cpu                 s1: train 1.95s load 0.93s la 14.0 -> ok
+20:27:06 s768_200k k=64 py-torch-cpu           s1: train 2.08s load 2.65s la 16.8 -> ok
+20:27:08 s768_200k k=64 py-numpy               s1: train 2.02s load 0.24s la 17.2 -> ok
+20:27:12 s768_200k k=64 py-torch-cpu           s2: train 1.47s load 1.79s la 18.3 -> ok
+20:27:14 s768_200k k=64 py-numpy               s2: train 1.52s load 0.13s la 18.3 -> ok
+20:27:17 s768_200k k=64 rs-cpu                 s2: train 2.07s load 0.46s la 18.0 -> ok
+20:27:20 s768_200k k=64 py-numpy               s3: train 1.86s load 0.10s la 18.0 -> ok
+20:27:21 s768_200k k=64 rs-cpu                 s3: train 0.89s load 0.42s la 17.6 -> ok
+20:27:26 s768_200k k=64 py-torch-cpu           s3: train 1.70s load 1.65s la 17.6 -> ok
+20:27:27 s768_200k k=256 rs-cpu                 s1000 (warm-up): train 1.23s load 0.34s la 16.4 -> ok
+20:27:31 s768_200k k=256 py-torch-cpu           s1000 (warm-up): train 1.77s load 0.96s la 16.4 -> ok
+20:27:33 s768_200k k=256 py-numpy               s1000 (warm-up): train 2.05s load 0.10s la 15.6 -> ok
+20:27:35 s768_200k k=256 rs-cpu                 s1: train 0.99s load 0.27s la 14.9 -> ok
+20:27:39 s768_200k k=256 py-torch-cpu           s1: train 2.25s load 1.18s la 14.9 -> ok
+20:27:42 s768_200k k=256 py-numpy               s1: train 2.20s load 0.48s la 14.7 -> ok
+20:27:50 s768_200k k=256 py-torch-cpu           s2: train 2.98s load 2.59s la 14.7 -> ok
+20:27:54 s768_200k k=256 py-numpy               s2: train 2.40s load 0.76s la 14.5 -> ok
+20:27:56 s768_200k k=256 rs-cpu                 s2: train 1.36s load 0.62s la 14.4 -> ok
+20:27:58 s768_200k k=256 py-numpy               s3: train 1.81s load 0.09s la 14.4 -> ok
+20:28:00 s768_200k k=256 rs-cpu                 s3: train 1.45s load 0.34s la 14.4 -> ok
+20:28:04 s768_200k k=256 py-torch-cpu           s3: train 2.12s load 1.14s la 14.5 -> ok
+20:28:07 s768_200k k=1024 rs-cpu                 s1000 (warm-up): train 1.94s load 0.94s la 14.1 -> ok
+20:28:13 s768_200k k=1024 py-torch-cpu           s1000 (warm-up): train 3.50s load 1.14s la 14.1 -> ok
+20:28:18 s768_200k k=1024 py-numpy               s1000 (warm-up): train 4.34s load 0.10s la 13.5 -> ok
+20:28:20 s768_200k k=1024 rs-cpu                 s1: train 1.72s load 0.34s la 13.1 -> ok
+20:28:24 s768_200k k=1024 py-torch-cpu           s1: train 2.31s load 0.95s la 13.4 -> ok
+20:28:27 s768_200k k=1024 py-numpy               s1: train 3.27s load 0.09s la 12.8 -> ok
+20:28:31 s768_200k k=1024 py-torch-cpu           s2: train 2.38s load 0.68s la 12.8 -> ok
+20:28:35 s768_200k k=1024 py-numpy               s2: train 3.42s load 0.09s la 12.2 -> ok
+20:28:38 s768_200k k=1024 rs-cpu                 s2: train 2.25s load 0.65s la 11.9 -> ok
+20:28:42 s768_200k k=1024 py-numpy               s3: train 4.16s load 0.09s la 11.9 -> ok
+20:28:45 s768_200k k=1024 rs-cpu                 s3: train 2.10s load 0.24s la 11.2 -> ok
+20:28:49 s768_200k k=1024 py-torch-cpu           s3: train 2.39s load 1.01s la 13.2 -> ok
+DONE
+=== 20:28:49 s768_200k done, load { 12.42 21.50 28.23 }
+| n | k | impl | objective mean ± sd | train s median (IQR) | load s | peak RSS GiB | peak GPU GiB (Linux) / footprint GiB (macOS) | ARI vs py-numpy | runs |
+|---|---|---|---|---|---|---|---|---|---|
+| 16,000 | 64 | py-numpy | 0.631739 ± 0.008021 | 0.14 (0.03) | 0.01 | 0.12 | 0.10 | 1.0000 ± 0.0000 | 3/3 |
+| 16,000 | 64 | py-torch-cpu | 0.625324 ± 0.014432 | 0.20 (0.09) | 0.77 | 0.26 | 0.20 | 0.7166 ± 0.0174 | 3/3 |
+| 16,000 | 64 | rs-cpu | 0.631797 ± 0.008069 | 0.10 (0.02) | 0.02 | 0.11 | 0.10 | 0.9981 ± 0.0033 | 3/3 |
+| 16,000 | 256 | py-numpy | 0.294028 ± 0.000884 | 0.16 (0.00) | 0.01 | 0.13 | 0.10 | 1.0000 ± 0.0000 | 3/3 |
+| 16,000 | 256 | py-torch-cpu | 0.290528 ± 0.002577 | 0.22 (0.01) | 0.65 | 0.26 | 0.21 | 0.5482 ± 0.0090 | 3/3 |
+| 16,000 | 256 | rs-cpu | 0.294071 ± 0.001817 | 0.08 (0.00) | 0.01 | 0.11 | 0.11 | 0.6151 ± 0.0151 | 3/3 |
+| 16,000 | 1024 | py-numpy | 0.262338 ± 0.000189 | 0.32 (0.02) | 0.01 | 0.18 | 0.15 | 1.0000 ± 0.0000 | 3/3 |
+| 16,000 | 1024 | py-torch-cpu | 0.262233 ± 0.000149 | 0.31 (0.24) | 0.70 | 0.30 | 0.24 | 0.1986 ± 0.0006 | 3/3 |
+| 16,000 | 1024 | rs-cpu | 0.262306 ± 0.000287 | 0.15 (0.02) | 0.01 | 0.15 | 0.14 | 0.3534 ± 0.0151 | 3/3 |
+| 100,000 | 64 | py-numpy | 0.953380 ± 0.008207 | 0.51 (0.02) | 0.04 | 0.39 | 0.36 | 1.0000 ± 0.0000 | 3/3 |
+| 100,000 | 64 | py-torch-cpu | 0.954212 ± 0.007294 | 0.73 (0.09) | 0.69 | 0.52 | 0.47 | 0.3959 ± 0.0229 | 3/3 |
+| 100,000 | 64 | rs-cpu | 0.953380 ± 0.008207 | 0.23 (0.02) | 0.11 | 0.60 | 0.60 | 1.0000 ± 0.0000 | 3/3 |
+| 100,000 | 256 | py-numpy | 0.376756 ± 0.000746 | 0.75 (0.07) | 0.04 | 0.42 | 0.40 | 1.0000 ± 0.0000 | 3/3 |
+| 100,000 | 256 | py-torch-cpu | 0.382462 ± 0.005229 | 0.85 (0.58) | 1.09 | 0.55 | 0.50 | 0.8761 ± 0.0167 | 3/3 |
+| 100,000 | 256 | rs-cpu | 0.379827 ± 0.001899 | 0.37 (0.08) | 0.11 | 0.62 | 0.62 | 0.9448 ± 0.0141 | 3/3 |
+| 100,000 | 1024 | py-numpy | 0.282537 ± 0.000343 | 1.83 (0.41) | 0.04 | 0.47 | 0.45 | 1.0000 ± 0.0000 | 3/3 |
+| 100,000 | 1024 | py-torch-cpu | 0.282718 ± 0.000262 | 1.49 (0.13) | 0.72 | 0.61 | 0.57 | 0.3594 ± 0.0093 | 3/3 |
+| 100,000 | 1024 | rs-cpu | 0.282510 ± 0.000448 | 0.93 (0.01) | 0.13 | 0.65 | 0.67 | 0.3761 ± 0.0108 | 3/3 |
+| 200,000 | 64 | py-numpy | 1.046615 ± 0.004525 | 1.86 (0.25) | 0.13 | 0.71 | 0.69 | 1.0000 ± 0.0000 | 3/3 |
+| 200,000 | 64 | py-torch-cpu | 1.046386 ± 0.002520 | 1.70 (0.30) | 1.79 | 0.84 | 0.79 | 0.3301 ± 0.0075 | 3/3 |
+| 200,000 | 64 | rs-cpu | 1.046615 ± 0.004525 | 1.95 (0.59) | 0.46 | 1.05 | 1.19 | 1.0000 ± 0.0000 | 3/3 |
+| 200,000 | 256 | py-numpy | 0.469809 ± 0.002215 | 2.20 (0.29) | 0.48 | 0.76 | 0.74 | 1.0000 ± 0.0000 | 3/3 |
+| 200,000 | 256 | py-torch-cpu | 0.463771 ± 0.003119 | 2.25 (0.43) | 1.18 | 0.85 | 0.82 | 0.8160 ± 0.0083 | 3/3 |
+| 200,000 | 256 | rs-cpu | 0.472479 ± 0.003152 | 1.36 (0.23) | 0.34 | 1.07 | 1.23 | 0.9648 ± 0.0064 | 3/3 |
+| 200,000 | 1024 | py-numpy | 0.284825 ± 0.000224 | 3.42 (0.45) | 0.09 | 0.80 | 0.78 | 1.0000 ± 0.0000 | 3/3 |
+| 200,000 | 1024 | py-torch-cpu | 0.285389 ± 0.000631 | 2.38 (0.04) | 0.95 | 0.93 | 0.88 | 0.4224 ± 0.0069 | 3/3 |
+| 200,000 | 1024 | rs-cpu | 0.284892 ± 0.000439 | 2.10 (0.27) | 0.34 | 1.17 | 1.30 | 0.4256 ± 0.0074 | 3/3 |
+
+Train s, median of 5 seeds:
+
+| n | k | py-numpy | py-torch-cpu | rs-cpu |
+|---|---|---|---|---|
+| 16,000 | 64 | 0.14 | 0.20 | 0.10 |
+| 16,000 | 256 | 0.16 | 0.22 | 0.08 |
+| 16,000 | 1024 | 0.32 | 0.31 | 0.15 |
+| 100,000 | 64 | 0.51 | 0.73 | 0.23 |
+| 100,000 | 256 | 0.75 | 0.85 | 0.37 |
+| 100,000 | 1024 | 1.83 | 1.49 | 0.93 |
+| 200,000 | 64 | 1.86 | 1.70 | 1.95 |
+| 200,000 | 256 | 2.20 | 2.25 | 1.36 |
+| 200,000 | 1024 | 3.42 | 2.38 | 2.10 |
+
+Objective, mean of 5 seeds:
+
+| n | k | py-numpy | py-torch-cpu | rs-cpu |
+|---|---|---|---|---|
+| 16,000 | 64 | 0.63174 | 0.62532 | 0.63180 |
+| 16,000 | 256 | 0.29403 | 0.29053 | 0.29407 |
+| 16,000 | 1024 | 0.26234 | 0.26223 | 0.26231 |
+| 100,000 | 64 | 0.95338 | 0.95421 | 0.95338 |
+| 100,000 | 256 | 0.37676 | 0.38246 | 0.37983 |
+| 100,000 | 1024 | 0.28254 | 0.28272 | 0.28251 |
+| 200,000 | 64 | 1.04662 | 1.04639 | 1.04662 |
+| 200,000 | 256 | 0.46981 | 0.46377 | 0.47248 |
+| 200,000 | 1024 | 0.28483 | 0.28539 | 0.28489 |
+
+ARI vs py-numpy (same seed), mean of 5 seeds:
+
+| n | k | py-numpy | py-torch-cpu | rs-cpu |
+|---|---|---|---|---|
+| 16,000 | 64 | 1.000 | 0.717 | 0.998 |
+| 16,000 | 256 | 1.000 | 0.548 | 0.615 |
+| 16,000 | 1024 | 1.000 | 0.199 | 0.353 |
+| 100,000 | 64 | 1.000 | 0.396 | 1.000 |
+| 100,000 | 256 | 1.000 | 0.876 | 0.945 |
+| 100,000 | 1024 | 1.000 | 0.359 | 0.376 |
+| 200,000 | 64 | 1.000 | 0.330 | 1.000 |
+| 200,000 | 256 | 1.000 | 0.816 | 0.965 |
+| 200,000 | 1024 | 1.000 | 0.422 | 0.426 |
+
+ARI noise floor (py-numpy seed s vs seed s+1, mean of 4 pairs):
+
+| n | k | ARI |
+|---|---|---|
+| 16,000 | 64 | 0.697 |
+| 16,000 | 256 | 0.542 |
+| 16,000 | 1024 | 0.198 |
+| 100,000 | 64 | 0.404 |
+| 100,000 | 256 | 0.880 |
+| 100,000 | 1024 | 0.368 |
+| 200,000 | 64 | 0.335 |
+| 200,000 | 256 | 0.826 |
+| 200,000 | 1024 | 0.417 |
+
+Peak memory GiB, RSS / GPU (Linux, nvidia-smi) or footprint (macOS):
+
+| n | k | py-numpy | py-torch-cpu | rs-cpu |
+|---|---|---|---|---|
+| 16,000 | 64 | 0.12 / 0.10 | 0.26 / 0.20 | 0.11 / 0.10 |
+| 16,000 | 256 | 0.13 / 0.10 | 0.26 / 0.21 | 0.11 / 0.11 |
+| 16,000 | 1024 | 0.18 / 0.15 | 0.30 / 0.24 | 0.15 / 0.14 |
+| 100,000 | 64 | 0.39 / 0.36 | 0.52 / 0.47 | 0.60 / 0.60 |
+| 100,000 | 256 | 0.42 / 0.40 | 0.55 / 0.50 | 0.62 / 0.62 |
+| 100,000 | 1024 | 0.47 / 0.45 | 0.61 / 0.57 | 0.65 / 0.67 |
+| 200,000 | 64 | 0.71 / 0.69 | 0.84 / 0.79 | 1.05 / 1.19 |
+| 200,000 | 256 | 0.76 / 0.74 | 0.85 / 0.82 | 1.07 / 1.23 |
+| 200,000 | 1024 | 0.80 / 0.78 | 0.93 / 0.88 | 1.17 / 1.30 |
+
+=== 20:29:13 DONE

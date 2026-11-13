@@ -1,0 +1,44 @@
+{
+ "case": "candle:cuda:f32",
+ "batch": 1,
+ "cmd": [
+  "~/workspace/tools/emeans/target/bench-embed/release/embed-compare",
+  "cuda",
+  "f32",
+  "1",
+  "64",
+  "~/workspace/tools/emeans/bench/compare/results/ubuntu/embed/candle_cuda_f32_b1"
+ ],
+ "loadavg_before": [
+  12.4658203125,
+  31.49951171875,
+  34.66357421875
+ ],
+ "gpu_peak_bytes": 2183135232,
+ "peak_rss_bytes": 1109995520,
+ "ok": true,
+ "device": "cuda",
+ "dtype": "f32",
+ "files": [
+  "astronaut.png",
+  "camera.png",
+  "cat.png",
+  "cat_small.png",
+  "coffee.png",
+  "coffee_wide.png",
+  "coins.png",
+  "grass.png",
+  "horse.png",
+  "hubble.png",
+  "logo.png",
+  "page.png",
+  "page_strip.png",
+  "rocket.png",
+  "rocket_tall.png"
+ ],
+ "images_per_s": 3.238224384854141,
+ "impl": "candle",
+ "load_s": 2.516219344,
+ "n": 64,
+ "seconds": 19.763917627
+}

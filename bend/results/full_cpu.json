@@ -1,0 +1,6186 @@
+{
+ "nepochs": 5,
+ "gpu": false,
+ "runs": [
+  {
+   "dataset": "n20k_d16",
+   "k": 16,
+   "seed": 1,
+   "ref": {
+    "recipe": {
+     "batch_size": 128,
+     "alpha0": 0.17735053433336384,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     15398.319189041853,
+     15052.666784465313,
+     14983.963417768478,
+     14923.021949231625,
+     14882.587778672576
+    ],
+    "final": 14837.097571297028,
+    "wall_s": 0.19529708311893046,
+    "splits": 0,
+    "label_agree": 0.9885
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 1,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 128,
+     "alpha0": 0.17735057,
+     "alpha0_bits": 1043700579,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      157,
+      157,
+      157,
+      157,
+      157
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     15491.123,
+     14971.2295,
+     14862.563,
+     14809.294,
+     14767.919
+    ],
+    "time_ms": [
+     19,
+     36,
+     55,
+     74,
+     94
+    ],
+    "imbalance": [
+     1.0403763,
+     1.0115932,
+     1.0178975,
+     1.0167356,
+     1.0192317
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 18,
+    "init_ms": 0,
+    "train_ms": 94,
+    "finalize_ms": 1,
+    "final": 14724.185792304099,
+    "wall_s": 0.2171918749809265,
+    "label_agree": 0.98845,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n20k_d16",
+   "k": 16,
+   "seed": 2,
+   "ref": {
+    "recipe": {
+     "batch_size": 128,
+     "alpha0": 0.17735053433336384,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     15380.403110772371,
+     14958.501824378967,
+     14863.884477943182,
+     14799.032572120428,
+     14762.214720353484
+    ],
+    "final": 14716.482700524,
+    "wall_s": 0.1749140419997275,
+    "splits": 0,
+    "label_agree": 0.98735
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 2,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 128,
+     "alpha0": 0.17735057,
+     "alpha0_bits": 1043700579,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      157,
+      157,
+      157,
+      157,
+      157
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     15353.525,
+     14996.393,
+     14930.036,
+     14870.526,
+     14835.107
+    ],
+    "time_ms": [
+     40,
+     62,
+     93,
+     128,
+     162
+    ],
+    "imbalance": [
+     1.0283772,
+     1.0320125,
+     1.0345693,
+     1.0357924,
+     1.0341786
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 15,
+    "init_ms": 0,
+    "train_ms": 162,
+    "finalize_ms": 0,
+    "final": 14790.197029283718,
+    "wall_s": 0.24999512499198318,
+    "label_agree": 0.98755,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n20k_d16",
+   "k": 16,
+   "seed": 3,
+   "ref": {
+    "recipe": {
+     "batch_size": 128,
+     "alpha0": 0.17735053433336384,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     15381.1843149364,
+     14979.182532221079,
+     14901.23030257225,
+     14837.472638487816,
+     14801.282238572836
+    ],
+    "final": 14755.441209494029,
+    "wall_s": 0.17978562507778406,
+    "splits": 0,
+    "label_agree": 0.98635
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 3,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 128,
+     "alpha0": 0.17735057,
+     "alpha0_bits": 1043700579,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      157,
+      157,
+      157,
+      157,
+      157
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     15374.178,
+     14998.557,
+     14930.385,
+     14876.305,
+     14835.678
+    ],
+    "time_ms": [
+     20,
+     39,
+     57,
+     76,
+     96
+    ],
+    "imbalance": [
+     1.0330746,
+     1.0232483,
+     1.0228223,
+     1.0247571,
+     1.0252137
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 15,
+    "init_ms": 0,
+    "train_ms": 96,
+    "finalize_ms": 0,
+    "final": 14791.180490465962,
+    "wall_s": 0.5328032081015408,
+    "label_agree": 0.9847,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n20k_d16",
+   "k": 16,
+   "seed": 4,
+   "ref": {
+    "recipe": {
+     "batch_size": 128,
+     "alpha0": 0.17735053433336384,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     15338.531386315823,
+     15069.83288308978,
+     15006.91265501082,
+     14937.252109438181,
+     14899.76620978117
+    ],
+    "final": 14856.539703998855,
+    "wall_s": 0.1685766251757741,
+    "splits": 0,
+    "label_agree": 0.9875
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 4,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 128,
+     "alpha0": 0.17735057,
+     "alpha0_bits": 1043700579,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      157,
+      157,
+      157,
+      157,
+      157
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     15392.469,
+     15059.354,
+     15002.244,
+     14943.11,
+     14901.939
+    ],
+    "time_ms": [
+     18,
+     36,
+     54,
+     72,
+     91
+    ],
+    "imbalance": [
+     1.053071,
+     1.0522776,
+     1.0534142,
+     1.0554687,
+     1.0574721
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 14,
+    "init_ms": 0,
+    "train_ms": 91,
+    "finalize_ms": 0,
+    "final": 14857.63875247466,
+    "wall_s": 0.17059358302503824,
+    "label_agree": 0.9875,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n20k_d16",
+   "k": 16,
+   "seed": 5,
+   "ref": {
+    "recipe": {
+     "batch_size": 128,
+     "alpha0": 0.17735053433336384,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     15402.759534865618,
+     15055.637976914644,
+     14999.35871425271,
+     14931.647265195847,
+     14877.361844062805
+    ],
+    "final": 14832.858640852006,
+    "wall_s": 0.16803679196164012,
+    "splits": 0,
+    "label_agree": 0.98595
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 5,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 128,
+     "alpha0": 0.17735057,
+     "alpha0_bits": 1043700579,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      157,
+      157,
+      157,
+      157,
+      157
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     15308.399,
+     14932.038,
+     14865.871,
+     14806.544,
+     14767.658
+    ],
+    "time_ms": [
+     20,
+     39,
+     59,
+     77,
+     95
+    ],
+    "imbalance": [
+     1.0272999,
+     1.0279928,
+     1.0257722,
+     1.0285083,
+     1.0263932
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 14,
+    "init_ms": 0,
+    "train_ms": 95,
+    "finalize_ms": 0,
+    "final": 14724.604371760242,
+    "wall_s": 0.18363395798951387,
+    "label_agree": 0.98795,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n20k_d16",
+   "k": 64,
+   "seed": 1,
+   "ref": {
+    "recipe": {
+     "batch_size": 128,
+     "alpha0": 0.09351072050794712,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     9673.979777157307,
+     9281.530443429947,
+     9166.025044858456,
+     9089.524161458015,
+     9033.86827659607
+    ],
+    "final": 8974.030092019393,
+    "wall_s": 0.18376258411444724,
+    "splits": 2,
+    "label_agree": 0.9936
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 1,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 128,
+     "alpha0": 0.093510725,
+     "alpha0_bits": 1035960973,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      157,
+      157,
+      157,
+      157,
+      157
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     9589.264,
+     9248.807,
+     9179.094,
+     9096.466,
+     9041.264
+    ],
+    "time_ms": [
+     25,
+     51,
+     77,
+     103,
+     128
+    ],
+    "imbalance": [
+     1.2742049,
+     1.3148375,
+     1.3227926,
+     1.3315635,
+     1.3340585
+    ],
+    "nsplit": [
+     5,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 5,
+    "load_ms": 13,
+    "init_ms": 0,
+    "train_ms": 128,
+    "finalize_ms": 0,
+    "final": 8981.206525408415,
+    "wall_s": 0.2085131669882685,
+    "label_agree": 0.9939,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n20k_d16",
+   "k": 64,
+   "seed": 2,
+   "ref": {
+    "recipe": {
+     "batch_size": 128,
+     "alpha0": 0.09351072050794712,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     9716.843153357506,
+     9299.850766122341,
+     9155.082529723644,
+     9081.044274151325,
+     9025.810021817684
+    ],
+    "final": 8966.474801140657,
+    "wall_s": 0.18751499988138676,
+    "splits": 2,
+    "label_agree": 0.99445
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 2,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 128,
+     "alpha0": 0.093510725,
+     "alpha0_bits": 1035960973,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      157,
+      157,
+      157,
+      157,
+      157
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     9600.418,
+     9186.304,
+     9118.531,
+     9051.923,
+     8996.374
+    ],
+    "time_ms": [
+     27,
+     52,
+     76,
+     102,
+     126
+    ],
+    "imbalance": [
+     1.3099695,
+     1.3149862,
+     1.3155504,
+     1.3172448,
+     1.3190633
+    ],
+    "nsplit": [
+     3,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 3,
+    "load_ms": 14,
+    "init_ms": 0,
+    "train_ms": 126,
+    "finalize_ms": 0,
+    "final": 8937.137301973064,
+    "wall_s": 0.19947291701100767,
+    "label_agree": 0.99315,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n20k_d16",
+   "k": 64,
+   "seed": 3,
+   "ref": {
+    "recipe": {
+     "batch_size": 128,
+     "alpha0": 0.09351072050794712,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     9620.195030987263,
+     9205.10268843174,
+     9133.225300610065,
+     9068.518961310387,
+     9008.437666356564
+    ],
+    "final": 8943.751318783545,
+    "wall_s": 0.1880332501605153,
+    "splits": 2,
+    "label_agree": 0.992
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 3,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 128,
+     "alpha0": 0.093510725,
+     "alpha0_bits": 1035960973,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      157,
+      157,
+      157,
+      157,
+      157
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     9648.198,
+     9237.504,
+     9108.416,
+     9037.069,
+     8983.312
+    ],
+    "time_ms": [
+     25,
+     51,
+     81,
+     108,
+     133
+    ],
+    "imbalance": [
+     1.2365034,
+     1.289495,
+     1.279831,
+     1.2808807,
+     1.2785447
+    ],
+    "nsplit": [
+     5,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 5,
+    "load_ms": 14,
+    "init_ms": 0,
+    "train_ms": 133,
+    "finalize_ms": 0,
+    "final": 8924.329527334166,
+    "wall_s": 0.2157635830808431,
+    "label_agree": 0.9941,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n20k_d16",
+   "k": 64,
+   "seed": 4,
+   "ref": {
+    "recipe": {
+     "batch_size": 128,
+     "alpha0": 0.09351072050794712,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     9572.307528972626,
+     9237.314382195473,
+     9121.927273392677,
+     9050.317457556725,
+     8998.5514934659
+    ],
+    "final": 8938.88942350697,
+    "wall_s": 0.18916216702200472,
+    "splits": 2,
+    "label_agree": 0.99365
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 4,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 128,
+     "alpha0": 0.093510725,
+     "alpha0_bits": 1035960973,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      157,
+      157,
+      157,
+      157,
+      157
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     9564.761,
+     9175.124,
+     9096.7,
+     9025.428,
+     8973.427
+    ],
+    "time_ms": [
+     26,
+     50,
+     77,
+     103,
+     127
+    ],
+    "imbalance": [
+     1.2678454,
+     1.2812487,
+     1.289296,
+     1.2879376,
+     1.2870938
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 14,
+    "init_ms": 0,
+    "train_ms": 127,
+    "finalize_ms": 0,
+    "final": 8914.53144281512,
+    "wall_s": 0.21923687495291233,
+    "label_agree": 0.9934,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n20k_d16",
+   "k": 64,
+   "seed": 5,
+   "ref": {
+    "recipe": {
+     "batch_size": 128,
+     "alpha0": 0.09351072050794712,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     9658.768883049488,
+     9205.123747825623,
+     9121.410265505314,
+     9043.641716957092,
+     8982.211851596832
+    ],
+    "final": 8922.107651636456,
+    "wall_s": 0.18757833307608962,
+    "splits": 1,
+    "label_agree": 0.9938
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 5,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 128,
+     "alpha0": 0.093510725,
+     "alpha0_bits": 1035960973,
+     "steps_per_pass": 157,
+     "total_steps": 785,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      157,
+      157,
+      157,
+      157,
+      157
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     9593.627,
+     9179.276,
+     9109.541,
+     9021.967,
+     8965.357
+    ],
+    "time_ms": [
+     31,
+     62,
+     89,
+     115,
+     141
+    ],
+    "imbalance": [
+     1.2823923,
+     1.2896435,
+     1.2930787,
+     1.3140883,
+     1.3208588
+    ],
+    "nsplit": [
+     3,
+     1,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 4,
+    "load_ms": 14,
+    "init_ms": 0,
+    "train_ms": 141,
+    "finalize_ms": 0,
+    "final": 8905.654974813056,
+    "wall_s": 0.22500254213809967,
+    "label_agree": 0.99385,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n20k_d16",
+   "k": 256,
+   "seed": 1,
+   "ref": {
+    "recipe": {
+     "batch_size": 256,
+     "alpha0": 0.09202537807857998,
+     "steps_per_pass": 79,
+     "total_steps": 395,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     8072.206999599934,
+     7669.361446857452,
+     7542.931650817394,
+     7397.784012079239,
+     7274.670892179012
+    ],
+    "final": 7170.082180525923,
+    "wall_s": 0.12424512510187924,
+    "splits": 73,
+    "label_agree": 0.9873
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 1,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 256,
+     "alpha0": 0.09202539,
+     "alpha0_bits": 1035761615,
+     "steps_per_pass": 79,
+     "total_steps": 395,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      79,
+      79,
+      79,
+      79,
+      79
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     8088.0977,
+     7674.3486,
+     7538.648,
+     7386.272,
+     7264.579
+    ],
+    "time_ms": [
+     44,
+     84,
+     125,
+     163,
+     203
+    ],
+    "imbalance": [
+     1.3376883,
+     1.1821619,
+     1.1450227,
+     1.1303232,
+     1.1237748
+    ],
+    "nsplit": [
+     73,
+     5,
+     1,
+     0,
+     0
+    ],
+    "n_splits": 79,
+    "load_ms": 14,
+    "init_ms": 0,
+    "train_ms": 203,
+    "finalize_ms": 0,
+    "final": 7159.633532548369,
+    "wall_s": 0.2846013749949634,
+    "label_agree": 0.98635,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n20k_d16",
+   "k": 256,
+   "seed": 2,
+   "ref": {
+    "recipe": {
+     "batch_size": 256,
+     "alpha0": 0.09202537807857998,
+     "steps_per_pass": 79,
+     "total_steps": 395,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     8092.388212621212,
+     7676.6218230724335,
+     7532.278394043446,
+     7383.320504307747,
+     7260.896889805794
+    ],
+    "final": 7156.860262228997,
+    "wall_s": 0.11898191715590656,
+    "splits": 85,
+    "label_agree": 0.98735
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 2,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 256,
+     "alpha0": 0.09202539,
+     "alpha0_bits": 1035761615,
+     "steps_per_pass": 79,
+     "total_steps": 395,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      79,
+      79,
+      79,
+      79,
+      79
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     8080.9727,
+     7679.7607,
+     7558.8022,
+     7405.1636,
+     7282.2666
+    ],
+    "time_ms": [
+     39,
+     76,
+     112,
+     150,
+     185
+    ],
+    "imbalance": [
+     1.3541683,
+     1.2191104,
+     1.1801753,
+     1.1696359,
+     1.163008
+    ],
+    "nsplit": [
+     75,
+     6,
+     2,
+     0,
+     0
+    ],
+    "n_splits": 83,
+    "load_ms": 14,
+    "init_ms": 0,
+    "train_ms": 185,
+    "finalize_ms": 0,
+    "final": 7175.173394684878,
+    "wall_s": 0.2618456669151783,
+    "label_agree": 0.98465,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n20k_d16",
+   "k": 256,
+   "seed": 3,
+   "ref": {
+    "recipe": {
+     "batch_size": 256,
+     "alpha0": 0.09202537807857998,
+     "steps_per_pass": 79,
+     "total_steps": 395,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     8063.064499557018,
+     7681.219367146492,
+     7542.881460130215,
+     7387.640439987183,
+     7265.580611109734
+    ],
+    "final": 7161.005071485993,
+    "wall_s": 0.12268045893870294,
+    "splits": 68,
+    "label_agree": 0.9868
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 3,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 256,
+     "alpha0": 0.09202539,
+     "alpha0_bits": 1035761615,
+     "steps_per_pass": 79,
+     "total_steps": 395,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      79,
+      79,
+      79,
+      79,
+      79
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     8075.5312,
+     7679.531,
+     7546.276,
+     7398.3813,
+     7278.187
+    ],
+    "time_ms": [
+     38,
+     77,
+     112,
+     151,
+     187
+    ],
+    "imbalance": [
+     1.3717389,
+     1.1860083,
+     1.1563148,
+     1.146711,
+     1.14208
+    ],
+    "nsplit": [
+     78,
+     8,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 86,
+    "load_ms": 14,
+    "init_ms": 0,
+    "train_ms": 187,
+    "finalize_ms": 0,
+    "final": 7173.643885994277,
+    "wall_s": 0.2725015420001,
+    "label_agree": 0.987,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n20k_d16",
+   "k": 256,
+   "seed": 4,
+   "ref": {
+    "recipe": {
+     "batch_size": 256,
+     "alpha0": 0.09202537807857998,
+     "steps_per_pass": 79,
+     "total_steps": 395,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     8075.66995036602,
+     7675.302586078644,
+     7545.911164045334,
+     7391.710158646107,
+     7269.33063262701
+    ],
+    "final": 7164.093025319963,
+    "wall_s": 0.1242691669613123,
+    "splits": 66,
+    "label_agree": 0.987
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 4,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 256,
+     "alpha0": 0.09202539,
+     "alpha0_bits": 1035761615,
+     "steps_per_pass": 79,
+     "total_steps": 395,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      79,
+      79,
+      79,
+      79,
+      79
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     8079.2383,
+     7676.007,
+     7547.498,
+     7392.021,
+     7269.056
+    ],
+    "time_ms": [
+     37,
+     73,
+     115,
+     150,
+     188
+    ],
+    "imbalance": [
+     1.297481,
+     1.167552,
+     1.1379341,
+     1.1218138,
+     1.1176218
+    ],
+    "nsplit": [
+     65,
+     6,
+     2,
+     0,
+     0
+    ],
+    "n_splits": 73,
+    "load_ms": 14,
+    "init_ms": 0,
+    "train_ms": 188,
+    "finalize_ms": 0,
+    "final": 7164.772692761912,
+    "wall_s": 0.2696730000898242,
+    "label_agree": 0.9864,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n20k_d16",
+   "k": 256,
+   "seed": 5,
+   "ref": {
+    "recipe": {
+     "batch_size": 256,
+     "alpha0": 0.09202537807857998,
+     "steps_per_pass": 79,
+     "total_steps": 395,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     8068.4658380150795,
+     7670.698461174965,
+     7539.400665462017,
+     7387.039935171604,
+     7265.428029119968
+    ],
+    "final": 7159.782046043327,
+    "wall_s": 0.1211052080616355,
+    "splits": 77,
+    "label_agree": 0.987
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 16,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 5,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 256,
+     "alpha0": 0.09202539,
+     "alpha0_bits": 1035761615,
+     "steps_per_pass": 79,
+     "total_steps": 395,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      79,
+      79,
+      79,
+      79,
+      79
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     8098.969,
+     7687.1167,
+     7555.5054,
+     7399.225,
+     7277.1914
+    ],
+    "time_ms": [
+     38,
+     77,
+     114,
+     149,
+     185
+    ],
+    "imbalance": [
+     1.398432,
+     1.2080026,
+     1.1665587,
+     1.142761,
+     1.1371584
+    ],
+    "nsplit": [
+     66,
+     11,
+     2,
+     0,
+     0
+    ],
+    "n_splits": 79,
+    "load_ms": 14,
+    "init_ms": 0,
+    "train_ms": 185,
+    "finalize_ms": 0,
+    "final": 7172.613811765032,
+    "wall_s": 0.268869916908443,
+    "label_agree": 0.9864,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 16,
+   "seed": 1,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 1.0,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     23903.107846312225,
+     23098.419496268034,
+     22914.524417959154,
+     22792.012966994196,
+     22723.67367953807
+    ],
+    "final": 22649.977668607684,
+    "wall_s": 0.5249545839615166,
+    "splits": 0,
+    "label_agree": 0.9992
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 1,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 1024,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      20,
+      20,
+      20,
+      20,
+      20
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     23432.225,
+     22705.166,
+     22527.027,
+     22399.162,
+     22335.3
+    ],
+    "time_ms": [
+     23,
+     47,
+     68,
+     89,
+     111
+    ],
+    "imbalance": [
+     1.0427443,
+     1.0579277,
+     1.0580513,
+     1.0580289,
+     1.0573131
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 520,
+    "init_ms": 0,
+    "train_ms": 111,
+    "finalize_ms": 0,
+    "final": 22270.287873994104,
+    "wall_s": 0.6955455830320716,
+    "label_agree": 0.9989,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 16,
+   "seed": 2,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 1.0,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     23499.099814568646,
+     22765.533002106473,
+     22615.32087226212,
+     22483.680018402636,
+     22413.86056896299
+    ],
+    "final": 22350.20905499991,
+    "wall_s": 0.5306924160104245,
+    "splits": 0,
+    "label_agree": 0.999
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 2,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 1024,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      20,
+      20,
+      20,
+      20,
+      20
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     23662.676,
+     22870.023,
+     22698.275,
+     22584.531,
+     22510.953
+    ],
+    "time_ms": [
+     22,
+     42,
+     65,
+     89,
+     112
+    ],
+    "imbalance": [
+     1.0442939,
+     1.040589,
+     1.0394512,
+     1.0375692,
+     1.0374318
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 518,
+    "init_ms": 0,
+    "train_ms": 112,
+    "finalize_ms": 0,
+    "final": 22442.64101496079,
+    "wall_s": 0.7285487088374794,
+    "label_agree": 0.99915,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 16,
+   "seed": 3,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 1.0,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     23531.733116634918,
+     22812.621993988752,
+     22639.651104781777,
+     22527.52252996713,
+     22450.976186629385
+    ],
+    "final": 22384.738686724908,
+    "wall_s": 0.52695441711694,
+    "splits": 0,
+    "label_agree": 0.99845
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 3,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 1024,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      20,
+      20,
+      20,
+      20,
+      20
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     23710.707,
+     22948.553,
+     22787.854,
+     22638.33,
+     22569.768
+    ],
+    "time_ms": [
+     30,
+     60,
+     85,
+     125,
+     194
+    ],
+    "imbalance": [
+     1.0826478,
+     1.0708339,
+     1.0722315,
+     1.0671653,
+     1.0662018
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 530,
+    "init_ms": 0,
+    "train_ms": 194,
+    "finalize_ms": 0,
+    "final": 22500.75634988098,
+    "wall_s": 0.7990739590022713,
+    "label_agree": 0.9992,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 16,
+   "seed": 4,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 1.0,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     23943.79126054421,
+     23143.64364687726,
+     22954.100027114153,
+     22833.848233146593,
+     22756.42289804481
+    ],
+    "final": 22688.209513605427,
+    "wall_s": 0.5411234998609871,
+    "splits": 0,
+    "label_agree": 0.99865
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 4,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 1024,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      20,
+      20,
+      20,
+      20,
+      20
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     23665.766,
+     22897.945,
+     22693.533,
+     22549.305,
+     22488.36
+    ],
+    "time_ms": [
+     26,
+     49,
+     74,
+     104,
+     129
+    ],
+    "imbalance": [
+     1.0846795,
+     1.0663991,
+     1.0660994,
+     1.0661997,
+     1.0636227
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 547,
+    "init_ms": 0,
+    "train_ms": 129,
+    "finalize_ms": 0,
+    "final": 22417.947858066167,
+    "wall_s": 0.7387856659479439,
+    "label_agree": 0.99835,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 16,
+   "seed": 5,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 1.0,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     23815.81108948216,
+     23112.650959242135,
+     22929.466993384063,
+     22812.134856570512,
+     22741.5377651453
+    ],
+    "final": 22670.22275026238,
+    "wall_s": 0.5379003749694675,
+    "splits": 0,
+    "label_agree": 0.9993
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 5,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 1024,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      20,
+      20,
+      20,
+      20,
+      20
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     24017.96,
+     23260.832,
+     23092.287,
+     22962.03,
+     22887.146
+    ],
+    "time_ms": [
+     39,
+     64,
+     93,
+     121,
+     150
+    ],
+    "imbalance": [
+     1.1308776,
+     1.1139203,
+     1.1158208,
+     1.1150942,
+     1.1153396
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 520,
+    "init_ms": 0,
+    "train_ms": 150,
+    "finalize_ms": 0,
+    "final": 22818.344440561432,
+    "wall_s": 0.7371214588638395,
+    "label_agree": 0.999,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 64,
+   "seed": 1,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 0.6080136348989154,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     13050.052319556475,
+     11905.80096641928,
+     11740.291370145977,
+     11599.79548934102,
+     11490.518160961568
+    ],
+    "final": 11401.230542263316,
+    "wall_s": 0.5613190000876784,
+    "splits": 30,
+    "label_agree": 0.9999
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 1,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 1024,
+     "alpha0": 0.6080137,
+     "alpha0_bits": 1058776777,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      20,
+      20,
+      20,
+      20,
+      20
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     12724.01,
+     11677.675,
+     11566.358,
+     11296.278,
+     11197.081
+    ],
+    "time_ms": [
+     93,
+     203,
+     316,
+     412,
+     502
+    ],
+    "imbalance": [
+     1.352361,
+     1.3957437,
+     1.3543216,
+     1.4052407,
+     1.4063536
+    ],
+    "nsplit": [
+     12,
+     6,
+     3,
+     1,
+     0
+    ],
+    "n_splits": 22,
+    "load_ms": 541,
+    "init_ms": 1,
+    "train_ms": 502,
+    "finalize_ms": 1,
+    "final": 11121.55250898538,
+    "wall_s": 1.1271130829118192,
+    "label_agree": 0.9997,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 64,
+   "seed": 2,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 0.6080136348989154,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     13206.454610325396,
+     11856.790065683424,
+     11652.198475271463,
+     11410.593780182302,
+     11320.465021967888
+    ],
+    "final": 11246.942119006571,
+    "wall_s": 0.5663515420164913,
+    "splits": 30,
+    "label_agree": 0.99965
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 2,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 1024,
+     "alpha0": 0.6080137,
+     "alpha0_bits": 1058776777,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      20,
+      20,
+      20,
+      20,
+      20
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     12693.489,
+     11543.58,
+     11429.485,
+     11345.149,
+     11276.978
+    ],
+    "time_ms": [
+     95,
+     184,
+     274,
+     367,
+     477
+    ],
+    "imbalance": [
+     1.3408417,
+     1.3291385,
+     1.3279741,
+     1.3268592,
+     1.3177917
+    ],
+    "nsplit": [
+     10,
+     6,
+     5,
+     1,
+     1
+    ],
+    "n_splits": 23,
+    "load_ms": 541,
+    "init_ms": 1,
+    "train_ms": 477,
+    "finalize_ms": 0,
+    "final": 11194.207434213413,
+    "wall_s": 1.0910799170378596,
+    "label_agree": 0.99705,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 64,
+   "seed": 3,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 0.6080136348989154,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     13017.113074980676,
+     11522.347191929817,
+     11274.263558246195,
+     11179.035859659314,
+     11114.684216037393
+    ],
+    "final": 11044.046060551753,
+    "wall_s": 0.5404085419140756,
+    "splits": 30,
+    "label_agree": 0.99975
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 3,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 1024,
+     "alpha0": 0.6080137,
+     "alpha0_bits": 1058776777,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      20,
+      20,
+      20,
+      20,
+      20
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     13164.422,
+     11769.055,
+     11373.331,
+     11243.447,
+     11174.251
+    ],
+    "time_ms": [
+     75,
+     152,
+     230,
+     304,
+     387
+    ],
+    "imbalance": [
+     1.3222624,
+     1.3735386,
+     1.3938057,
+     1.3839331,
+     1.3819453
+    ],
+    "nsplit": [
+     13,
+     6,
+     1,
+     1,
+     0
+    ],
+    "n_splits": 21,
+    "load_ms": 532,
+    "init_ms": 0,
+    "train_ms": 387,
+    "finalize_ms": 1,
+    "final": 11100.919745026997,
+    "wall_s": 1.31572200008668,
+    "label_agree": 0.9999,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 64,
+   "seed": 4,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 0.6080136348989154,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     12713.468078620732,
+     11552.729961797595,
+     11382.57394772768,
+     11261.744794689119,
+     11127.197600595653
+    ],
+    "final": 11056.481992412677,
+    "wall_s": 0.5393808749504387,
+    "splits": 19,
+    "label_agree": 0.99985
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 4,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 1024,
+     "alpha0": 0.6080137,
+     "alpha0_bits": 1058776777,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      20,
+      20,
+      20,
+      20,
+      20
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     13171.67,
+     11586.372,
+     11309.246,
+     11095.058,
+     11035.253
+    ],
+    "time_ms": [
+     83,
+     174,
+     267,
+     376,
+     462
+    ],
+    "imbalance": [
+     1.3260365,
+     1.2790922,
+     1.3236291,
+     1.321279,
+     1.3536035
+    ],
+    "nsplit": [
+     18,
+     6,
+     4,
+     2,
+     0
+    ],
+    "n_splits": 30,
+    "load_ms": 532,
+    "init_ms": 1,
+    "train_ms": 462,
+    "finalize_ms": 1,
+    "final": 10940.672120665273,
+    "wall_s": 1.060926000121981,
+    "label_agree": 0.9987,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 64,
+   "seed": 5,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 0.6080136348989154,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     13220.12385866046,
+     11888.711314566433,
+     11510.712731987238,
+     11402.743555597961,
+     11334.522236980498
+    ],
+    "final": 11262.960291727626,
+    "wall_s": 0.53800466703251,
+    "splits": 27,
+    "label_agree": 0.99965
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 5,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 1024,
+     "alpha0": 0.6080137,
+     "alpha0_bits": 1058776777,
+     "steps_per_pass": 20,
+     "total_steps": 100,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      20,
+      20,
+      20,
+      20,
+      20
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     13091.705,
+     12025.584,
+     11422.141,
+     11231.1,
+     11084.599
+    ],
+    "time_ms": [
+     69,
+     136,
+     217,
+     286,
+     349
+    ],
+    "imbalance": [
+     1.4038874,
+     1.3657725,
+     1.4031444,
+     1.3889148,
+     1.39208
+    ],
+    "nsplit": [
+     15,
+     10,
+     2,
+     2,
+     0
+    ],
+    "n_splits": 29,
+    "load_ms": 524,
+    "init_ms": 0,
+    "train_ms": 349,
+    "finalize_ms": 0,
+    "final": 11013.609804547612,
+    "wall_s": 0.941217957995832,
+    "label_agree": 0.9999,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 256,
+   "seed": 1,
+   "ref": {
+    "recipe": {
+     "batch_size": 2048,
+     "alpha0": 0.5983558283432238,
+     "steps_per_pass": 10,
+     "total_steps": 50,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     10451.883395254612,
+     9506.739656597376,
+     9402.098731547594,
+     9302.215294539928,
+     9189.890213370323
+    ],
+    "final": 9068.60884980449,
+    "wall_s": 0.5831668330356479,
+    "splits": 505,
+    "label_agree": 0.99905
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 1,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 2048,
+     "alpha0": 0.59835595,
+     "alpha0_bits": 1058614747,
+     "steps_per_pass": 10,
+     "total_steps": 50,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      10,
+      10,
+      10,
+      10,
+      10
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     10403.945,
+     9496.399,
+     9395.166,
+     9304.056,
+     9203.287
+    ],
+    "time_ms": [
+     261,
+     505,
+     750,
+     1004,
+     1276
+    ],
+    "imbalance": [
+     2.6848435,
+     1.954665,
+     2.128969,
+     1.8561139,
+     1.5644121
+    ],
+    "nsplit": [
+     208,
+     155,
+     106,
+     47,
+     7
+    ],
+    "n_splits": 523,
+    "load_ms": 530,
+    "init_ms": 2,
+    "train_ms": 1276,
+    "finalize_ms": 1,
+    "final": 9076.130589663304,
+    "wall_s": 1.8821643749251962,
+    "label_agree": 0.99845,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 256,
+   "seed": 2,
+   "ref": {
+    "recipe": {
+     "batch_size": 2048,
+     "alpha0": 0.5983558283432238,
+     "steps_per_pass": 10,
+     "total_steps": 50,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     10512.96799904108,
+     9527.805736497045,
+     9411.611404493451,
+     9308.773943662643,
+     9200.28652742505
+    ],
+    "final": 9073.50085338971,
+    "wall_s": 0.5752404169179499,
+    "splits": 513,
+    "label_agree": 0.99725
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 2,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 2048,
+     "alpha0": 0.59835595,
+     "alpha0_bits": 1058614747,
+     "steps_per_pass": 10,
+     "total_steps": 50,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      10,
+      10,
+      10,
+      10,
+      10
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     10459.842,
+     9526.971,
+     9414.582,
+     9314.071,
+     9216.092
+    ],
+    "time_ms": [
+     283,
+     567,
+     854,
+     1135,
+     1371
+    ],
+    "imbalance": [
+     2.6502414,
+     1.9928076,
+     2.0751514,
+     2.1632512,
+     1.8402445
+    ],
+    "nsplit": [
+     202,
+     162,
+     100,
+     45,
+     5
+    ],
+    "n_splits": 514,
+    "load_ms": 527,
+    "init_ms": 1,
+    "train_ms": 1371,
+    "finalize_ms": 1,
+    "final": 9091.914210806823,
+    "wall_s": 1.9818268751259893,
+    "label_agree": 0.9978,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 256,
+   "seed": 3,
+   "ref": {
+    "recipe": {
+     "batch_size": 2048,
+     "alpha0": 0.5983558283432238,
+     "steps_per_pass": 10,
+     "total_steps": 50,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     10489.542932614684,
+     9515.280871078372,
+     9393.693638578057,
+     9330.386855006218,
+     9214.472133234143
+    ],
+    "final": 9091.291006304189,
+    "wall_s": 0.5775859169661999,
+    "splits": 515,
+    "label_agree": 0.99845
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 3,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 2048,
+     "alpha0": 0.59835595,
+     "alpha0_bits": 1058614747,
+     "steps_per_pass": 10,
+     "total_steps": 50,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      10,
+      10,
+      10,
+      10,
+      10
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     10419.347,
+     9502.95,
+     9415.298,
+     9326.562,
+     9210.778
+    ],
+    "time_ms": [
+     245,
+     500,
+     748,
+     996,
+     1241
+    ],
+    "imbalance": [
+     2.5452864,
+     2.0017292,
+     1.8938278,
+     1.973495,
+     1.7464973
+    ],
+    "nsplit": [
+     208,
+     157,
+     98,
+     40,
+     2
+    ],
+    "n_splits": 505,
+    "load_ms": 516,
+    "init_ms": 1,
+    "train_ms": 1241,
+    "finalize_ms": 1,
+    "final": 9088.525890311112,
+    "wall_s": 1.8296224582009017,
+    "label_agree": 0.9994,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 256,
+   "seed": 4,
+   "ref": {
+    "recipe": {
+     "batch_size": 2048,
+     "alpha0": 0.5983558283432238,
+     "steps_per_pass": 10,
+     "total_steps": 50,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     10533.256067797542,
+     9500.65547259152,
+     9411.660255610943,
+     9313.868871212006,
+     9205.227252796292
+    ],
+    "final": 9086.116084872529,
+    "wall_s": 0.5758244171738625,
+    "splits": 528,
+    "label_agree": 0.99765
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 4,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 2048,
+     "alpha0": 0.59835595,
+     "alpha0_bits": 1058614747,
+     "steps_per_pass": 10,
+     "total_steps": 50,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      10,
+      10,
+      10,
+      10,
+      10
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     10499.31,
+     9495.994,
+     9421.889,
+     9308.956,
+     9202.698
+    ],
+    "time_ms": [
+     240,
+     493,
+     742,
+     1023,
+     1331
+    ],
+    "imbalance": [
+     2.597312,
+     1.9555303,
+     2.0729792,
+     1.8935527,
+     1.6018406
+    ],
+    "nsplit": [
+     208,
+     152,
+     113,
+     31,
+     5
+    ],
+    "n_splits": 509,
+    "load_ms": 530,
+    "init_ms": 1,
+    "train_ms": 1331,
+    "finalize_ms": 1,
+    "final": 9080.15713774449,
+    "wall_s": 1.935388249810785,
+    "label_agree": 0.9979,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n20k_d768",
+   "k": 256,
+   "seed": 5,
+   "ref": {
+    "recipe": {
+     "batch_size": 2048,
+     "alpha0": 0.5983558283432238,
+     "steps_per_pass": 10,
+     "total_steps": 50,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     10410.942843317986,
+     9515.399204730988,
+     9415.776838034391,
+     9309.624599903822,
+     9209.302462637424
+    ],
+    "final": 9077.243792448811,
+    "wall_s": 0.5897480410058051,
+    "splits": 525,
+    "label_agree": 0.99745
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 20000,
+    "d": 768,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 5,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 2048,
+     "alpha0": 0.59835595,
+     "alpha0_bits": 1058614747,
+     "steps_per_pass": 10,
+     "total_steps": 50,
+     "epoch_rows": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+     ],
+     "epoch_steps": [
+      10,
+      10,
+      10,
+      10,
+      10
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     10413.849,
+     9493.103,
+     9407.524,
+     9303.275,
+     9190.949
+    ],
+    "time_ms": [
+     283,
+     597,
+     912,
+     1250,
+     1661
+    ],
+    "imbalance": [
+     2.6825895,
+     1.9785088,
+     2.1362906,
+     2.1628838,
+     1.9786752
+    ],
+    "nsplit": [
+     209,
+     156,
+     110,
+     39,
+     5
+    ],
+    "n_splits": 519,
+    "load_ms": 542,
+    "init_ms": 2,
+    "train_ms": 1661,
+    "finalize_ms": 1,
+    "final": 9067.419180307468,
+    "wall_s": 2.280646750004962,
+    "label_agree": 0.99825,
+    "labelled": 20000
+   },
+   "alpha0_ulps": 2
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 16,
+   "seed": 1,
+   "ref": {
+    "recipe": {
+     "batch_size": 512,
+     "alpha0": 0.2995507446413187,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     75041.12856465578,
+     74417.19677098095,
+     74273.7415727973,
+     74150.57834158838,
+     74065.49283196032
+    ],
+    "final": 73983.7007219902,
+    "wall_s": 0.8852619589306414,
+    "splits": 0,
+    "label_agree": 0.98725
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 1,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 512,
+     "alpha0": 0.29955077,
+     "alpha0_bits": 1050238648,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      196,
+      196,
+      196,
+      196,
+      196
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     75287.56,
+     74713.15,
+     74570.03,
+     74455.73,
+     74368.56
+    ],
+    "time_ms": [
+     83,
+     201,
+     337,
+     479,
+     556
+    ],
+    "imbalance": [
+     1.039993,
+     1.038631,
+     1.0400227,
+     1.0372001,
+     1.0379599
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 71,
+    "init_ms": 1,
+    "train_ms": 556,
+    "finalize_ms": 0,
+    "final": 74288.29200773773,
+    "wall_s": 0.7196134999394417,
+    "label_agree": 0.98741,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 16,
+   "seed": 2,
+   "ref": {
+    "recipe": {
+     "batch_size": 512,
+     "alpha0": 0.2995507446413187,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     75365.51177473366,
+     74616.2887173444,
+     74442.19579093158,
+     74310.07074062526,
+     74228.25041730702
+    ],
+    "final": 74145.30312563044,
+    "wall_s": 0.37647991604171693,
+    "splits": 0,
+    "label_agree": 0.98704
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 2,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 512,
+     "alpha0": 0.29955077,
+     "alpha0_bits": 1050238648,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      196,
+      196,
+      196,
+      196,
+      196
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     75532.41,
+     74755.66,
+     74607.53,
+     74490.95,
+     74405.97
+    ],
+    "time_ms": [
+     39,
+     76,
+     117,
+     180,
+     290
+    ],
+    "imbalance": [
+     1.0395423,
+     1.0439069,
+     1.0442873,
+     1.0466423,
+     1.0446637
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 62,
+    "init_ms": 0,
+    "train_ms": 290,
+    "finalize_ms": 0,
+    "final": 74322.72666267364,
+    "wall_s": 0.43396158306859434,
+    "label_agree": 0.98588,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 16,
+   "seed": 3,
+   "ref": {
+    "recipe": {
+     "batch_size": 512,
+     "alpha0": 0.2995507446413187,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     76578.91785621643,
+     74654.5838239491,
+     74525.25496312976,
+     74399.11965107918,
+     74313.7094552666
+    ],
+    "final": 74235.54241814736,
+    "wall_s": 0.8906624170485884,
+    "splits": 0,
+    "label_agree": 0.98806
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 3,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 512,
+     "alpha0": 0.29955077,
+     "alpha0_bits": 1050238648,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      196,
+      196,
+      196,
+      196,
+      196
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     75829.99,
+     74249.01,
+     74064,
+     73932.17,
+     73852.2
+    ],
+    "time_ms": [
+     186,
+     277,
+     370,
+     465,
+     539
+    ],
+    "imbalance": [
+     1.0522693,
+     1.0344201,
+     1.0347196,
+     1.0349883,
+     1.0364563
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 72,
+    "init_ms": 0,
+    "train_ms": 539,
+    "finalize_ms": 0,
+    "final": 73770.83475003738,
+    "wall_s": 0.6982272081077099,
+    "label_agree": 0.98773,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 16,
+   "seed": 4,
+   "ref": {
+    "recipe": {
+     "batch_size": 512,
+     "alpha0": 0.2995507446413187,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     75432.13907045126,
+     74641.35710683465,
+     74497.12917768955,
+     74376.3759251535,
+     74299.72405071557
+    ],
+    "final": 74216.63733759346,
+    "wall_s": 0.8881032080389559,
+    "splits": 0,
+    "label_agree": 0.9869
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 4,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 512,
+     "alpha0": 0.29955077,
+     "alpha0_bits": 1050238648,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      196,
+      196,
+      196,
+      196,
+      196
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     75471.89,
+     74686.305,
+     74553.266,
+     74414.125,
+     74332.21
+    ],
+    "time_ms": [
+     74,
+     194,
+     326,
+     542,
+     730
+    ],
+    "imbalance": [
+     1.0423093,
+     1.042112,
+     1.0434477,
+     1.0424917,
+     1.0419556
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 102,
+    "init_ms": 0,
+    "train_ms": 730,
+    "finalize_ms": 0,
+    "final": 74252.08867566257,
+    "wall_s": 0.9687162500340492,
+    "label_agree": 0.98642,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 16,
+   "seed": 5,
+   "ref": {
+    "recipe": {
+     "batch_size": 512,
+     "alpha0": 0.2995507446413187,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     75800.50522616506,
+     74841.6175814867,
+     74693.89455986023,
+     74559.8322186917,
+     74473.19293218851
+    ],
+    "final": 74388.99844828295,
+    "wall_s": 0.9246560409665108,
+    "splits": 0,
+    "label_agree": 0.98771
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 5,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 512,
+     "alpha0": 0.29955077,
+     "alpha0_bits": 1050238648,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      196,
+      196,
+      196,
+      196,
+      196
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     76169.8,
+     75331.93,
+     75179.414,
+     75051.31,
+     74966.945
+    ],
+    "time_ms": [
+     120,
+     272,
+     430,
+     654,
+     712
+    ],
+    "imbalance": [
+     1.0645669,
+     1.0654656,
+     1.0653547,
+     1.0659097,
+     1.0661774
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 75,
+    "init_ms": 0,
+    "train_ms": 712,
+    "finalize_ms": 0,
+    "final": 74883.77319535278,
+    "wall_s": 0.9083881671540439,
+    "label_agree": 0.98714,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 64,
+   "seed": 1,
+   "ref": {
+    "recipe": {
+     "batch_size": 512,
+     "alpha0": 0.15794260821029973,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     47388.254824995995,
+     46196.12649512291,
+     45997.34953606129,
+     45844.97329610586,
+     45748.858409285545
+    ],
+    "final": 45641.50848941656,
+    "wall_s": 0.5409953750204295,
+    "splits": 0,
+    "label_agree": 0.99256
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 1,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 512,
+     "alpha0": 0.1579426,
+     "alpha0_bits": 1042398132,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      196,
+      196,
+      196,
+      196,
+      196
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     47264.883,
+     46387.46,
+     46216.562,
+     46069.797,
+     45967.52
+    ],
+    "time_ms": [
+     83,
+     173,
+     248,
+     321,
+     379
+    ],
+    "imbalance": [
+     1.2296151,
+     1.2458516,
+     1.2480587,
+     1.2479451,
+     1.2469398
+    ],
+    "nsplit": [
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 1,
+    "load_ms": 58,
+    "init_ms": 1,
+    "train_ms": 379,
+    "finalize_ms": 0,
+    "final": 45860.54227800491,
+    "wall_s": 0.5121765830554068,
+    "label_agree": 0.99027,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 64,
+   "seed": 2,
+   "ref": {
+    "recipe": {
+     "batch_size": 512,
+     "alpha0": 0.15794260821029973,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     47067.765816152096,
+     46008.60173326731,
+     45750.04424917698,
+     45586.743035674095,
+     45482.30092680454
+    ],
+    "final": 45374.05837244313,
+    "wall_s": 0.3661295420024544,
+    "splits": 0,
+    "label_agree": 0.99223
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 2,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 512,
+     "alpha0": 0.1579426,
+     "alpha0_bits": 1042398132,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      196,
+      196,
+      196,
+      196,
+      196
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     47588.176,
+     46515.55,
+     46262.668,
+     45990.99,
+     45884.918
+    ],
+    "time_ms": [
+     61,
+     118,
+     182,
+     263,
+     339
+    ],
+    "imbalance": [
+     1.2697173,
+     1.2905113,
+     1.3150764,
+     1.3206619,
+     1.3204954
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 58,
+    "init_ms": 1,
+    "train_ms": 339,
+    "finalize_ms": 0,
+    "final": 45776.210294199336,
+    "wall_s": 0.47352649993263185,
+    "label_agree": 0.9923,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 64,
+   "seed": 3,
+   "ref": {
+    "recipe": {
+     "batch_size": 512,
+     "alpha0": 0.15794260821029973,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     46948.69683295488,
+     45941.42290365696,
+     45699.830730736256,
+     45537.40603661537,
+     45436.35912293196
+    ],
+    "final": 45329.997176929464,
+    "wall_s": 0.33418204193003476,
+    "splits": 1,
+    "label_agree": 0.99262
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 3,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 512,
+     "alpha0": 0.1579426,
+     "alpha0_bits": 1042398132,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      196,
+      196,
+      196,
+      196,
+      196
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     47203.668,
+     46242.812,
+     45995.902,
+     45829.21,
+     45724.418
+    ],
+    "time_ms": [
+     84,
+     160,
+     258,
+     375,
+     466
+    ],
+    "imbalance": [
+     1.2762214,
+     1.3456753,
+     1.3936619,
+     1.4047043,
+     1.405625
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 65,
+    "init_ms": 0,
+    "train_ms": 466,
+    "finalize_ms": 0,
+    "final": 45617.04456825253,
+    "wall_s": 0.6619127078447491,
+    "label_agree": 0.9939,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 64,
+   "seed": 4,
+   "ref": {
+    "recipe": {
+     "batch_size": 512,
+     "alpha0": 0.15794260821029973,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     47490.790185809135,
+     46436.422040104866,
+     45901.82676243782,
+     45729.97809308767,
+     45633.32692307234
+    ],
+    "final": 45526.454434247964,
+    "wall_s": 0.34503266704268754,
+    "splits": 0,
+    "label_agree": 0.99192
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 4,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 512,
+     "alpha0": 0.1579426,
+     "alpha0_bits": 1042398132,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      196,
+      196,
+      196,
+      196,
+      196
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     47445.285,
+     45964.223,
+     45805.91,
+     45547.062,
+     45425.953
+    ],
+    "time_ms": [
+     102,
+     179,
+     244,
+     308,
+     386
+    ],
+    "imbalance": [
+     1.3038667,
+     1.3455839,
+     1.3539318,
+     1.3645191,
+     1.3790938
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 71,
+    "init_ms": 2,
+    "train_ms": 386,
+    "finalize_ms": 0,
+    "final": 45311.99165838042,
+    "wall_s": 0.5623894159216434,
+    "label_agree": 0.99221,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 64,
+   "seed": 5,
+   "ref": {
+    "recipe": {
+     "batch_size": 512,
+     "alpha0": 0.15794260821029973,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     47507.03497391939,
+     46302.97888183594,
+     46037.53139895201,
+     45836.804460823536,
+     45734.42107141018
+    ],
+    "final": 45627.057615824415,
+    "wall_s": 0.3246648330241442,
+    "splits": 0,
+    "label_agree": 0.99219
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 5,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 512,
+     "alpha0": 0.1579426,
+     "alpha0_bits": 1042398132,
+     "steps_per_pass": 196,
+     "total_steps": 980,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      196,
+      196,
+      196,
+      196,
+      196
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     46696.375,
+     45764.062,
+     45607.47,
+     45467.176,
+     45362.32
+    ],
+    "time_ms": [
+     72,
+     144,
+     205,
+     264,
+     327
+    ],
+    "imbalance": [
+     1.238252,
+     1.244038,
+     1.2422249,
+     1.242508,
+     1.2435125
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 65,
+    "init_ms": 0,
+    "train_ms": 327,
+    "finalize_ms": 0,
+    "final": 45256.88812701469,
+    "wall_s": 0.46687287488020957,
+    "label_agree": 0.99182,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 256,
+   "seed": 1,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 0.15543381717430582,
+     "steps_per_pass": 98,
+     "total_steps": 490,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     38886.17999154329,
+     38052.00910329819,
+     37804.93447440863,
+     37519.31267130375,
+     37282.417337715626
+    ],
+    "final": 37073.87070348711,
+    "wall_s": 0.28035550005733967,
+    "splits": 26,
+    "label_agree": 0.97474
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 1,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 1024,
+     "alpha0": 0.15543383,
+     "alpha0_bits": 1042229772,
+     "steps_per_pass": 98,
+     "total_steps": 490,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      98,
+      98,
+      98,
+      98,
+      98
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     38830,
+     38045.895,
+     37787.105,
+     37497.656,
+     37259.613
+    ],
+    "time_ms": [
+     128,
+     260,
+     377,
+     506,
+     649
+    ],
+    "imbalance": [
+     1.155328,
+     1.0997783,
+     1.0949394,
+     1.0928762,
+     1.0919803
+    ],
+    "nsplit": [
+     26,
+     1,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 27,
+    "load_ms": 62,
+    "init_ms": 0,
+    "train_ms": 649,
+    "finalize_ms": 1,
+    "final": 37051.66167482762,
+    "wall_s": 0.7893473338335752,
+    "label_agree": 0.97487,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 256,
+   "seed": 2,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 0.15543381717430582,
+     "steps_per_pass": 98,
+     "total_steps": 490,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     38866.832203269005,
+     38090.23839712143,
+     37832.512672781944,
+     37541.886064291,
+     37310.39463108778
+    ],
+    "final": 37100.565283866235,
+    "wall_s": 0.28353387489914894,
+    "splits": 24,
+    "label_agree": 0.97516
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 2,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 1024,
+     "alpha0": 0.15543383,
+     "alpha0_bits": 1042229772,
+     "steps_per_pass": 98,
+     "total_steps": 490,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      98,
+      98,
+      98,
+      98,
+      98
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     38910.4,
+     38066.25,
+     37837.02,
+     37547.19,
+     37311.305
+    ],
+    "time_ms": [
+     129,
+     254,
+     401,
+     609,
+     736
+    ],
+    "imbalance": [
+     1.1727337,
+     1.1235427,
+     1.1215881,
+     1.1193382,
+     1.1185114
+    ],
+    "nsplit": [
+     17,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 17,
+    "load_ms": 60,
+    "init_ms": 1,
+    "train_ms": 736,
+    "finalize_ms": 0,
+    "final": 37101.111639937655,
+    "wall_s": 0.8688177091535181,
+    "label_agree": 0.97472,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 256,
+   "seed": 3,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 0.15543381717430582,
+     "steps_per_pass": 98,
+     "total_steps": 490,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     38881.02916955948,
+     38084.603858947754,
+     37827.22009426355,
+     37532.06673628092,
+     37297.453013300896
+    ],
+    "final": 37087.896710179506,
+    "wall_s": 0.2654480829369277,
+    "splits": 20,
+    "label_agree": 0.97407
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 3,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 1024,
+     "alpha0": 0.15543383,
+     "alpha0_bits": 1042229772,
+     "steps_per_pass": 98,
+     "total_steps": 490,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      98,
+      98,
+      98,
+      98,
+      98
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     38956.785,
+     38104.535,
+     37850.566,
+     37547.09,
+     37312.566
+    ],
+    "time_ms": [
+     138,
+     271,
+     388,
+     512,
+     654
+    ],
+    "imbalance": [
+     1.1897395,
+     1.1315387,
+     1.1287812,
+     1.1281818,
+     1.1271012
+    ],
+    "nsplit": [
+     22,
+     1,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 23,
+    "load_ms": 63,
+    "init_ms": 0,
+    "train_ms": 654,
+    "finalize_ms": 1,
+    "final": 37102.014982572364,
+    "wall_s": 0.8418933341745287,
+    "label_agree": 0.97571,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 256,
+   "seed": 4,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 0.15543381717430582,
+     "steps_per_pass": 98,
+     "total_steps": 490,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     38948.886256337166,
+     38113.799265027046,
+     37857.18654221296,
+     37577.56980472803,
+     37347.748405992985
+    ],
+    "final": 37139.469673366584,
+    "wall_s": 0.2854851249139756,
+    "splits": 23,
+    "label_agree": 0.97669
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 4,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 1024,
+     "alpha0": 0.15543383,
+     "alpha0_bits": 1042229772,
+     "steps_per_pass": 98,
+     "total_steps": 490,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      98,
+      98,
+      98,
+      98,
+      98
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     38853.527,
+     38068.24,
+     37809.926,
+     37516.59,
+     37283.05
+    ],
+    "time_ms": [
+     127,
+     248,
+     363,
+     478,
+     616
+    ],
+    "imbalance": [
+     1.1637647,
+     1.1205646,
+     1.1082593,
+     1.1052245,
+     1.1038
+    ],
+    "nsplit": [
+     19,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 19,
+    "load_ms": 76,
+    "init_ms": 0,
+    "train_ms": 616,
+    "finalize_ms": 1,
+    "final": 37073.89574596968,
+    "wall_s": 0.7684111658018082,
+    "label_agree": 0.97574,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d16",
+   "k": 256,
+   "seed": 5,
+   "ref": {
+    "recipe": {
+     "batch_size": 1024,
+     "alpha0": 0.15543381717430582,
+     "steps_per_pass": 98,
+     "total_steps": 490,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "quality"
+    },
+    "obj": [
+     38933.6292347312,
+     38061.45531105995,
+     37805.749299407005,
+     37513.39903497696,
+     37278.005723655224
+    ],
+    "final": 37070.27092412844,
+    "wall_s": 0.2805554161313921,
+    "splits": 21,
+    "label_agree": 0.97634
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 16,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 5,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "quality",
+     "batch_size": 1024,
+     "alpha0": 0.15543383,
+     "alpha0_bits": 1042229772,
+     "steps_per_pass": 98,
+     "total_steps": 490,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      98,
+      98,
+      98,
+      98,
+      98
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     38915.547,
+     38051.05,
+     37795.996,
+     37497.93,
+     37260.51
+    ],
+    "time_ms": [
+     133,
+     263,
+     383,
+     506,
+     641
+    ],
+    "imbalance": [
+     1.1885514,
+     1.1079223,
+     1.1012704,
+     1.1006365,
+     1.0994886
+    ],
+    "nsplit": [
+     16,
+     0,
+     1,
+     0,
+     0
+    ],
+    "n_splits": 17,
+    "load_ms": 65,
+    "init_ms": 0,
+    "train_ms": 641,
+    "finalize_ms": 0,
+    "final": 37053.5422752877,
+    "wall_s": 0.7856469170656055,
+    "label_agree": 0.9752,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 1
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 16,
+   "seed": 1,
+   "ref": {
+    "recipe": {
+     "batch_size": 4096,
+     "alpha0": 1.0,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     114219.72547054943,
+     112182.5645512417,
+     111964.57069214061,
+     111801.38986746222,
+     111738.21050405502
+    ],
+    "final": 111655.82940441152,
+    "wall_s": 2.805939125129953,
+    "splits": 0,
+    "label_agree": 0.99946
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 1,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 4096,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      25,
+      25,
+      25,
+      25,
+      25
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     115998.62,
+     113508.836,
+     113272.21,
+     113119.06,
+     113036.94
+    ],
+    "time_ms": [
+     165,
+     312,
+     451,
+     587,
+     855
+    ],
+    "imbalance": [
+     1.0893817,
+     1.0900899,
+     1.0896173,
+     1.0893539,
+     1.0890486
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 3381,
+    "init_ms": 1,
+    "train_ms": 855,
+    "finalize_ms": 0,
+    "final": 112960.44779591552,
+    "wall_s": 4.32818854204379,
+    "label_agree": 0.99941,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 16,
+   "seed": 2,
+   "ref": {
+    "recipe": {
+     "batch_size": 4096,
+     "alpha0": 1.0,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     116048.72385697253,
+     112950.72962833568,
+     112744.19070658088,
+     112570.05705658719,
+     112494.67498401552
+    ],
+    "final": 112412.57430620005,
+    "wall_s": 2.761514291865751,
+    "splits": 0,
+    "label_agree": 0.99926
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 2,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 4096,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      25,
+      25,
+      25,
+      25,
+      25
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     115861.08,
+     113353.94,
+     113140.75,
+     112980.58,
+     112901.67
+    ],
+    "time_ms": [
+     143,
+     266,
+     396,
+     520,
+     639
+    ],
+    "imbalance": [
+     1.0676315,
+     1.0715278,
+     1.071765,
+     1.0713707,
+     1.0714624
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 2890,
+    "init_ms": 0,
+    "train_ms": 639,
+    "finalize_ms": 0,
+    "final": 112821.72293122884,
+    "wall_s": 3.6306647919118404,
+    "label_agree": 0.9992,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 16,
+   "seed": 3,
+   "ref": {
+    "recipe": {
+     "batch_size": 4096,
+     "alpha0": 1.0,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     115661.95437221043,
+     113055.88269557431,
+     112833.88029583916,
+     112683.77893710509,
+     112593.46851132438
+    ],
+    "final": 112514.27165499775,
+    "wall_s": 2.61719883303158,
+    "splits": 0,
+    "label_agree": 0.99915
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 3,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 4096,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      25,
+      25,
+      25,
+      25,
+      25
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     115760.625,
+     113331.836,
+     113115.97,
+     112963.43,
+     112884.65
+    ],
+    "time_ms": [
+     178,
+     300,
+     416,
+     556,
+     713
+    ],
+    "imbalance": [
+     1.1045929,
+     1.104089,
+     1.1050305,
+     1.1060517,
+     1.105571
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 3354,
+    "init_ms": 0,
+    "train_ms": 713,
+    "finalize_ms": 0,
+    "final": 112805.2085749252,
+    "wall_s": 4.197440749965608,
+    "label_agree": 0.99926,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 16,
+   "seed": 4,
+   "ref": {
+    "recipe": {
+     "batch_size": 4096,
+     "alpha0": 1.0,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     119569.60140608787,
+     116384.98007880151,
+     116134.38622620329,
+     115967.3922849223,
+     115879.27565361187
+    ],
+    "final": 115796.80112133462,
+    "wall_s": 2.9635547909419984,
+    "splits": 0,
+    "label_agree": 0.99907
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 4,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 4096,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      25,
+      25,
+      25,
+      25,
+      25
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     117178.39,
+     114945.82,
+     114712.7,
+     114537.94,
+     114446.336
+    ],
+    "time_ms": [
+     168,
+     288,
+     463,
+     620,
+     784
+    ],
+    "imbalance": [
+     1.0911304,
+     1.0923117,
+     1.0921594,
+     1.0918427,
+     1.0919954
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 4380,
+    "init_ms": 0,
+    "train_ms": 784,
+    "finalize_ms": 0,
+    "final": 114363.18831452412,
+    "wall_s": 5.415052790893242,
+    "label_agree": 0.99945,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 16,
+   "seed": 5,
+   "ref": {
+    "recipe": {
+     "batch_size": 4096,
+     "alpha0": 1.0,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     116886.45924477652,
+     113538.92990071326,
+     113300.68820778653,
+     113158.87778685614,
+     113067.60032520443
+    ],
+    "final": 112984.47948560248,
+    "wall_s": 3.4312850839924067,
+    "splits": 0,
+    "label_agree": 0.99937
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 16,
+    "nepochs": 5,
+    "seed": 5,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 4096,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      25,
+      25,
+      25,
+      25,
+      25
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     116891.234,
+     114240.72,
+     113995.99,
+     113828.875,
+     113746.875
+    ],
+    "time_ms": [
+     145,
+     276,
+     393,
+     506,
+     615
+    ],
+    "imbalance": [
+     1.0787895,
+     1.0728397,
+     1.0716406,
+     1.0713525,
+     1.0714505
+    ],
+    "nsplit": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 0,
+    "load_ms": 3388,
+    "init_ms": 0,
+    "train_ms": 615,
+    "finalize_ms": 0,
+    "final": 113662.67220073339,
+    "wall_s": 4.124546500155702,
+    "label_agree": 0.9994,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 64,
+   "seed": 1,
+   "ref": {
+    "recipe": {
+     "batch_size": 4096,
+     "alpha0": 1.0,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     62648.9431784451,
+     57346.813841603696,
+     56557.84986989945,
+     56208.98816509545,
+     56075.52702188492
+    ],
+    "final": 55945.709421370346,
+    "wall_s": 4.043155499966815,
+    "splits": 21,
+    "label_agree": 0.99999
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 1,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 4096,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      25,
+      25,
+      25,
+      25,
+      25
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     63453.914,
+     58992.004,
+     57513.258,
+     57258.74,
+     57113.5
+    ],
+    "time_ms": [
+     453,
+     883,
+     1452,
+     1915,
+     2558
+    ],
+    "imbalance": [
+     1.3574753,
+     1.3549832,
+     1.3667469,
+     1.3796539,
+     1.38013
+    ],
+    "nsplit": [
+     11,
+     7,
+     1,
+     0,
+     0
+    ],
+    "n_splits": 19,
+    "load_ms": 3681,
+    "init_ms": 1,
+    "train_ms": 2558,
+    "finalize_ms": 0,
+    "final": 56984.60292491054,
+    "wall_s": 6.431221999926493,
+    "label_agree": 0.99909,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 64,
+   "seed": 2,
+   "ref": {
+    "recipe": {
+     "batch_size": 4096,
+     "alpha0": 1.0,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     61418.146376900375,
+     57280.11993525177,
+     56937.0247034207,
+     56662.05266562849,
+     56525.07649267465
+    ],
+    "final": 56394.110489432474,
+    "wall_s": 2.946498499950394,
+    "splits": 20,
+    "label_agree": 0.99714
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 2,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 4096,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      25,
+      25,
+      25,
+      25,
+      25
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     61921.68,
+     57463.81,
+     56745.492,
+     56489.113,
+     56360.117
+    ],
+    "time_ms": [
+     412,
+     811,
+     1230,
+     1649,
+     2075
+    ],
+    "imbalance": [
+     1.3677065,
+     1.3105326,
+     1.36928,
+     1.3706028,
+     1.3796268
+    ],
+    "nsplit": [
+     10,
+     4,
+     1,
+     0,
+     0
+    ],
+    "n_splits": 15,
+    "load_ms": 3157,
+    "init_ms": 1,
+    "train_ms": 2075,
+    "finalize_ms": 0,
+    "final": 56232.961763825704,
+    "wall_s": 5.39664199994877,
+    "label_agree": 0.99926,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 64,
+   "seed": 3,
+   "ref": {
+    "recipe": {
+     "batch_size": 4096,
+     "alpha0": 1.0,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     60843.638263851404,
+     56752.0771933645,
+     56225.40591562539,
+     55974.17115355283,
+     55841.764082342386
+    ],
+    "final": 55711.60889553347,
+    "wall_s": 2.6251355409622192,
+    "splits": 8,
+    "label_agree": 0.99995
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 3,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 4096,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      25,
+      25,
+      25,
+      25,
+      25
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     62241.17,
+     58055.965,
+     57412.984,
+     57128.742,
+     57004.113
+    ],
+    "time_ms": [
+     356,
+     730,
+     1107,
+     1539,
+     2002
+    ],
+    "imbalance": [
+     1.3152015,
+     1.3718375,
+     1.3912095,
+     1.365298,
+     1.3647093
+    ],
+    "nsplit": [
+     12,
+     4,
+     2,
+     1,
+     0
+    ],
+    "n_splits": 19,
+    "load_ms": 2728,
+    "init_ms": 0,
+    "train_ms": 2002,
+    "finalize_ms": 1,
+    "final": 56873.084417366714,
+    "wall_s": 4.823661208152771,
+    "label_agree": 0.99823,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 64,
+   "seed": 4,
+   "ref": {
+    "recipe": {
+     "batch_size": 4096,
+     "alpha0": 1.0,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     65470.652714811265,
+     59097.43006404489,
+     58002.096685402095,
+     57571.929925486445,
+     56976.43222365528
+    ],
+    "final": 56504.79565092013,
+    "wall_s": 6.080240416806191,
+    "splits": 39,
+    "label_agree": 0.99543
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 4,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 4096,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      25,
+      25,
+      25,
+      25,
+      25
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     61534.434,
+     57053.016,
+     56652.12,
+     56398.535,
+     56263.527
+    ],
+    "time_ms": [
+     632,
+     1137,
+     1629,
+     2152,
+     2796
+    ],
+    "imbalance": [
+     1.3277341,
+     1.3830593,
+     1.3829404,
+     1.3826091,
+     1.3825166
+    ],
+    "nsplit": [
+     9,
+     0,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 9,
+    "load_ms": 8174,
+    "init_ms": 1,
+    "train_ms": 2796,
+    "finalize_ms": 0,
+    "final": 56134.34700422568,
+    "wall_s": 11.113030707929283,
+    "label_agree": 0.99996,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 64,
+   "seed": 5,
+   "ref": {
+    "recipe": {
+     "batch_size": 4096,
+     "alpha0": 1.0,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     64291.1022400856,
+     58559.482960917056,
+     58204.103073090315,
+     57949.39507897198,
+     57808.95594060421
+    ],
+    "final": 57681.26157736001,
+    "wall_s": 3.0578121659345925,
+    "splits": 15,
+    "label_agree": 0.99641
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 64,
+    "nepochs": 5,
+    "seed": 5,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 4096,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 25,
+     "total_steps": 125,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      25,
+      25,
+      25,
+      25,
+      25
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     65422.24,
+     58583.062,
+     57724.375,
+     57458.254,
+     57323.457
+    ],
+    "time_ms": [
+     539,
+     1079,
+     2395,
+     2925,
+     3371
+    ],
+    "imbalance": [
+     1.4010404,
+     1.4205267,
+     1.4245218,
+     1.4240404,
+     1.4238702
+    ],
+    "nsplit": [
+     17,
+     3,
+     0,
+     0,
+     0
+    ],
+    "n_splits": 20,
+    "load_ms": 3004,
+    "init_ms": 1,
+    "train_ms": 3371,
+    "finalize_ms": 0,
+    "final": 57196.55606448335,
+    "wall_s": 6.523900917032734,
+    "label_agree": 0.99992,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 256,
+   "seed": 1,
+   "ref": {
+    "recipe": {
+     "batch_size": 8192,
+     "alpha0": 1.0,
+     "steps_per_pass": 13,
+     "total_steps": 65,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     50912.52675138414,
+     46941.18089866638,
+     46695.42060661316,
+     46456.931414723396,
+     46278.61217312515
+    ],
+    "final": 46062.23214299054,
+    "wall_s": 3.115860499907285,
+    "splits": 831,
+    "label_agree": 0.96856
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 1,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 8192,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 13,
+     "total_steps": 65,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      13,
+      13,
+      13,
+      13,
+      13
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     50615.227,
+     46974.22,
+     46663.555,
+     46428.758,
+     46243.305
+    ],
+    "time_ms": [
+     1409,
+     2887,
+     4424,
+     5642,
+     6912
+    ],
+    "imbalance": [
+     2.1042721,
+     1.7523141,
+     1.6777174,
+     1.6656146,
+     1.6082176
+    ],
+    "nsplit": [
+     219,
+     338,
+     146,
+     95,
+     17
+    ],
+    "n_splits": 815,
+    "load_ms": 2920,
+    "init_ms": 3,
+    "train_ms": 6912,
+    "finalize_ms": 1,
+    "final": 45993.70037846442,
+    "wall_s": 9.945662458892912,
+    "label_agree": 0.97179,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 256,
+   "seed": 2,
+   "ref": {
+    "recipe": {
+     "batch_size": 8192,
+     "alpha0": 1.0,
+     "steps_per_pass": 13,
+     "total_steps": 65,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     50396.25465217233,
+     46951.37366275489,
+     46627.27805429697,
+     46407.00733464956,
+     46208.830082818866
+    ],
+    "final": 45949.71273406404,
+    "wall_s": 2.803639625199139,
+    "splits": 822,
+    "label_agree": 0.9712
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 2,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 8192,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 13,
+     "total_steps": 65,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      13,
+      13,
+      13,
+      13,
+      13
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     50341.957,
+     46963.117,
+     46637.406,
+     46435.336,
+     46255.824
+    ],
+    "time_ms": [
+     1243,
+     2572,
+     3987,
+     5929,
+     7889
+    ],
+    "imbalance": [
+     2.2740216,
+     1.7831286,
+     1.5757967,
+     1.8317349,
+     1.6312296
+    ],
+    "nsplit": [
+     218,
+     337,
+     143,
+     105,
+     24
+    ],
+    "n_splits": 827,
+    "load_ms": 2748,
+    "init_ms": 2,
+    "train_ms": 7889,
+    "finalize_ms": 1,
+    "final": 46008.77020544255,
+    "wall_s": 10.743453625123948,
+    "label_agree": 0.96549,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 256,
+   "seed": 3,
+   "ref": {
+    "recipe": {
+     "batch_size": 8192,
+     "alpha0": 1.0,
+     "steps_per_pass": 13,
+     "total_steps": 65,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     50651.043668076396,
+     46969.04085981846,
+     46687.60724875331,
+     46429.56055651605,
+     46220.38990288973
+    ],
+    "final": 45963.8955476478,
+    "wall_s": 3.541168416151777,
+    "splits": 817,
+    "label_agree": 0.976
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 3,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 8192,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 13,
+     "total_steps": 65,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      13,
+      13,
+      13,
+      13,
+      13
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     50345.52,
+     46927.78,
+     46623.08,
+     46371.145,
+     46240.098
+    ],
+    "time_ms": [
+     1447,
+     3072,
+     4589,
+     6617,
+     8512
+    ],
+    "imbalance": [
+     2.0801828,
+     1.7972366,
+     1.5966495,
+     1.5556579,
+     1.4455162
+    ],
+    "nsplit": [
+     227,
+     333,
+     146,
+     103,
+     14
+    ],
+    "n_splits": 823,
+    "load_ms": 3207,
+    "init_ms": 2,
+    "train_ms": 8512,
+    "finalize_ms": 2,
+    "final": 46008.918107370526,
+    "wall_s": 11.920476166997105,
+    "label_agree": 0.97639,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 256,
+   "seed": 4,
+   "ref": {
+    "recipe": {
+     "batch_size": 8192,
+     "alpha0": 1.0,
+     "steps_per_pass": 13,
+     "total_steps": 65,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     50749.44117709994,
+     46977.666843771935,
+     46658.722766816616,
+     46402.04245053232,
+     46208.22250568867
+    ],
+    "final": 45975.966643445114,
+    "wall_s": 3.2822937918826938,
+    "splits": 824,
+    "label_agree": 0.9673
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 4,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 8192,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 13,
+     "total_steps": 65,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      13,
+      13,
+      13,
+      13,
+      13
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     50315.203,
+     46939.703,
+     46690.07,
+     46474.844,
+     46293.1
+    ],
+    "time_ms": [
+     2342,
+     5085,
+     7839,
+     9619,
+     10863
+    ],
+    "imbalance": [
+     2.271619,
+     1.7435801,
+     1.5682304,
+     1.6225024,
+     1.496335
+    ],
+    "nsplit": [
+     215,
+     332,
+     143,
+     100,
+     11
+    ],
+    "n_splits": 801,
+    "load_ms": 3612,
+    "init_ms": 3,
+    "train_ms": 10863,
+    "finalize_ms": 1,
+    "final": 46065.46577731654,
+    "wall_s": 14.606355542084202,
+    "label_agree": 0.97563,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  },
+  {
+   "dataset": "n100k_d768",
+   "k": 256,
+   "seed": 5,
+   "ref": {
+    "recipe": {
+     "batch_size": 8192,
+     "alpha0": 1.0,
+     "steps_per_pass": 13,
+     "total_steps": 65,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "batch_law": "throughput"
+    },
+    "obj": [
+     50367.07786759734,
+     46937.231909930706,
+     46625.16433122754,
+     46444.87527026236,
+     46232.6075052768
+    ],
+    "final": 45967.47735617353,
+    "wall_s": 2.7833921660203487,
+    "splits": 830,
+    "label_agree": 0.97262
+   },
+   "bend": {
+    "impl": "bend",
+    "backend": "c-cpu",
+    "n": 100000,
+    "d": 768,
+    "k": 256,
+    "nepochs": 5,
+    "seed": 5,
+    "spherical": true,
+    "recipe": {
+     "batch_law": "throughput",
+     "batch_size": 8192,
+     "alpha0": 1,
+     "alpha0_bits": 1065353216,
+     "steps_per_pass": 13,
+     "total_steps": 65,
+     "epoch_rows": [
+      100000,
+      100000,
+      100000,
+      100000,
+      100000
+     ],
+     "epoch_steps": [
+      13,
+      13,
+      13,
+      13,
+      13
+     ],
+     "unused_threshold": 0.1
+    },
+    "obj": [
+     50760.504,
+     46939.477,
+     46626.266,
+     46390.797,
+     46226.195
+    ],
+    "time_ms": [
+     1233,
+     2478,
+     3706,
+     4917,
+     6198
+    ],
+    "imbalance": [
+     2.16764,
+     1.7265586,
+     1.6482644,
+     1.6895993,
+     1.4335818
+    ],
+    "nsplit": [
+     213,
+     330,
+     146,
+     112,
+     14
+    ],
+    "n_splits": 815,
+    "load_ms": 2636,
+    "init_ms": 1,
+    "train_ms": 6198,
+    "finalize_ms": 1,
+    "final": 45980.84345042038,
+    "wall_s": 8.918184416135773,
+    "label_agree": 0.97001,
+    "labelled": 100000
+   },
+   "alpha0_ulps": 0
+  }
+ ]
+}

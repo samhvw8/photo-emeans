@@ -1,0 +1,44 @@
+{
+ "case": "candle:cuda:bf16",
+ "batch": 1,
+ "cmd": [
+  "~/workspace/tools/emeans/target/bench-embed/release/embed-compare",
+  "cuda",
+  "bf16",
+  "1",
+  "64",
+  "~/workspace/tools/emeans/bench/compare/results/ubuntu/embed/candle_cuda_bf16_b1"
+ ],
+ "loadavg_before": [
+  3.11083984375,
+  20.6025390625,
+  30.14697265625
+ ],
+ "gpu_peak_bytes": 1719664640,
+ "peak_rss_bytes": 1094713344,
+ "ok": true,
+ "device": "cuda",
+ "dtype": "bf16",
+ "files": [
+  "astronaut.png",
+  "camera.png",
+  "cat.png",
+  "cat_small.png",
+  "coffee.png",
+  "coffee_wide.png",
+  "coins.png",
+  "grass.png",
+  "horse.png",
+  "hubble.png",
+  "logo.png",
+  "page.png",
+  "page_strip.png",
+  "rocket.png",
+  "rocket_tall.png"
+ ],
+ "images_per_s": 3.7961023718903757,
+ "impl": "candle",
+ "load_s": 1.389428796,
+ "n": 64,
+ "seconds": 16.859397806
+}

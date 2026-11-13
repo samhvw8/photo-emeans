@@ -1,0 +1,11 @@
+{
+  "impl": "bend",
+  "backend": "c-cpu",
+  "n": 100000, "d": 768, "k": 256, "nepochs": 5, "seed": 1, "spherical": true,
+  "recipe": {"batch_law": "throughput", "batch_size": 8192, "alpha0": 1, "alpha0_bits": 1065353216, "steps_per_pass": 13, "total_steps": 65, "epoch_rows": [100000, 100000, 100000, 100000, 100000], "epoch_steps": [13, 13, 13, 13, 13], "unused_threshold": 0.1},
+  "obj": [47922.19, 39452.254, 38095.496, 37115.83, 36649.21],
+  "time_ms": [988, 1844, 2756, 3651, 4544],
+  "imbalance": [1.447816, 1.5530422, 1.50895, 1.5450655, 1.5387753],
+  "nsplit": [54, 48, 13, 10, 0], "n_splits": 125,
+  "load_ms": 4545, "init_ms": 3, "train_ms": 4544, "finalize_ms": 2
+}

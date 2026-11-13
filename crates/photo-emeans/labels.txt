@@ -1,0 +1,464 @@
+# Everyday photo concepts for naming cluster albums (`photo-emeans names`).
+#
+# One label per line: `Name | text to embed`. Without `| text`, the text is "a photo of <name>".
+# The name is what goes into the album title; keep it short, without "&" or "·". Lines with the same name are averaged
+# into one label (prompt ensembling). `#` starts a comment. Edit freely; `names` re-embeds only new
+# texts (cached in $EMEANS_DATA/names/label-vectors.jsonl).
+
+# --- People ---
+Selfie | a selfie taken with a phone front camera
+Portrait | a portrait photo of one person
+Group Photo | a group photo of friends posing together
+Family | a family photo with parents and children
+Couple | a photo of a couple together
+Baby | a photo of a newborn baby
+Toddler | a photo of a toddler playing
+Kids | a photo of young children
+Kids Playing | children playing together
+Teenagers | a photo of teenagers
+Grandparents | a photo of grandparents with grandchildren
+Elderly People | a photo of elderly people
+Mother and Child | a mother holding her child
+Father and Child | a father with his child
+Friends | a photo of friends hanging out
+Crowd | a big crowd of people
+Mirror Selfie | a mirror selfie
+Close-up Face | a close-up of a face
+Sleeping | a person sleeping
+Baby Bath | a baby taking a bath
+School Kids | children at school in uniforms
+Students | students in a classroom
+Team Photo | a team photo of colleagues
+Outfit | a full body photo showing an outfit
+Fashion | a fashion photo with stylish clothes
+Ao Dai | a woman wearing a Vietnamese ao dai dress
+Wedding Dress | a bride in a white wedding dress
+Makeup | hair styling and makeup
+
+# --- Celebrations and events ---
+Birthday Party | a birthday party with a cake and candles
+Birthday Cake | a birthday cake with candles
+Wedding | a wedding ceremony
+Wedding Party | a wedding reception party with guests
+Engagement | an engagement ceremony
+Pre-wedding Shoot | a pre-wedding photo shoot of a couple
+Tet | Vietnamese Lunar New Year Tet celebration
+Tet | Tet holiday with peach blossoms, apricot flowers and red envelopes
+Lunar New Year | lunar new year decorations in red and gold
+Mid-Autumn Festival | mid-autumn festival with lanterns and mooncakes
+Christmas | Christmas with a decorated Christmas tree
+New Year's Eve | New Year's Eve fireworks and party
+Halloween | Halloween costumes and pumpkins
+Graduation | a graduation ceremony with caps and gowns
+Party | a party with friends at night
+Anniversary | an anniversary celebration
+Baby Shower | a baby shower party
+Funeral | a funeral ceremony
+Memorial Altar | an ancestor altar with incense and offerings
+Concert | a live music concert on stage
+Festival | an outdoor festival with crowds
+Fireworks | fireworks in the night sky
+Parade | a street parade
+Ceremony | a formal ceremony
+Conference | a conference with a speaker on stage
+Meeting | a business meeting in a room
+Presentation | a presentation on a projector screen
+Award Ceremony | an award ceremony on stage
+School Event | a school performance event
+Performance | a stage performance with performers
+Karaoke | people singing karaoke
+Picnic | a picnic outdoors on a blanket
+Barbecue | a barbecue grill party
+Family Dinner | a family dinner around a table
+Gathering | a family gathering at home
+Toast | people raising glasses for a toast
+Cheering | people cheering and celebrating
+
+# --- Food and drink ---
+Food | a photo of a plate of food
+Meal | a home-cooked meal on the table
+Restaurant | eating at a restaurant
+Street Food | Vietnamese street food stall
+Pho | a bowl of pho noodle soup
+Noodles | a bowl of noodles
+Banh Mi | a Vietnamese banh mi sandwich
+Rice Dish | a plate of rice with meat and vegetables
+Hotpot | a hotpot meal
+Seafood | a seafood dish with shrimp and crab
+Sushi | sushi and Japanese food
+Pizza | a pizza
+Burger | a burger and fries
+Fried Chicken | fried chicken
+Steak | a grilled steak
+Salad | a fresh salad
+Soup | a bowl of soup
+Dumplings | dumplings
+Bread | bread and pastries
+Breakfast | breakfast food
+Dessert | a dessert
+Cake | a cake
+Ice Cream | ice cream
+Fruit | fresh fruit
+Vegetables | fresh vegetables
+Snacks | snacks and chips
+Chocolate | chocolate
+Coffee | a cup of coffee
+Vietnamese Coffee | Vietnamese drip coffee with a phin filter
+Tea | a cup of tea
+Bubble Tea | bubble tea with tapioca pearls
+Smoothie | a smoothie or fruit juice
+Beer | glasses of beer
+Wine | a glass of wine
+Cocktails | cocktails at a bar
+Cooking | cooking food in a kitchen
+Baking | baking at home
+Groceries | groceries from a supermarket
+Market | a local market with food stalls
+Banh Chung | Vietnamese banh chung square sticky rice cake
+Mooncake | mooncakes
+Fruit Tray | a fruit tray offering
+Buffet | a buffet with many dishes
+Cafe | inside a cozy cafe
+Food Delivery | food delivery packaging
+Lunch Box | a lunch box
+
+# --- Home and everyday life ---
+Home | inside a home living room
+Living Room | a living room with a sofa
+Bedroom | a bedroom with a bed
+Kitchen | a kitchen
+Bathroom | a bathroom
+Dining Table | a dining table
+Interior Design | interior design of a modern room
+Furniture | furniture
+Home Renovation | home renovation and construction work
+Construction | a construction site
+Moving House | moving boxes for moving house
+Cleaning | cleaning the house
+Laundry | laundry and clothes
+Garden | a home garden with plants
+Houseplants | houseplants in pots
+Balcony | a balcony
+House | the outside of a house
+Apartment Building | an apartment building
+Room Decor | room decoration
+Desk Setup | a desk setup with a computer
+Bed | a bed with pillows and blankets
+Window View | the view from a window
+Toys | children's toys
+Lego | Lego bricks
+Drawing | a child's drawing
+Crafts | handmade crafts
+Shopping | shopping in a store
+Mall | a shopping mall
+Clothes | clothes and fashion items
+Shoes | a pair of shoes
+Bags | a handbag
+Jewelry | jewelry
+Watch | a wristwatch
+Glasses | eyeglasses and sunglasses
+Cosmetics | cosmetics and skincare products
+Perfume | a bottle of perfume
+Flowers | a bouquet of flowers
+Gifts | wrapped gifts and presents
+Unboxing | unboxing a new product
+Haircut | a haircut at a barber shop
+Hospital | a hospital
+Doctor Visit | a visit to the doctor
+Medicine | medicine and pills
+Dentist | a dentist
+Pregnancy | a pregnant woman
+Ultrasound | an ultrasound scan image
+Injury | a wound or injury
+Gym | working out at a gym
+Yoga | yoga
+Sleeping Baby | a baby sleeping in a crib
+Stroller | a baby stroller
+Baby Food | feeding a baby
+Breastfeeding | a mother feeding her baby
+Bath Time | bath time for kids
+Playground | children at a playground
+Kindergarten | a kindergarten class
+Homework | a child doing homework
+Reading | reading a book
+Books | books on a shelf
+Studying | studying with notebooks
+
+# --- Documents, screens and text ---
+Screenshot | a screenshot of a phone screen
+Chat Screenshot | a screenshot of a chat conversation
+Social Media Screenshot | a screenshot of a social media post
+Web Page Screenshot | a screenshot of a web page
+App Screenshot | a screenshot of a mobile app interface
+Game Screenshot | a screenshot of a video game
+Map Screenshot | a screenshot of a map with directions
+Banking Screenshot | a screenshot of a banking app transaction
+Code Screenshot | a screenshot of computer code
+Computer Screen | a photo of a computer screen
+Phone Screen | a photo of a phone screen
+TV Screen | a photo of a TV screen
+Document | a photo of a printed document
+Receipt | a shopping receipt
+Invoice | an invoice or bill
+ID Card | an ID card or passport
+Passport | a passport
+Business Card | a business card
+Certificate | a certificate or diploma
+Contract | a signed contract
+Form | a filled-in paper form
+Handwritten Notes | handwritten notes on paper
+Whiteboard | a whiteboard with notes
+Notebook | an open notebook
+Book Page | a page of a book
+Textbook | a textbook page with exercises
+Exam | an exam paper
+Menu | a restaurant menu
+Ticket | a ticket
+Boarding Pass | a boarding pass
+Price Tag | a price tag
+Label | a product label
+Sign | a sign with text
+Poster | a poster
+Meme | a meme image with text
+Quote | a quote image with text
+Chart | a chart or graph
+Spreadsheet | a spreadsheet
+Calendar | a calendar
+Schedule | a timetable or schedule
+Map | a paper map
+Floor Plan | a floor plan of a house
+Blueprint | an architectural drawing
+Money | cash money banknotes
+QR Code | a QR code
+Barcode | a barcode
+Medical Record | a medical test result paper
+Prescription | a doctor's prescription
+Bank Statement | a bank statement
+Product Packaging | product packaging box
+Manual | an instruction manual
+Wallpaper | a phone wallpaper image
+Illustration | a digital illustration
+Cartoon | a cartoon drawing
+Anime | an anime picture
+Logo | a logo
+Infographic | an infographic
+Slide | a presentation slide
+Video Call | a video call on a screen
+
+# --- Pets and animals ---
+Dog | a dog
+Puppy | a puppy
+Cat | a cat
+Kitten | a kitten
+Pets | pets at home
+Bird | a bird
+Fish | fish in an aquarium
+Hamster | a hamster
+Rabbit | a rabbit
+Chickens | chickens on a farm
+Cows | cows in a field
+Horse | a horse
+Buffalo | a water buffalo
+Pig | a pig
+Farm Animals | farm animals
+Zoo | animals at a zoo
+Monkey | a monkey
+Elephant | an elephant
+Deer | a deer
+Butterfly | a butterfly
+Insects | insects
+Aquarium | a public aquarium
+
+# --- Nature and weather ---
+Beach | a sandy beach by the sea
+Sea | the open sea and waves
+Sunset | a sunset sky
+Sunrise | a sunrise
+Mountains | mountains
+Hiking | hiking on a mountain trail
+Forest | a forest with tall trees
+Waterfall | a waterfall
+Lake | a lake
+River | a river
+Rice Fields | green rice fields
+Terraced Rice Fields | terraced rice fields on hills
+Countryside | the countryside
+Village | a rural village
+Countryside Road | a road through the countryside
+Fields | open fields and grass
+Flower Garden | a flower garden
+Cherry Blossoms | cherry blossoms
+Lotus | lotus flowers
+Trees | trees
+Park | a city park
+Sky | the sky with clouds
+Clouds | clouds
+Night Sky | the night sky with stars
+Moon | the moon
+Rain | rain
+Storm | a storm
+Flood | a flooded street
+Snow | snow
+Fog | fog and mist
+Desert | a desert
+Island | a tropical island
+Cave | a cave
+Volcano | a volcano
+Rocks | rocks and cliffs
+Coast | a rocky coast
+Pool | a swimming pool
+Hot Spring | a hot spring
+Garden Plants | plants and leaves close-up
+Mushrooms | mushrooms
+Autumn Leaves | autumn leaves
+
+# --- Travel and places ---
+Travel | a travel photo at a tourist spot
+Landmark | a famous landmark
+City | a city skyline
+City Street | a busy city street
+Night City | a city at night with lights
+Old Town | an old town with historic buildings
+Hoi An | Hoi An ancient town with lanterns
+Ha Long Bay | Ha Long Bay limestone islands
+Hanoi | Hanoi Old Quarter street
+Saigon | Ho Chi Minh City street
+Da Lat | Da Lat pine hills and flowers
+Sapa | Sapa mountains
+Temple | a Buddhist temple
+Pagoda | a pagoda
+Church | a church
+Mosque | a mosque
+Castle | a castle
+Palace | a palace
+Museum | a museum exhibit
+Art Gallery | an art gallery
+Monument | a monument or statue
+Bridge | a bridge
+Tower | a tall tower
+Skyscraper | skyscrapers
+Architecture | architecture of a building
+Ruins | ancient ruins
+Theme Park | an amusement park with rides
+Water Park | a water park
+Hotel | a hotel room
+Resort | a beach resort
+Airport | an airport terminal
+Airplane | an airplane
+Airplane Window | the view from an airplane window
+Train | a train
+Train Station | a train station
+Bus | a bus
+Boat | a boat
+Ferry | a ferry
+Cruise | a cruise ship
+Road Trip | a road trip
+Camping | camping with a tent
+Campfire | a campfire
+Street Market | a night street market
+Shopping Street | a shopping street
+Japan | travel in Japan
+Korea | travel in Korea
+Thailand | travel in Thailand
+Singapore | Singapore city
+Europe | travel in Europe
+Paris | Paris and the Eiffel Tower
+USA | travel in the United States
+China | travel in China
+Tourist Crowd | tourists at an attraction
+Viewpoint | a scenic viewpoint
+Rooftop | a rooftop view
+
+# --- Vehicles and transport ---
+Car | a car
+Car Interior | inside a car
+Motorbike | a motorbike
+Scooter | a scooter on the street
+Bicycle | a bicycle
+Traffic | traffic on a road
+Highway | a highway
+Parking | a parking lot
+Truck | a truck
+Electric Car | an electric car charging
+Car Dashboard | a car dashboard
+Driving | driving on the road
+Motorbike Ride | riding a motorbike
+
+# --- Sports and activities ---
+Football | playing football soccer
+Basketball | basketball
+Badminton | badminton
+Tennis | tennis
+Table Tennis | table tennis
+Swimming | swimming
+Running | running a race
+Marathon | a marathon race
+Cycling | cycling
+Golf | golf
+Martial Arts | martial arts
+Dance | dancing
+Fishing | fishing
+Surfing | surfing
+Skiing | skiing
+Climbing | rock climbing
+Kayaking | kayaking
+Diving | scuba diving underwater
+Sports Event | a sports match in a stadium
+Video Games | playing video games
+Board Games | playing board games
+Chess | chess
+Music | playing music
+Guitar | playing guitar
+Piano | playing piano
+Painting | painting a picture
+Photography | taking photos with a camera
+Gardening | gardening
+Volunteering | volunteering
+Exercise | exercising
+Walking | walking outdoors
+
+# --- Work and tech ---
+Office | an office with desks
+Work | people working at work
+Coworkers | coworkers at the office
+Laptop | a laptop
+Computer | a computer
+Smartphone | a smartphone
+Gadgets | electronic gadgets
+Electronics | cables and electronics
+Server Room | a server room
+Circuit Board | a circuit board
+Tools | hand tools
+Workshop | a workshop
+Factory | a factory
+Warehouse | a warehouse
+Shop | a small shop
+Store Shelf | products on a store shelf
+Classroom | a classroom
+School | a school building
+University | a university campus
+Training | a training session
+Lab | a laboratory
+Bank | a bank
+Real Estate | a real estate project
+Signboard | a shop signboard
+Event Booth | an event booth
+
+# --- Photo styles ---
+Night Photo | a dark photo taken at night
+Blurry Photo | a blurry photo
+Black and White | a black and white photo
+Old Photo | an old scanned photo print
+Film Photo | a film photo
+Close-up | a macro close-up photo
+Pattern | an abstract pattern
+Texture | a texture close-up
+Light | lights and bokeh
+Neon | neon lights
+Lanterns | colorful lanterns
+Reflection | a reflection in water
+Silhouette | a silhouette against the sky
+Panorama | a panorama photo
+Aerial View | an aerial drone view
+Street Photography | street photography
+Candid | a candid moment

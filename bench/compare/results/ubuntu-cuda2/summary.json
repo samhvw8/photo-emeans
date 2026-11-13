@@ -1,0 +1,272 @@
+[
+ {
+  "data": "s768_1m",
+  "n": 1000000,
+  "k": 1024,
+  "impl": "py-numpy",
+  "runs_ok": 3,
+  "runs_failed": 0,
+  "errors": [],
+  "objective_mean": 0.30321933627720515,
+  "objective_sd": 0.0012041751851566097,
+  "train_s_median": 64.25850001900108,
+  "train_s_iqr": 0.19636104850360425,
+  "load_s_median": 1.188801278003666,
+  "peak_rss_bytes_max": 3619938304,
+  "peak_footprint_bytes_max": null,
+  "gpu_peak_bytes_max": null,
+  "ari_mean": 1.0,
+  "ari_sd": 0.0,
+  "ari_seed_floor": 0.6740941452976352,
+  "loadavg_1m_range": [
+   50.650390625,
+   53.994140625
+  ],
+  "threads": {
+   "faiss_omp": 64
+  }
+ },
+ {
+  "data": "s768_1m",
+  "n": 1000000,
+  "k": 1024,
+  "impl": "py-torch-cuda-triton",
+  "runs_ok": 5,
+  "runs_failed": 0,
+  "errors": [],
+  "objective_mean": 0.3005954211640921,
+  "objective_sd": 0.0010395317675300911,
+  "train_s_median": 0.6043179570042412,
+  "train_s_iqr": 0.001957357999344822,
+  "load_s_median": 3.386136487002659,
+  "peak_rss_bytes_max": 3787878400,
+  "peak_footprint_bytes_max": null,
+  "gpu_peak_bytes_max": 4164943872,
+  "ari_mean": 0.679199393824237,
+  "ari_sd": 0.008286401883794545,
+  "ari_seed_floor": 0.6740941452976352,
+  "loadavg_1m_range": [
+   1.8984375,
+   4.6796875
+  ],
+  "threads": {
+   "torch": 32
+  }
+ },
+ {
+  "data": "s768_1m",
+  "n": 1000000,
+  "k": 1024,
+  "impl": "py-torch-cuda-triton-f32",
+  "runs_ok": 5,
+  "runs_failed": 0,
+  "errors": [],
+  "objective_mean": 0.30404153575850945,
+  "objective_sd": 0.0016682388029209446,
+  "train_s_median": 1.383669116999954,
+  "train_s_iqr": 0.0017198620043927804,
+  "load_s_median": 3.371219567998196,
+  "peak_rss_bytes_max": 3787673600,
+  "peak_footprint_bytes_max": null,
+  "gpu_peak_bytes_max": 3963617280,
+  "ari_mean": 0.6716624958417111,
+  "ari_sd": 0.005836003730596912,
+  "ari_seed_floor": 0.6740941452976352,
+  "loadavg_1m_range": [
+   1.9853515625,
+   4.384765625
+  ],
+  "threads": {
+   "torch": 32
+  }
+ },
+ {
+  "data": "s768_1m",
+  "n": 1000000,
+  "k": 1024,
+  "impl": "rs-cuda",
+  "runs_ok": 5,
+  "runs_failed": 0,
+  "errors": [],
+  "objective_mean": 0.30345251489175923,
+  "objective_sd": 0.0008093292709995404,
+  "train_s_median": 0.623669337,
+  "train_s_iqr": 0.006308734999999954,
+  "load_s_median": 4.307614704,
+  "peak_rss_bytes_max": 6269923328,
+  "peak_footprint_bytes_max": null,
+  "gpu_peak_bytes_max": 4873781248,
+  "ari_mean": 0.7005304260339479,
+  "ari_sd": 0.002985714134379488,
+  "ari_seed_floor": 0.6740941452976352,
+  "loadavg_1m_range": [
+   1.9228515625,
+   6.474609375
+  ],
+  "threads": {
+   "rayon": 64
+  }
+ },
+ {
+  "data": "s768_1m",
+  "n": 1000000,
+  "k": 1024,
+  "impl": "rs-cuda-bf16",
+  "runs_ok": 5,
+  "runs_failed": 0,
+  "errors": [],
+  "objective_mean": 0.30087348230863886,
+  "objective_sd": 0.0008466522950429636,
+  "train_s_median": 0.390607822,
+  "train_s_iqr": 0.004580065999999994,
+  "load_s_median": 4.307372388,
+  "peak_rss_bytes_max": 6269825024,
+  "peak_footprint_bytes_max": null,
+  "gpu_peak_bytes_max": 4873781248,
+  "ari_mean": 0.6885718106337717,
+  "ari_sd": 0.005782365802497773,
+  "ari_seed_floor": 0.6740941452976352,
+  "loadavg_1m_range": [
+   1.96337890625,
+   5.26171875
+  ],
+  "threads": {
+   "rayon": 64
+  }
+ },
+ {
+  "data": "s768_200k",
+  "n": 200000,
+  "k": 1024,
+  "impl": "py-numpy",
+  "runs_ok": 3,
+  "runs_failed": 0,
+  "errors": [],
+  "objective_mean": 0.2852236419387939,
+  "objective_sd": 0.0002442945514026859,
+  "train_s_median": 13.13327023900274,
+  "train_s_iqr": 0.7655018280020158,
+  "load_s_median": 0.23519549000047846,
+  "peak_rss_bytes_max": 843857920,
+  "peak_footprint_bytes_max": null,
+  "gpu_peak_bytes_max": null,
+  "ari_mean": 1.0,
+  "ari_sd": 0.0,
+  "ari_seed_floor": 0.4155022451364022,
+  "loadavg_1m_range": [
+   32.27197265625,
+   33.9697265625
+  ],
+  "threads": {
+   "faiss_omp": 64
+  }
+ },
+ {
+  "data": "s768_200k",
+  "n": 200000,
+  "k": 1024,
+  "impl": "py-torch-cuda-triton",
+  "runs_ok": 5,
+  "runs_failed": 0,
+  "errors": [],
+  "objective_mean": 0.2850426652432558,
+  "objective_sd": 0.0002969676430885983,
+  "train_s_median": 0.15471175200218568,
+  "train_s_iqr": 0.0011048650048905984,
+  "load_s_median": 2.116655047000677,
+  "peak_rss_bytes_max": 1362800640,
+  "peak_footprint_bytes_max": null,
+  "gpu_peak_bytes_max": 1046478848,
+  "ari_mean": 0.42930644715688,
+  "ari_sd": 0.004055735429688872,
+  "ari_seed_floor": 0.4155022451364022,
+  "loadavg_1m_range": [
+   1.1640625,
+   1.484375
+  ],
+  "threads": {
+   "torch": 32
+  }
+ },
+ {
+  "data": "s768_200k",
+  "n": 200000,
+  "k": 1024,
+  "impl": "py-torch-cuda-triton-f32",
+  "runs_ok": 5,
+  "runs_failed": 0,
+  "errors": [],
+  "objective_mean": 0.28511667437076216,
+  "objective_sd": 0.00024640344184806786,
+  "train_s_median": 0.30667295799503336,
+  "train_s_iqr": 0.001344912001513876,
+  "load_s_median": 2.1131744949962012,
+  "peak_rss_bytes_max": 1361633280,
+  "peak_footprint_bytes_max": null,
+  "gpu_peak_bytes_max": 996147200,
+  "ari_mean": 0.4197725743518836,
+  "ari_sd": 0.00351476224849167,
+  "ari_seed_floor": 0.4155022451364022,
+  "loadavg_1m_range": [
+   1.2314453125,
+   1.443359375
+  ],
+  "threads": {
+   "torch": 32
+  }
+ },
+ {
+  "data": "s768_200k",
+  "n": 200000,
+  "k": 1024,
+  "impl": "rs-cuda",
+  "runs_ok": 5,
+  "runs_failed": 0,
+  "errors": [],
+  "objective_mean": 0.28494714968085555,
+  "objective_sd": 0.0003211978674560261,
+  "train_s_median": 0.159699611,
+  "train_s_iqr": 0.0020904089999999875,
+  "load_s_median": 0.872973676,
+  "peak_rss_bytes_max": 1354723328,
+  "peak_footprint_bytes_max": null,
+  "gpu_peak_bytes_max": 1115684864,
+  "ari_mean": 0.42586672324971486,
+  "ari_sd": 0.007608202100047264,
+  "ari_seed_floor": 0.4155022451364022,
+  "loadavg_1m_range": [
+   1.0556640625,
+   1.52587890625
+  ],
+  "threads": {
+   "rayon": 64
+  }
+ },
+ {
+  "data": "s768_200k",
+  "n": 200000,
+  "k": 1024,
+  "impl": "rs-cuda-bf16",
+  "runs_ok": 5,
+  "runs_failed": 0,
+  "errors": [],
+  "objective_mean": 0.285074834080457,
+  "objective_sd": 0.0002782422749800102,
+  "train_s_median": 0.098052326,
+  "train_s_iqr": 0.0004191000000000056,
+  "load_s_median": 0.873118868,
+  "peak_rss_bytes_max": 1354690560,
+  "peak_footprint_bytes_max": null,
+  "gpu_peak_bytes_max": 1115684864,
+  "ari_mean": 0.4342183967106274,
+  "ari_sd": 0.00817074553908396,
+  "ari_seed_floor": 0.4155022451364022,
+  "loadavg_1m_range": [
+   1.1943359375,
+   1.4833984375
+  ],
+  "threads": {
+   "rayon": 64
+  }
+ }
+]

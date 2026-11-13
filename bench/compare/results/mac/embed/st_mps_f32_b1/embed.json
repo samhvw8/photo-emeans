@@ -1,0 +1,34 @@
+{
+ "impl": "sentence-transformers",
+ "device": "mps",
+ "dtype": "f32",
+ "batch": 1,
+ "n": 64,
+ "load_s": 7.349414499942213,
+ "seconds": 65.3155581660103,
+ "images_per_s": 0.9798584257265842,
+ "files": [
+  "astronaut.png",
+  "camera.png",
+  "cat.png",
+  "cat_small.png",
+  "coffee.png",
+  "coffee_wide.png",
+  "coins.png",
+  "grass.png",
+  "horse.png",
+  "hubble.png",
+  "logo.png",
+  "page.png",
+  "page_strip.png",
+  "rocket.png",
+  "rocket_tall.png"
+ ],
+ "threads": 8,
+ "versions": {
+  "torch": "2.11.0",
+  "transformers": "5.22.2",
+  "sentence_transformers": "6.3.0"
+ },
+ "mps_driver_allocated_bytes_end": 3855613952
+}

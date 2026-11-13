@@ -1,0 +1,126 @@
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.18s
+    Finished `release` profile [optimized + debuginfo] target(s) in 7.81s
+=== BUILD-END 20:10:57
+=== tests
+test core::cuda::tests::bf16_cached_rows_match_converted_rows ... ok
+test core::cuda::tests::scatter_many_segments_is_bit_equal ... ok
+test core::cuda::tests::screen_is_bit_equal_to_fp32 ... ok
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 7 filtered out; finished in 22.87s
+test backends_train_to_the_same_objective ... spherical=true revival=true cpu-blocked: final 0.07461401759982109 epochs [3043.684258878231, 1602.6002527475357, 1509.1370822191238, 1501.3372776508331, 1497.723804950714] splits 19
+test cpu_backends_pass_the_contract ... Report { backend: "cpu-blocked", top1_rows: 15508, top1_ties: 0, top1_score_err: 1.595779951669862e-6, topk_rows: 930, topk_ties: 2, topk_score_err: 6.074950358154986e-7, norm_err: 1.3196660912055984e-6, normalize_err: 9.894629537932076e-8, scatter_mismatch: 0, ema_mismatch: 0, norm_mismatch: 0 }
+test cpu_passes_the_contract_at_the_production_shape ... Report { backend: "cpu-fused", top1_rows: 2080, top1_ties: 0, top1_score_err: 1.6065529413342573e-6, topk_rows: 64, topk_ties: 4, topk_score_err: 6.990896713587782e-7, norm_err: 0.0, normalize_err: 0.0, scatter_mismatch: 0, ema_mismatch: 0, norm_mismatch: 0 }
+test cuda_bf16_is_close_to_the_reference ... bf16 InnerProduct: 24 of 3000 labels differ from f64 (all within 1e-2)
+test cuda_passes_the_contract ... Report { backend: "cuda-fused-f32", top1_rows: 15508, top1_ties: 0, top1_score_err: 1.4762040282248836e-6, topk_rows: 930, topk_ties: 8, topk_score_err: 1.3173177993985874e-6, norm_err: 1.3196660912055984e-6, normalize_err: 9.894629537932076e-8, scatter_mismatch: 0, ema_mismatch: 0, norm_mismatch: 0 }
+test cuda_passes_the_contract_at_the_production_shape ... screen=true Report { backend: "cuda-fused-f32", top1_rows: 2080, top1_ties: 0, top1_score_err: 1.1973448541074877e-6, topk_rows: 64, topk_ties: 4, topk_score_err: 1.1630979148691267e-6, norm_err: 0.0, normalize_err: 0.0, scatter_mismatch: 0, ema_mismatch: 0, norm_mismatch: 0 }
+screen=false Report { backend: "cuda-fused-f32", top1_rows: 2080, top1_ties: 0, top1_score_err: 1.1973448541074877e-6, topk_rows: 64, topk_ties: 4, topk_score_err: 1.1630979148691267e-6, norm_err: 0.0, normalize_err: 0.0, scatter_mismatch: 0, ema_mismatch: 0, norm_mismatch: 0 }
+test cuda_screen_is_bit_equal_to_fp32_on_near_ties ... near-ties n=4000 d=768 k=512 InnerProduct: 240 of 4000 rows on the FP32 fallback
+near-ties n=4000 d=768 k=512 L2: 1180 of 4000 rows on the FP32 fallback
+near-ties n=3000 d=72 k=256 InnerProduct: 180 of 3000 rows on the FP32 fallback
+near-ties n=3000 d=72 k=256 L2: 885 of 3000 rows on the FP32 fallback
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 81.23s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.29s
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+=== ops 200k batch 16384
+--- cuda (screen)
+cuda-fused-f32 n=200000 d=768 k=1024 batch=16384
+sync              0.006 ms
+normalize         0.063 ms
+top1              2.657 ms
+top1-dense        2.575 ms
+scatter_add       0.230 ms
+ema_update        0.049 ms
+read_usage        0.013 ms
+read_pos          0.378 ms
+loop            236.303 ms (65 steps)
+screen: 1256 of 1262144 rows on the FP32 fallback (0.100%)
+=== screen stats in training (bench files)
+s768_16k k=64 
+s768_16k k=256 screen: 933 of 84096 rows on the FP32 fallback (1.109%)
+s768_16k k=1024 screen: 2765 of 84096 rows on the FP32 fallback (3.288%)
+s768_100k k=64 
+s768_100k k=256 screen: 14 of 504096 rows on the FP32 fallback (0.003%)
+s768_100k k=1024 screen: 7995 of 504096 rows on the FP32 fallback (1.586%)
+s768_200k k=64 
+s768_200k k=256 screen: 16 of 1004096 rows on the FP32 fallback (0.002%)
+s768_200k k=1024 screen: 61346 of 1004096 rows on the FP32 fallback (6.110%)
+s768_1m k=1024 screen: 20559 of 5004096 rows on the FP32 fallback (0.411%)
+=== nsys
+== cuda s768_200k train_s=0.2481
+window 242.43 ms, gpu busy 224.26 ms, idle 18.17 ms
+  screen_verify                                 112.52 ms      65 x    1731.0 us
+  screen_256_3                                   62.70 ms      65 x     964.7 us
+  top1_128_128_v4                                18.19 ms      60 x     303.2 us
+  scatter_sum                                    10.45 ms      65 x     160.7 us
+  gather_f16s                                     6.11 ms      67 x      91.3 us
+  normalize_rows                                  3.34 ms      65 x      51.4 us
+  [CUDA memcpy Device-to-Host]                    2.76 ms      26 x     106.2 us
+  ema_positions                                   2.21 ms      65 x      34.1 us
+  scatter_place                                   1.51 ms      65 x      23.2 us
+  [CUDA memset]                                   1.04 ms      20 x      51.9 us
+  scatter_count                                   1.00 ms      65 x      15.3 us
+  top1_64_128_v4                                  0.85 ms       5 x     170.6 us
+  [CUDA memcpy Host-to-Device]                    0.69 ms      20 x      34.7 us
+  scan_counts                                     0.29 ms      65 x       4.5 us
+  top1_combine                                    0.22 ms      65 x       3.4 us
+  max_aux                                         0.16 ms      65 x       2.5 us
+  ema_usage                                       0.12 ms      65 x       1.8 us
+  split_pairs                                     0.09 ms      13 x       6.6 us
+  largest gaps (us): 9416 before [CUDA memset], 3102 before [CUDA memcpy Devic, 1545 before [CUDA memcpy Devic, 285 before [CUDA memcpy Host-, 236 before [CUDA memcpy Host-, 225 before [CUDA memcpy Host-, 202 before [CUDA memcpy Host-, 154 before [CUDA memset]
+  gaps > 10us: 30, total 17.23 ms
+== cuda-bf16 s768_200k train_s=0.1003
+window 95.08 ms, gpu busy 78.62 ms, idle 16.46 ms
+  top1_bf16_256_3                                50.94 ms      65 x     783.7 us
+  scatter_sum                                    10.50 ms      65 x     161.5 us
+  gather_bf16                                     4.15 ms      67 x      61.9 us
+  normalize_rows                                  3.40 ms      65 x      52.3 us
+  [CUDA memcpy Device-to-Host]                    2.60 ms      26 x     100.2 us
+  ema_positions                                   2.18 ms      65 x      33.6 us
+  scatter_place                                   1.57 ms      65 x      24.2 us
+  [CUDA memset]                                   1.02 ms      13 x      78.4 us
+  scatter_count                                   1.01 ms      65 x      15.6 us
+  [CUDA memcpy Host-to-Device]                    0.70 ms      20 x      35.2 us
+  scan_counts                                     0.32 ms      65 x       4.9 us
+  ema_usage                                       0.12 ms      65 x       1.9 us
+  split_pairs                                     0.09 ms      13 x       7.2 us
+  largest gaps (us): 7027 before [CUDA memset], 3240 before [CUDA memcpy Devic, 1431 before [CUDA memcpy Devic, 533 before [CUDA memcpy Host-, 507 before [CUDA memcpy Host-, 295 before [CUDA memcpy Host-, 263 before [CUDA memcpy Host-, 224 before [CUDA memcpy Host-
+  gaps > 10us: 30, total 15.77 ms
+== cuda s768_1m train_s=1.1233
+window 1117.99 ms, gpu busy 1051.12 ms, idle 66.87 ms
+  screen_verify                                 613.13 ms      80 x    7664.1 us
+  screen_256_3                                  303.19 ms      80 x    3789.9 us
+  scatter_sum                                    48.14 ms      80 x     601.7 us
+  [CUDA memcpy Device-to-Host]                   26.36 ms      29 x     908.8 us
+  gather_f16s                                    24.42 ms      82 x     297.8 us
+  top1_128_128_v4                                11.35 ms      80 x     141.9 us
+  scatter_place                                   5.36 ms      80 x      67.0 us
+  [CUDA memset]                                   4.92 ms      20 x     246.1 us
+  normalize_rows                                  3.95 ms      80 x      49.3 us
+  scatter_count                                   3.54 ms      80 x      44.2 us
+  ema_positions                                   2.82 ms      80 x      35.3 us
+  [CUDA memcpy Host-to-Device]                    2.69 ms      23 x     117.1 us
+  scan_counts                                     0.63 ms      80 x       7.9 us
+  top1_combine                                    0.23 ms      80 x       2.9 us
+  max_aux                                         0.19 ms      80 x       2.4 us
+  ema_usage                                       0.14 ms      80 x       1.8 us
+  split_pairs                                     0.06 ms      16 x       3.9 us
+  largest gaps (us): 21705 before [CUDA memset], 18422 before [CUDA memcpy Devic, 2486 before [CUDA memcpy Host-, 2421 before [CUDA memcpy Host-, 2374 before [CUDA memcpy Host-, 2155 before [CUDA memcpy Devic, 2143 before [CUDA memcpy Devic, 2019 before [CUDA memcpy Host-
+  gaps > 10us: 44, total 65.84 ms
+== cuda-bf16 s768_1m train_s=0.4034
+window 398.97 ms, gpu busy 340.94 ms, idle 58.03 ms
+  top1_bf16_256_3                               229.52 ms      80 x    2869.0 us
+  scatter_sum                                    48.69 ms      80 x     608.6 us
+  [CUDA memcpy Device-to-Host]                   21.76 ms      29 x     750.3 us
+  gather_bf16                                    16.26 ms      82 x     198.3 us
+  scatter_place                                   5.58 ms      80 x      69.8 us
+  [CUDA memset]                                   4.87 ms      16 x     304.1 us
+  normalize_rows                                  4.07 ms      80 x      50.9 us
+  scatter_count                                   3.68 ms      80 x      46.0 us
+  ema_positions                                   2.84 ms      80 x      35.5 us
+  [CUDA memcpy Host-to-Device]                    2.45 ms      22 x     111.4 us
+  scan_counts                                     0.66 ms      80 x       8.2 us
+  top1_bf16_combine                               0.37 ms      75 x       4.9 us
+  ema_usage                                       0.14 ms      80 x       1.8 us
+  split_pairs                                     0.07 ms      15 x       4.5 us
+  largest gaps (us): 23314 before [CUDA memset], 17021 before [CUDA memcpy Devic, 2351 before [CUDA memcpy Host-, 1789 before [CUDA memcpy Host-, 1727 before [CUDA memcpy Devic, 1556 before [CUDA memcpy Host-, 1197 before [CUDA memcpy Host-, 1188 before [CUDA memcpy Devic
+  gaps > 10us: 37, total 57.18 ms
+DONE

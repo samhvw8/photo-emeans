@@ -1,0 +1,56 @@
+[
+ {
+  "data": "s768_200k",
+  "n": 200000,
+  "k": 1024,
+  "impl": "rs-cpu",
+  "runs_ok": 5,
+  "runs_failed": 0,
+  "errors": [],
+  "objective_mean": 0.2849471496868393,
+  "objective_sd": 0.00032119787134996886,
+  "train_s_median": 1.133019459,
+  "train_s_iqr": 0.07795820800000008,
+  "load_s_median": 0.151473583,
+  "peak_rss_bytes_max": 1402601472,
+  "peak_footprint_bytes_max": 1398556112,
+  "gpu_peak_bytes_max": null,
+  "ari_mean": null,
+  "ari_sd": null,
+  "ari_seed_floor": null,
+  "loadavg_1m_range": [
+   9.4638671875,
+   10.06689453125
+  ],
+  "threads": {
+   "rayon": 10
+  }
+ },
+ {
+  "data": "s768_200k",
+  "n": 200000,
+  "k": 1024,
+  "impl": "rs-metal-fused",
+  "runs_ok": 5,
+  "runs_failed": 0,
+  "errors": [],
+  "objective_mean": 0.2849471496868393,
+  "objective_sd": 0.00032119787134996886,
+  "train_s_median": 0.740928792,
+  "train_s_iqr": 0.017209623999999923,
+  "load_s_median": 0.150568625,
+  "peak_rss_bytes_max": 1337901056,
+  "peak_footprint_bytes_max": 1333266016,
+  "gpu_peak_bytes_max": null,
+  "ari_mean": null,
+  "ari_sd": null,
+  "ari_seed_floor": null,
+  "loadavg_1m_range": [
+   9.4638671875,
+   10.06689453125
+  ],
+  "threads": {
+   "rayon": 10
+  }
+ }
+]

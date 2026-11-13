@@ -1,0 +1,52 @@
+{
+ "case": "st:mps:f32",
+ "batch": 1,
+ "cmd": [
+  "~/workspace/tools/emeans/bench/compare/py/.venv/bin/python",
+  "~/workspace/tools/emeans/bench/compare/py/embed_py.py",
+  "mps",
+  "f32",
+  "1",
+  "64",
+  "~/workspace/tools/emeans/bench/compare/results/mac/embed/st_mps_f32_b1"
+ ],
+ "loadavg_before": [
+  23.84228515625,
+  39.77978515625,
+  36.396484375
+ ],
+ "peak_rss_bytes": 1616789504,
+ "peak_footprint_bytes": 5061200200,
+ "ok": true,
+ "impl": "sentence-transformers",
+ "device": "mps",
+ "dtype": "f32",
+ "n": 64,
+ "load_s": 7.349414499942213,
+ "seconds": 65.3155581660103,
+ "images_per_s": 0.9798584257265842,
+ "files": [
+  "astronaut.png",
+  "camera.png",
+  "cat.png",
+  "cat_small.png",
+  "coffee.png",
+  "coffee_wide.png",
+  "coins.png",
+  "grass.png",
+  "horse.png",
+  "hubble.png",
+  "logo.png",
+  "page.png",
+  "page_strip.png",
+  "rocket.png",
+  "rocket_tall.png"
+ ],
+ "threads": 8,
+ "versions": {
+  "torch": "2.11.0",
+  "transformers": "5.22.2",
+  "sentence_transformers": "6.3.0"
+ },
+ "mps_driver_allocated_bytes_end": 3855613952
+}

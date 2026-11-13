@@ -1,0 +1,57 @@
+=== 20:42:00 ops redo, load 0.43 8.70 14.91
+--- RAYON_NUM_THREADS=8 | load 0.43 8.70 14.91 | busy procs 0
+normalize         0.601 ms
+top1             61.301 ms
+scatter_add       3.035 ms
+ema_update        0.625 ms
+loop           4018.402 ms (65 steps)
+--- RAYON_NUM_THREADS=16 | load 1.12 8.44 14.73 | busy procs 0
+normalize         0.487 ms
+top1             33.100 ms
+scatter_add       3.143 ms
+ema_update        0.554 ms
+loop           2390.909 ms (65 steps)
+--- RAYON_NUM_THREADS=64 | load 2.30 8.45 14.66 | busy procs 0
+normalize         0.930 ms
+top1            266.632 ms
+scatter_add       3.547 ms
+ema_update        1.090 ms
+loop           16521.629 ms (65 steps)
+--- RAYON_NUM_THREADS=64 | load 19.67 11.81 15.57 | busy procs 0
+normalize         0.996 ms
+top1            274.990 ms
+scatter_add       3.841 ms
+ema_update        1.326 ms
+loop           20186.682 ms (65 steps)
+--- RAYON_NUM_THREADS=32 | load 16.67 11.87 15.47 | busy procs 0
+normalize         0.482 ms
+top1            472.875 ms
+scatter_add       3.310 ms
+ema_update        0.697 ms
+loop           28920.244 ms (65 steps)
+--- RAYON_NUM_THREADS=32 | load 22.26 13.83 15.95 | busy procs 0
+normalize         0.449 ms
+top1            293.393 ms
+scatter_add       3.328 ms
+ema_update        0.643 ms
+loop           19915.995 ms (65 steps)
+=== 20:44:41 run.py redo 200k k=256, load 21.60 14.39 16.07
+20:44:43 s768_200k k=256 rs-cpu-fused           s1000 (warm-up): train 0.80s load 0.87s la 21.6 -> ok
+20:44:49 s768_200k k=256 rs-cpu-blocked         s1000 (warm-up): train 4.56s load 0.88s la 20.0 -> ok
+20:44:51 s768_200k k=256 rs-cpu-fused           s1: train 0.77s load 0.89s la 23.6 -> ok
+20:44:57 s768_200k k=256 rs-cpu-blocked         s1: train 4.52s load 0.88s la 23.6 -> ok
+20:45:03 s768_200k k=256 rs-cpu-blocked         s2: train 4.51s load 0.89s la 22.1 -> ok
+20:45:05 s768_200k k=256 rs-cpu-fused           s2: train 0.73s load 0.86s la 24.0 -> ok
+20:45:07 s768_200k k=256 rs-cpu-fused           s3: train 0.79s load 0.88s la 24.0 -> ok
+20:45:13 s768_200k k=256 rs-cpu-blocked         s3: train 4.50s load 0.85s la 24.0 -> ok
+DONE
+Train s, median of 5 seeds:
+
+| n | k | py-numpy | py-torch-cpu | rs-cpu-blocked | rs-cpu-fused |
+|---|---|---|---|---|---|
+| 200,000 | 256 | 7.56 | 1.98 | 4.51 | 0.77 |
+| 200,000 | 1024 | 12.83 | 3.73 | 16.52 | 1.83 |
+| 1,000,000 | 1024 | 63.29 | 18.31 | 76.06 | 6.92 |
+
+Objective, mean of 5 seeds:
+=== 20:45:28 DONE

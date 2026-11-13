@@ -1,0 +1,27 @@
+{
+  "batch": 1,
+  "device": "cuda",
+  "dtype": "bf16",
+  "files": [
+    "astronaut.png",
+    "camera.png",
+    "cat.png",
+    "cat_small.png",
+    "coffee.png",
+    "coffee_wide.png",
+    "coins.png",
+    "grass.png",
+    "horse.png",
+    "hubble.png",
+    "logo.png",
+    "page.png",
+    "page_strip.png",
+    "rocket.png",
+    "rocket_tall.png"
+  ],
+  "images_per_s": 3.787280141186054,
+  "impl": "candle",
+  "load_s": 1.427435942,
+  "n": 64,
+  "seconds": 16.898670712
+}

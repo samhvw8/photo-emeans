@@ -1,0 +1,11 @@
+09:26:56 candle:metal:f32 b1 1.43 img/s
+09:27:48 candle:metal:f32 b8 1.45 img/s
+09:29:24 st:mps:f32 b1 0.98 img/s
+09:45:34 st:mps:f32 b8 exit -15:                   26  messages sent |                   70  messages received |                    0  signals received |              3846603  voluntary context switches |               581636  involuntary context switches |         516747706954  instructions retired |         278303421794  cycles elapsed |          11932338024  peak memory footprint
+| impl | device | dtype | batch | images/s | load s | peak RSS GiB | peak footprint / GPU GiB | cos vs ST f32 (min) | cos vs CPU ref (min) |
+|---|---|---|---|---|---|---|---|---|---|
+| candle | metal | f32 | 1 | 1.43 | 1.4 | 1.18 | 2.56 | 1.000000 | 1.000000 |
+| candle | metal | f32 | 8 | 1.45 | 2.3 | 1.20 | 3.49 | 1.000000 | 1.000000 |
+| sentence-transformers | mps | f32 | 1 | 0.98 | 7.3 | 1.51 | 4.71 | 1.000000 | 1.000000 |
+| st:mps:f32 | | | 8 | failed: exit -15:                   26  messages sent |                   70  messages received |                    0  signals  | | | | | |
+

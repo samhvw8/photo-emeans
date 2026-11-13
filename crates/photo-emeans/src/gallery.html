@@ -1,0 +1,981 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photo clusters</title>
+<style>
+:root {
+  --paper: #eceff1;
+  --sheet: #ffffff;
+  --ink: #1d2226;
+  --muted: #66717a;
+  --rule: #d5dadf;
+  --well: #e3e7ea;
+  --pencil: #cc3f2b;
+  --pencil-wash: rgba(204, 63, 43, 0.08);
+  --focus: #2b6fcc;
+  --ui: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --edge: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #141719;
+    --sheet: #1d2125;
+    --ink: #e5e8ea;
+    --muted: #8d979f;
+    --rule: #2d3338;
+    --well: #24292d;
+    --pencil: #ff7a63;
+    --pencil-wash: rgba(255, 122, 99, 0.10);
+    --focus: #6ea5ff;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.45 var(--ui);
+  -webkit-font-smoothing: antialiased;
+}
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* Bar */
+.bar {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.bar-in {
+  max-width: 1280px; margin: 0 auto; padding: 12px 16px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+}
+.bar h1 { margin: 0; font-size: 17px; font-weight: 650; letter-spacing: -0.01em; }
+.edge {
+  font: 11px/1.3 var(--edge); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
+}
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-left: auto; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+.seg button {
+  border: 0; background: transparent; padding: 5px 10px; cursor: pointer; color: var(--muted);
+}
+.seg button[aria-pressed="true"] { background: var(--sheet); color: var(--ink); }
+.btn {
+  border: 1px solid var(--rule); background: var(--sheet); border-radius: 8px;
+  padding: 6px 12px; cursor: pointer;
+}
+.btn.primary { border-color: var(--pencil); color: var(--pencil); font-weight: 600; }
+.btn.primary:disabled { opacity: 0.45; cursor: default; }
+.status { flex-basis: 100%; min-height: 1em; font-size: 13px; color: var(--pencil); }
+.status:empty { display: none; }
+
+main { max-width: 1280px; margin: 0 auto; padding: 8px 16px 80px; }
+
+/* Group (level 1) */
+.group { margin: 28px 0 8px; }
+.group-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px;
+  padding: 0 2px 8px; border-bottom: 1px solid var(--rule); margin-bottom: 12px;
+}
+.group-head h2 { margin: 0; font-size: 15px; font-weight: 650; }
+
+/* Card (one cluster) */
+.card {
+  position: relative;
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px;
+  margin: 0 0 14px; padding: 12px 14px 14px;
+}
+.card.marked { border-color: color-mix(in srgb, var(--pencil) 55%, var(--rule)); background: linear-gradient(var(--pencil-wash), var(--pencil-wash)), var(--sheet); }
+.head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+.mark {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer; user-select: none;
+  font-size: 13px; color: var(--muted);
+}
+.mark input { width: 18px; height: 18px; accent-color: var(--pencil); margin: 0; }
+.key { font: 600 13px var(--edge); color: var(--ink); min-width: 3.5ch; }
+.title-wrap { position: relative; flex: 1 1 240px; max-width: 420px; }
+.title {
+  width: 100%; border: 1px solid transparent; border-bottom-color: var(--rule);
+  background: transparent; padding: 4px 6px; border-radius: 4px; font-size: 15px; font-weight: 550;
+}
+.title:hover { border-bottom-color: var(--muted); }
+.title:focus { border-color: var(--rule); background: var(--paper); }
+.title::placeholder { color: var(--muted); font-weight: 400; }
+.title[disabled] { opacity: 0.5; }
+/* The grease-pencil loop around a marked title. */
+.loop {
+  position: absolute; left: -12px; top: -8px; width: calc(100% + 24px); height: calc(100% + 16px);
+  pointer-events: none; overflow: visible;
+}
+.loop path {
+  fill: none; stroke: var(--pencil); stroke-width: 2.2; stroke-linecap: round; opacity: 0;
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+}
+.marked > .head .loop path { opacity: 0.85; animation: draw 420ms ease-out forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .marked > .head .loop path { animation: none; stroke-dashoffset: 0; }
+}
+.meta { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-left: auto; }
+
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 4px;
+  margin-top: 12px;
+}
+.grid.pending { min-height: 112px; background: var(--well); border-radius: 6px; }
+.ph { position: relative; aspect-ratio: 1; background: var(--well); border-radius: 3px; overflow: hidden; border: 0; padding: 0; cursor: zoom-in; }
+.ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ph.stack { overflow: visible; box-shadow: 3px -3px 0 -1px var(--sheet), 3px -3px 0 0 var(--muted), 6px -6px 0 -1px var(--sheet), 6px -6px 0 0 var(--rule); margin: 6px 6px 0 0; }
+.ph.stack img { border-radius: 3px; }
+.ph.member { outline: 2px dashed var(--muted); outline-offset: -2px; }
+.ph.out::after { content: ""; position: absolute; inset: 0; border: 2px dotted rgba(255,255,255,0.85); border-radius: 3px; mix-blend-mode: difference; }
+.count {
+  position: absolute; right: 4px; bottom: 4px; padding: 1px 6px; border-radius: 9px;
+  background: rgba(0,0,0,0.62); color: #fff; font: 600 11px var(--edge);
+}
+.fav { position: absolute; left: 5px; top: 3px; color: #fff; font-size: 13px; text-shadow: 0 1px 2px rgba(0,0,0,0.6); }
+.play {
+  position: absolute; left: 4px; bottom: 4px; padding: 1px 6px 1px 5px; border-radius: 9px;
+  background: rgba(0,0,0,0.62); color: #fff; font: 600 11px var(--edge); pointer-events: none;
+}
+.play::before { content: ""; display: inline-block; margin-right: 4px; border-style: solid; border-width: 4px 0 4px 7px; border-color: transparent transparent transparent #fff; vertical-align: 0; }
+.more { margin-top: 10px; }
+
+.empty { padding: 48px 0; text-align: center; color: var(--muted); }
+
+/* Viewer */
+.viewer {
+  position: fixed; inset: 0; z-index: 20; background: rgba(10,12,14,0.92);
+  display: none; align-items: center; justify-content: center; flex-direction: column; gap: 10px;
+}
+.viewer.open { display: flex; }
+.viewer img { max-width: 94vw; max-height: 84vh; object-fit: contain; border-radius: 4px; }
+.viewer .edge { color: #b9c1c7; }
+.viewer .close { position: absolute; top: 12px; left: 16px; background: transparent; border: 1px solid #555; color: #ddd; border-radius: 8px; padding: 4px 10px; cursor: pointer; }
+.viewer .nav { position: absolute; top: 50%; transform: translateY(-50%); background: transparent; border: 0; color: #ddd; font-size: 34px; padding: 12px; cursor: pointer; }
+.viewer .prev { left: 4px; } .viewer .next { right: 4px; }
+.viewer .strip { display: flex; gap: 4px; max-width: 94vw; overflow-x: auto; padding: 2px; }
+.viewer .strip:empty { display: none; }
+.viewer .strip button { border: 2px solid transparent; padding: 0; background: none; border-radius: 4px; cursor: pointer; flex: none; }
+.viewer .strip button[aria-current="true"] { border-color: #fff; }
+.viewer .strip img { height: 56px; width: auto; max-width: none; max-height: none; display: block; border-radius: 2px; }
+
+@media (max-width: 640px) {
+  .controls { margin-left: 0; }
+  .meta { margin-left: 0; flex-basis: 100%; }
+  .grid { grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); }
+}
+/* Tabs and the clean-up view */
+[hidden] { display: none !important; }
+.tabs button { font-weight: 600; }
+.clean-top {
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 12px 14px; margin: 16px 0; display: grid; gap: 8px;
+}
+.clean-top .sum { font-size: 15px; font-weight: 600; }
+.clean-top p { margin: 0; font-size: 13px; color: var(--muted); max-width: 80ch; }
+.keys { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--muted); }
+kbd {
+  font: 11px var(--edge); border: 1px solid var(--rule); border-bottom-width: 2px; border-radius: 4px;
+  padding: 0 4px; background: var(--paper); color: var(--ink);
+}
+.cg {
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px;
+  margin: 0 0 12px; padding: 10px 12px 12px; scroll-margin-top: 140px;
+}
+.cg.cur { border-color: var(--focus); box-shadow: 0 0 0 1px var(--focus); }
+.cg-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+.cg-head .acts { margin-left: auto; display: flex; gap: 6px; }
+.cg .done { display: none; color: var(--focus); }
+.cg.rev .done { display: inline; }
+.btn.sm { padding: 3px 9px; font-size: 13px; }
+.cg-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px;
+  margin-top: 10px; min-height: 120px;
+}
+.ct { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 3px; border: 2px solid transparent; border-radius: 7px; }
+.ct.sel { border-color: var(--focus); }
+.ct .ph { width: 100%; cursor: pointer; }
+.ct.rm .ph img { opacity: 0.38; filter: grayscale(0.6); }
+.ct.rm .ph::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top right, transparent calc(50% - 1.5px), var(--pencil) calc(50% - 1.5px), var(--pencil) calc(50% + 1.5px), transparent calc(50% + 1.5px));
+}
+.ct-row { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.ct-mark {
+  border: 1px solid var(--rule); border-radius: 6px; background: var(--sheet); padding: 1px 8px;
+  cursor: pointer; font-size: 12px; font-weight: 650; flex: none;
+}
+.ct.rm .ct-mark { color: var(--pencil); border-color: var(--pencil); }
+.ct-info { color: var(--muted); font: 11px var(--edge); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.zoom {
+  position: absolute; right: 7px; top: 7px; z-index: 2; border: 0; border-radius: 5px;
+  background: rgba(0,0,0,0.6); color: #fff; font-size: 12px; padding: 1px 6px; cursor: zoom-in;
+}
+.num { position: absolute; left: 7px; top: 7px; z-index: 2; padding: 0 5px; border-radius: 5px; background: rgba(0,0,0,0.6); color: #fff; font: 600 11px var(--edge); pointer-events: none; }
+.ct .fav { left: auto; right: 34px; top: 6px; z-index: 2; }
+.shot { position: absolute; right: 4px; bottom: 4px; z-index: 2; padding: 1px 6px; border-radius: 9px; background: rgba(0,0,0,0.62); color: #fff; font: 600 10px var(--edge); letter-spacing: 0.04em; pointer-events: none; }
+@media (max-width: 640px) {
+  .cg-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+  .cg-head .acts { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="bar-in">
+    <div>
+      <h1 id="run"></h1>
+      <div class="edge" id="summary"></div>
+    </div>
+    <div class="seg tabs" id="tabs" role="group" aria-label="View" hidden>
+      <button data-tab="albums" aria-pressed="true">Albums</button>
+      <button data-tab="clean" aria-pressed="false">Clean up</button>
+    </div>
+    <div class="controls" id="clean-controls" hidden>
+      <div class="seg" role="group" aria-label="Section">
+        <button data-csec="photos" aria-pressed="true">Photos</button>
+        <button data-csec="shots" aria-pressed="false">Screenshots</button>
+      </div>
+      <label class="edge" for="csize">Size</label>
+      <select id="csize" class="btn">
+        <option value="all">All sizes</option>
+        <option value="2">2 photos</option>
+        <option value="3">3–5 photos</option>
+        <option value="6">6 or more</option>
+      </select>
+      <div class="seg" role="group" aria-label="Show groups">
+        <button data-cshow="all" aria-pressed="true">All</button>
+        <button data-cshow="todo" aria-pressed="false">To review</button>
+      </div>
+      <label class="btn" for="cload">Load cleanup.json</label>
+      <input type="file" id="cload" accept="application/json,.json" hidden>
+      <button class="btn primary" id="cdownload" disabled>Download cleanup.json</button>
+    </div>
+    <div class="controls" id="album-controls">
+      <div class="seg" role="group" aria-label="Show">
+        <button data-filter="all" aria-pressed="true">All</button>
+        <button data-filter="marked" aria-pressed="false">Marked</button>
+        <button data-filter="unmarked" aria-pressed="false">Unmarked</button>
+      </div>
+      <label class="edge" for="sort">Sort</label>
+      <select id="sort" class="btn">
+        <option value="size">Largest first</option>
+        <option value="date">Oldest first</option>
+        <option value="sim">Most alike first</option>
+      </select>
+      <label class="btn" for="load">Load approved.json</label>
+      <input type="file" id="load" accept="application/json,.json" hidden>
+      <button class="btn primary" id="download" disabled>Download approved.json</button>
+    </div>
+    <div class="status" id="status" role="status" aria-live="polite"></div>
+  </div>
+</header>
+<main id="main"></main>
+<main id="clean" hidden></main>
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Photo">
+  <button class="close" id="v-close">Close</button>
+  <button class="nav prev" id="v-prev" aria-label="Previous photo">‹</button>
+  <img id="v-img" alt="">
+  <div class="strip" id="v-strip" aria-label="Video frames"></div>
+  <div class="edge" id="v-cap"></div>
+  <button class="nav next" id="v-next" aria-label="Next photo">›</button>
+</div>
+<script id="data" type="application/json">/*__DATA__*/</script>
+<script>
+"use strict";
+const D = JSON.parse(document.getElementById("data").textContent);
+const P = D.photos; // [thumb, id, date, fav, outlier, image path, null | [duration, [frame paths]]]
+const REP = D.rep;  // dedup representative row per photo, or null
+const MEMBERS = new Map();
+if (REP) REP.forEach((r, i) => { if (r !== i) { if (!MEMBERS.has(r)) MEMBERS.set(r, []); MEMBERS.get(r).push(i); } });
+const isShown = (r) => !REP || REP[r] === r || REP[r] < 0;
+const VIDEO_IDS = new Set(P.filter((p) => p[6]).map((p) => p[1]));
+const STORE_KEY = "emeans-gallery:" + D.run + ":" + D.ids_fnv;
+const fmt = new Intl.NumberFormat();
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+let marks = {};
+try { marks = JSON.parse(localStorage.getItem(STORE_KEY) || "{}") || {}; } catch (e) { marks = {}; }
+function saveMarks() { try { localStorage.setItem(STORE_KEY, JSON.stringify(marks)); } catch (e) { /* private window: marks live until reload */ } }
+const mark = (key) => marks[key] || (marks[key] = { on: false, title: "" });
+
+function rangeLabel(a, b) {
+  if (!a) return "no date";
+  return a === b ? a : a + " → " + b;
+}
+function suggestTitle(a, b) {
+  if (!a) return "";
+  const ya = a.slice(0, 4), yb = b.slice(0, 4), ma = MONTHS[+a.slice(5, 7) - 1], mb = MONTHS[+b.slice(5, 7) - 1];
+  if (ya !== yb) return ya + "–" + yb;
+  if (ma === mb) return ma + " " + ya;
+  return ma + "–" + mb + " " + ya;
+}
+function durLabel(s) {
+  s = Math.round(s || 0);
+  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60;
+  return (h ? h + ":" + String(m).padStart(2, "0") : m) + ":" + String(x).padStart(2, "0");
+}
+const pathURL = (p) => "../../../" + p.split("/").map(encodeURIComponent).join("/");
+function countLabel(rows) {
+  const v = rows.reduce((a, r) => a + (P[r][6] ? 1 : 0), 0);
+  const ph = rows.length - v;
+  if (!v) return fmt.format(ph) + " photos";
+  if (!ph) return fmt.format(v) + (v === 1 ? " video" : " videos");
+  return fmt.format(ph) + " photos · " + fmt.format(v) + (v === 1 ? " video" : " videos");
+}
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
+}
+
+// ---------------------------------------------------------------- cards
+const cardEls = new Map(); // key -> {el, card, grid, shownRows, limit}
+const observer = new IntersectionObserver((entries) => {
+  for (const en of entries) {
+    if (!en.isIntersecting) continue;
+    observer.unobserve(en.target);
+    const c = cardEls.get(en.target.dataset.key);
+    if (c) fillGrid(c);
+  }
+}, { rootMargin: "1200px 0px" });
+
+function makeCard(card, kind) {
+  const root = el("section", "card");
+  root.dataset.key = card.key;
+  const head = el("div", "head");
+  const lab = el("label", "mark");
+  const cb = el("input"); cb.type = "checkbox";
+  cb.setAttribute("aria-label", "Make an album from " + (kind === "group" ? "group " : "cluster ") + card.key);
+  lab.append(cb, el("span", null, kind === "group" ? "Album of the whole group" : "Album"));
+  const key = el("span", "key", card.key);
+  const wrap = el("div", "title-wrap");
+  const title = el("input", "title");
+  title.type = "text"; title.maxLength = 200;
+  title.placeholder = suggestTitle(card.start, card.end) || "Album title";
+  title.setAttribute("aria-label", "Album title for " + card.key);
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("class", "loop"); svg.setAttribute("viewBox", "0 0 100 40"); svg.setAttribute("preserveAspectRatio", "none");
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", "M8 22 C 10 6, 82 2, 95 14 C 104 26, 70 38, 40 37 C 14 36, 2 28, 7 18 C 10 12, 22 8, 30 7");
+  path.setAttribute("pathLength", "1");
+  svg.append(path);
+  wrap.append(title, svg);
+  const meta = el("div", "meta");
+  meta.append(
+    el("span", "edge", countLabel(card.rows)),
+    el("span", "edge", rangeLabel(card.start, card.end)),
+    el("span", "edge", "alike " + card.mean_sim.toFixed(2)));
+  head.append(lab, key, wrap, meta);
+  root.append(head);
+  const m = mark(card.key);
+  cb.checked = !!m.on; title.value = m.title || "";
+  root.classList.toggle("marked", !!m.on);
+  cb.addEventListener("change", () => {
+    m.on = cb.checked;
+    if (m.on && !title.value.trim()) { title.value = title.placeholder === "Album title" ? "" : title.placeholder; m.title = title.value; }
+    root.classList.toggle("marked", m.on);
+    saveMarks(); updateBar(); applyFilter();
+  });
+  title.addEventListener("input", () => { m.title = title.value; saveMarks(); updateBar(); });
+  const entry = { el: root, card, kind, cb, title, grid: null, limit: D.per_cluster };
+  if (kind === "leaf" || kind === "flat") {
+    const grid = el("div", "grid pending");
+    root.append(grid);
+    entry.grid = grid;
+    root.dataset.key = card.key;
+    observer.observe(root);
+  } else {
+    root.classList.add("group-card");
+  }
+  cardEls.set(card.key, entry);
+  return entry;
+}
+
+function thumb(r, cls, list, idx) {
+  const b = el("button", "ph" + (cls ? " " + cls : ""));
+  const p = P[r];
+  const img = el("img");
+  const what = p[6] ? "Video" : "Photo";
+  img.loading = "lazy"; img.decoding = "async"; img.alt = p[2] ? what + " from " + p[2] : what;
+  img.src = "thumbs/" + encodeURIComponent(p[0]);
+  b.append(img);
+  if (p[3]) b.append(el("span", "fav", "♥"));
+  if (p[6]) { b.classList.add("video"); b.append(el("span", "play", durLabel(p[6][0]))); }
+  if (p[4]) { b.classList.add("out"); b.title = "Far from this cluster's centre"; }
+  b.addEventListener("click", () => openViewer(list, idx));
+  return b;
+}
+
+function fillGrid(c) {
+  const shown = c.card.rows.filter(isShown);
+  c.grid.classList.remove("pending");
+  c.grid.textContent = "";
+  const list = [];
+  const n = Math.min(c.limit, shown.length);
+  for (let i = 0; i < n; i++) {
+    const r = shown[i];
+    const members = MEMBERS.get(r);
+    list.push(r);
+    const t = thumb(r, members ? "stack" : "", list, list.length - 1);
+    if (members) {
+      const cnt = el("span", "count", String(members.length + 1));
+      cnt.title = (members.length + 1) + " near-duplicates; click the badge to spread them";
+      cnt.setAttribute("role", "button"); cnt.tabIndex = 0;
+      const spread = (ev) => {
+        ev.stopPropagation();
+        if (t.dataset.open) return;
+        t.dataset.open = "1";
+        let after = t;
+        for (const m of members) { const mt = thumb(m, "member", [m], 0); after.after(mt); after = mt; }
+      };
+      cnt.addEventListener("click", spread);
+      cnt.addEventListener("keydown", (ev) => { if (ev.key === "Enter" || ev.key === " ") spread(ev); });
+      t.append(cnt);
+    }
+    c.grid.append(t);
+  }
+  const old = c.el.querySelector(".more");
+  if (old) old.remove();
+  if (shown.length > n) {
+    const more = el("button", "btn more",
+      "Show " + (shown.length - n > 200 ? "200 more" : "all") + " (" + fmt.format(shown.length - n) + " left)");
+    more.addEventListener("click", () => { c.limit += 200; fillGrid(c); });
+    c.el.append(more);
+  }
+}
+
+// ---------------------------------------------------------------- layout
+const main = document.getElementById("main");
+const groupEls = [];
+function build() {
+  if (D.groups) {
+    D.groups.forEach(([g, members]) => {
+      const sec = el("div", "group");
+      const gh = el("div", "group-head");
+      gh.append(el("h2", null, "Group " + g.key), el("span", "edge", members.length + " clusters"));
+      sec.append(gh);
+      const gc = makeCard(g, "group");
+      sec.append(gc.el);
+      const leaves = members.map((i) => makeCard(D.cards[i], "leaf"));
+      leaves.forEach((l) => sec.append(l.el));
+      groupEls.push({ sec, head: gh, card: g, gc, leaves });
+    });
+  } else {
+    D.cards.forEach((c) => makeCard(c, "flat"));
+  }
+}
+function sorter() {
+  const by = document.getElementById("sort").value;
+  if (by === "date") return (a, b) => (a.start || "9").localeCompare(b.start || "9") || b.size - a.size;
+  if (by === "sim") return (a, b) => b.mean_sim - a.mean_sim || b.size - a.size;
+  return (a, b) => b.size - a.size || a.key.localeCompare(b.key);
+}
+let filter = "all";
+function visible(entry) {
+  const on = !!(marks[entry.card.key] && marks[entry.card.key].on);
+  return filter === "all" || (filter === "marked") === on;
+}
+function applyFilter() {
+  const cmp = sorter();
+  main.textContent = "";
+  if (D.groups) {
+    const gs = groupEls.slice().sort((a, b) => cmp(a.card, b.card));
+    for (const g of gs) {
+      const leaves = g.leaves.slice().sort((a, b) => cmp(a.card, b.card)).filter(visible);
+      const showGroup = visible(g.gc);
+      if (!leaves.length && !showGroup) continue;
+      g.sec.textContent = "";
+      g.sec.append(g.head);
+      if (showGroup) g.sec.append(g.gc.el);
+      leaves.forEach((l) => g.sec.append(l.el));
+      main.append(g.sec);
+    }
+  } else {
+    const cs = [...cardEls.values()].sort((a, b) => cmp(a.card, b.card)).filter(visible);
+    cs.forEach((c) => main.append(c.el));
+  }
+  if (!main.children.length) {
+    main.append(el("p", "empty", filter === "marked"
+      ? "No clusters are marked yet. Tick “Album” on a cluster to mark it."
+      : "Every cluster is marked."));
+  }
+}
+
+// ---------------------------------------------------------------- bar
+function approved() {
+  const out = [];
+  for (const [key, c] of cardEls) {
+    const m = marks[key];
+    if (!m || !m.on) continue;
+    const ids = c.card.rows.map((r) => P[r][1]);
+    out.push({ cluster: key, title: (m.title || "").trim(), asset_ids: ids });
+  }
+  return out;
+}
+function updateBar() {
+  const a = approved();
+  const btn = document.getElementById("download");
+  btn.disabled = a.length === 0;
+  btn.textContent = a.length ? "Download approved.json (" + a.length + ")" : "Download approved.json";
+  document.getElementById("status").textContent = "";
+}
+function problem(a) {
+  const seen = new Map();
+  for (const x of a) {
+    if (!x.title) return [x.cluster, "Cluster " + x.cluster + " has no album title."];
+    if (seen.has(x.title)) return [x.cluster, "Clusters " + seen.get(x.title) + " and " + x.cluster + " have the same title. Album titles must differ."];
+    seen.set(x.title, x.cluster);
+  }
+  return null;
+}
+document.getElementById("download").addEventListener("click", () => {
+  const a = approved();
+  const bad = problem(a);
+  const status = document.getElementById("status");
+  if (bad) {
+    status.textContent = bad[1];
+    const c = cardEls.get(bad[0]);
+    if (c) { c.el.scrollIntoView({ block: "center" }); c.title.focus(); }
+    return;
+  }
+  const blob = new Blob([JSON.stringify(a, null, 1)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = el("a"); link.href = url; link.download = "approved.json";
+  document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+  const ids = new Set(a.flatMap((x) => x.asset_ids));
+  const vids = [...ids].filter((id) => VIDEO_IDS.has(id)).length;
+  status.textContent = "Downloaded approved.json: " + a.length + " albums, " + fmt.format(ids.size - vids) +
+    " photos" + (vids ? ", " + fmt.format(vids) + " videos" : "") + ". Next: photo-emeans albums --approved approved.json";
+});
+document.getElementById("load").addEventListener("change", async (ev) => {
+  const f = ev.target.files[0];
+  if (!f) return;
+  const status = document.getElementById("status");
+  try {
+    const list = JSON.parse(await f.text());
+    if (!Array.isArray(list)) throw new Error("not a list");
+    let n = 0, missing = 0;
+    for (const x of list) {
+      const key = String(x.cluster);
+      const c = cardEls.get(key);
+      if (!c) { missing++; continue; }
+      const m = mark(key); m.on = true; m.title = String(x.title || "");
+      c.cb.checked = true; c.title.value = m.title; c.el.classList.add("marked"); n++;
+    }
+    saveMarks(); updateBar(); applyFilter();
+    status.textContent = "Loaded " + n + " marks" + (missing ? "; " + missing + " clusters in the file are not in this run." : ".");
+  } catch (e) {
+    status.textContent = "Could not read that file: it must be an approved.json from this gallery.";
+  }
+  ev.target.value = "";
+});
+document.querySelectorAll("[data-filter]").forEach((b) => b.addEventListener("click", () => {
+  filter = b.dataset.filter;
+  document.querySelectorAll("[data-filter]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+  applyFilter();
+}));
+document.getElementById("sort").addEventListener("change", applyFilter);
+
+// ---------------------------------------------------------------- viewer
+const viewer = document.getElementById("viewer");
+let vList = [], vIdx = 0, vReturn = null, vExtra = null;
+function showV() {
+  const p = P[vList[vIdx]];
+  const img = document.getElementById("v-img");
+  img.src = pathURL(p[5]);
+  img.alt = p[6] ? "Video poster" : "Photo";
+  const strip = document.getElementById("v-strip");
+  strip.textContent = "";
+  if (p[6]) {
+    p[6][1].forEach((f, i) => {
+      const b = el("button");
+      b.setAttribute("aria-label", i === 0 ? "Poster frame" : "Frame " + i);
+      b.setAttribute("aria-current", String(i === 0));
+      const t = el("img"); t.loading = "lazy"; t.alt = ""; t.src = pathURL(f);
+      b.append(t);
+      b.addEventListener("click", (ev) => {
+        ev.stopPropagation();
+        img.src = pathURL(f);
+        strip.querySelectorAll("button").forEach((x) => x.setAttribute("aria-current", String(x === b)));
+      });
+      strip.append(b);
+    });
+  }
+  const kind = p[6] ? "video " + durLabel(p[6][0]) + "  ·  " : "";
+  document.getElementById("v-cap").textContent = kind + (p[2] || "no date") + (vList.length > 1 ? "  ·  " + (vIdx + 1) + " / " + vList.length : "") +
+    (vExtra ? vExtra(vList[vIdx]) : "");
+}
+function openViewer(list, idx) {
+  vReturn = document.activeElement; vList = list; vIdx = idx;
+  viewer.classList.add("open"); showV(); document.getElementById("v-close").focus();
+}
+function closeViewer() {
+  vExtra = null;
+  viewer.classList.remove("open"); document.getElementById("v-img").removeAttribute("src");
+  if (vReturn) vReturn.focus();
+}
+const step = (d) => { vIdx = (vIdx + d + vList.length) % vList.length; showV(); };
+document.getElementById("v-close").addEventListener("click", closeViewer);
+document.getElementById("v-prev").addEventListener("click", () => step(-1));
+document.getElementById("v-next").addEventListener("click", () => step(1));
+viewer.addEventListener("click", (e) => { if (e.target === viewer) closeViewer(); });
+document.addEventListener("keydown", (e) => {
+  if (!viewer.classList.contains("open")) return;
+  if (e.key === "Escape") closeViewer();
+  else if (e.key === "ArrowLeft") step(-1);
+  else if (e.key === "ArrowRight") step(1);
+});
+
+
+// ---------------------------------------------------------------- clean-up
+// Near-duplicate groups (from dedup.json), ranked by the keeper rule: a favorite first, then the
+// larger stored copy, then the group's anchor. The keeper and other favorites start as "keep".
+// Nothing here deletes anything: cleanup.json feeds `albums --cleanup`, which only builds an album.
+const C = D.cleanup;
+const CKEY = "emeans-cleanup:" + D.run + ":" + D.ids_fnv;
+const CG = C ? C.groups.map((G) => ({
+  G, rm: new Set(G.rows.filter((r) => !G.keep.includes(r))), rev: false, touched: false,
+  el: null, grid: null, state: null, tiles: null,
+})) : [];
+const groupOfRow = new Map();
+CG.forEach((x) => x.G.rows.forEach((r) => groupOfRow.set(r, x)));
+(function restore() {
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem(CKEY) || "null"); } catch (e) { saved = null; }
+  if (!saved || !saved.groups) return;
+  const byG = new Map(CG.map((x) => [x.G.g, x]));
+  for (const [g, st] of Object.entries(saved.groups)) {
+    const x = byG.get(+g);
+    if (!x || !Array.isArray(st.rm)) continue;
+    x.rm = new Set(st.rm.filter((r) => x.G.rows.includes(r)));
+    x.rev = !!st.rev; x.touched = true;
+  }
+})();
+function saveC() {
+  const groups = {};
+  for (const x of CG) if (x.touched || x.rev) groups[x.G.g] = { rm: [...x.rm], rev: x.rev ? 1 : 0 };
+  try { localStorage.setItem(CKEY, JSON.stringify({ v: 1, groups })); } catch (e) { /* private window: marks live until reload */ }
+}
+let csec = "photos", csize = "all", cshow = "all", cur = 0, sel = 0, shownC = [];
+const clean = document.getElementById("clean");
+const cobs = new IntersectionObserver((entries) => {
+  for (const en of entries) {
+    if (!en.isIntersecting) continue;
+    cobs.unobserve(en.target);
+    const x = CG[+en.target.dataset.i];
+    if (x && !x.tiles) fillC(x);
+  }
+}, { rootMargin: "1200px 0px" });
+
+function sizeOk(n) {
+  return csize === "all" || (csize === "2" ? n === 2 : csize === "3" ? n >= 3 && n <= 5 : n >= 6);
+}
+function cVisible(x) {
+  return (csec === "shots") === x.G.shots && sizeOk(x.G.rows.length) && (cshow === "all" || !x.rev);
+}
+function keptOf(x) { return x.G.rows.filter((r) => !x.rm.has(r)); }
+function pxLabel(x, j) { const [w, h] = x.G.px[j]; return w + "×" + h; }
+
+function makeC(x, i) {
+  const root = el("section", "cg");
+  root.dataset.i = String(i);
+  const head = el("div", "cg-head");
+  const dates = x.G.rows.map((r) => P[r][2]).filter(Boolean).sort();
+  x.state = el("span", "edge");
+  const acts = el("div", "acts");
+  const all = el("button", "btn sm", "Keep all");
+  const sug = el("button", "btn sm", "Suggested");
+  all.addEventListener("click", () => { all.blur(); setGroup(x, []); });
+  sug.addEventListener("click", () => { sug.blur(); setGroup(x, x.G.rows.filter((r) => !x.G.keep.includes(r))); });
+  acts.append(all, sug);
+  head.append(el("span", "key", "#" + x.G.g), el("span", "edge", countLabel(x.G.rows)),
+    el("span", "edge", rangeLabel(dates[0], dates[dates.length - 1])), x.state, el("span", "edge done", "✓ reviewed"), acts);
+  const grid = el("div", "cg-grid");
+  root.append(head, grid);
+  root.addEventListener("click", () => { const k = shownC.indexOf(x); if (k >= 0 && k !== cur) { cur = k; sel = 0; paintCur(); } });
+  x.el = root; x.grid = grid;
+  cobs.observe(root);
+  paintC(x);
+}
+function fillC(x) {
+  x.grid.textContent = "";
+  x.tiles = x.G.rows.map((r, j) => {
+    const t = el("div", "ct");
+    const b = thumb(r, "", x.G.rows, j);
+    const fresh = b.cloneNode(true); // drop thumb()'s viewer click: a click here toggles the mark
+    fresh.classList.remove("out");
+    fresh.title = "Click to switch keep / remove";
+    fresh.addEventListener("click", (ev) => { ev.stopPropagation(); fresh.blur(); selectC(x, j); toggle(x, r); });
+    if (j < 9) fresh.append(el("span", "num", String(j + 1)));
+    if (x.G.shot[j]) fresh.append(el("span", "shot", "SCREEN"));
+    const zoom = el("button", "zoom", "⤢");
+    zoom.setAttribute("aria-label", "Large view");
+    zoom.addEventListener("click", (ev) => { ev.stopPropagation(); selectC(x, j); openC(x, j); });
+    const row = el("div", "ct-row");
+    const mk = el("button", "ct-mark");
+    mk.addEventListener("click", (ev) => { ev.stopPropagation(); mk.blur(); selectC(x, j); toggle(x, r); });
+    const info = pxLabel(x, j) + (j === 0 ? " · suggested" : "") + (r === x.G.anchor ? " · anchor" : "");
+    const infoEl = el("span", "ct-info", info);
+    infoEl.title = info;
+    row.append(mk, infoEl);
+    t.append(fresh, zoom, row);
+    t.mk = mk;
+    x.grid.append(t);
+    return t;
+  });
+  paintC(x);
+}
+function paintC(x) {
+  const kept = keptOf(x).length, rm = x.rm.size;
+  x.state.textContent = kept + " keep · " + rm + " remove" + (kept ? "" : " · nothing kept");
+  x.el.classList.toggle("rev", x.rev);
+  if (x.tiles) x.tiles.forEach((t, j) => {
+    const off = x.rm.has(x.G.rows[j]);
+    t.classList.toggle("rm", off); t.classList.toggle("keep", !off);
+    t.mk.textContent = off ? "Remove" : "Keep";
+    t.mk.setAttribute("aria-label", (off ? "Marked for removal" : "Kept") + ", photo " + (j + 1) + "; click to switch");
+  });
+}
+function setGroup(x, rmRows, advance) {
+  x.rm = new Set(rmRows); x.rev = true; x.touched = true;
+  paintC(x); saveC(); updateC();
+  if (advance) move(1);
+}
+function toggle(x, r) {
+  if (x.rm.has(r)) x.rm.delete(r); else x.rm.add(r);
+  x.rev = true; x.touched = true;
+  paintC(x); saveC(); updateC();
+  if (vExtra && viewer.classList.contains("open")) showV();
+}
+function selectC(x, j) {
+  const k = shownC.indexOf(x);
+  if (k >= 0) cur = k;
+  sel = j; paintCur(false);
+}
+function paintCur(scroll = true) {
+  clean.querySelectorAll(".cg.cur").forEach((e) => e.classList.remove("cur"));
+  clean.querySelectorAll(".ct.sel").forEach((e) => e.classList.remove("sel"));
+  const x = shownC[cur];
+  if (!x) return;
+  x.el.classList.add("cur");
+  if (!x.tiles) fillC(x);
+  sel = Math.max(0, Math.min(sel, x.G.rows.length - 1));
+  x.tiles[sel].classList.add("sel");
+  if (scroll) x.el.scrollIntoView({ block: "center" });
+}
+function move(d) {
+  const x = shownC[cur];
+  if (d > 0 && x && !x.rev) { x.rev = true; paintC(x); saveC(); updateC(); }
+  if (!shownC.length) return;
+  cur = Math.max(0, Math.min(shownC.length - 1, cur + d)); sel = 0;
+  paintCur();
+}
+function openC(x, j) {
+  vExtra = (r) => {
+    const k = x.G.rows.indexOf(r);
+    return "  ·  " + (k >= 0 ? pxLabel(x, k) + "  ·  " : "") + (x.rm.has(r) ? "REMOVE" : "KEEP") + "  (x switches)";
+  };
+  openViewer(x.G.rows, j);
+}
+
+function cleanTop() {
+  const box = el("div", "clean-top");
+  box.append(el("div", "sum")); box.querySelector(".sum").id = "csum";
+  box.append(el("p", null,
+    "Each card is one group of near-duplicates. Keeper rule: a favorite first, then the largest stored copy (width × height; copies are at most 1024 px on the long side), then the group's " +
+    (C.anchors_stored ? "anchor" : "anchor (this run's dedup.json has no anchors, so its representative)") +
+    ". Other favorites also start as Keep. Click a photo or press x to switch it."));
+  box.append(el("p", null,
+    "Nothing is deleted here. Download cleanup.json (reviewed groups only), then run photo-emeans albums --cleanup cleanup.json: it plans one album to review and delete from in Photos."));
+  const keys = el("div", "keys");
+  [["j ↓", "next group"], ["k ↑", "previous group"], ["h l ← →", "select photo"], ["x Space", "switch keep / remove"],
+   ["1–9 Enter", "keep only that photo, next group"], ["a", "keep all, next group"], ["s", "back to suggested"], ["v", "large view"]]
+    .forEach(([k, what]) => {
+      const s = el("span");
+      k.split(" ").forEach((kk) => { s.append(el("kbd", null, kk), " "); });
+      s.append(what); keys.append(s);
+    });
+  box.append(keys);
+  const acc = el("button", "btn sm", "Accept the suggestions of every shown group");
+  acc.id = "caccept";
+  acc.addEventListener("click", () => {
+    const todo = shownC.filter((x) => !x.rev);
+    if (!todo.length) return;
+    if (!confirm("Mark " + todo.length + " shown groups as reviewed with their current marks?")) return;
+    todo.forEach((x) => { x.rev = true; paintC(x); });
+    saveC(); updateC();
+  });
+  const accRow = el("div");
+  accRow.append(acc);
+  box.append(accRow);
+  return box;
+}
+let topBox = null;
+function applyClean() {
+  if (!C) return;
+  const keepX = shownC[cur];
+  clean.textContent = "";
+  if (!topBox) topBox = cleanTop();
+  clean.append(topBox);
+  shownC = CG.filter(cVisible);
+  shownC.forEach((x) => {
+    if (!x.el) makeC(x, CG.indexOf(x));
+    clean.append(x.el);
+  });
+  if (!shownC.length) clean.append(el("p", "empty", cshow === "todo" ? "Every group in this view is reviewed." : "No groups in this view."));
+  cur = Math.max(0, shownC.indexOf(keepX)); sel = 0;
+  updateC(); paintCur(false);
+}
+function cleanupList() {
+  const out = [];
+  for (const x of CG) {
+    if (!x.rev || !x.rm.size) continue;
+    const kept = keptOf(x);
+    const reason = kept.length ? "near-duplicate of " + P[kept[0]][1] : "whole group marked, nothing kept";
+    for (const r of x.G.rows) if (x.rm.has(r)) out.push({ asset_id: P[r][1], file: P[r][5], group: x.G.g, reason });
+  }
+  return out;
+}
+function updateC() {
+  if (!C) return;
+  let rev = 0, marked = 0, markedRev = 0, kept = 0, empty = 0;
+  for (const x of CG) {
+    marked += x.rm.size; kept += x.G.rows.length - x.rm.size;
+    if (x.rev) { rev++; markedRev += x.rm.size; if (x.rm.size === x.G.rows.length) empty++; }
+  }
+  const sum = document.getElementById("csum");
+  if (sum) sum.textContent = "Reviewed " + fmt.format(rev) + " of " + fmt.format(CG.length) + " groups  ·  " +
+    fmt.format(marked) + " photos marked for removal (" + fmt.format(markedRev) + " in reviewed groups)  ·  " + fmt.format(kept) + " kept" +
+    (empty ? "  ·  " + empty + (empty === 1 ? " reviewed group keeps" : " reviewed groups keep") + " nothing" : "");
+  const btn = document.getElementById("cdownload");
+  btn.disabled = markedRev === 0;
+  btn.textContent = "Download cleanup.json (" + fmt.format(markedRev) + ")";
+  const shots = CG.filter((x) => x.G.shots).length;
+  document.querySelector('[data-csec="photos"]').textContent = "Photos (" + fmt.format(CG.length - shots) + ")";
+  document.querySelector('[data-csec="shots"]').textContent = "Screenshots (" + fmt.format(shots) + ")";
+}
+document.getElementById("cdownload").addEventListener("click", () => {
+  const list = cleanupList();
+  const status = document.getElementById("status");
+  if (!list.length) { status.textContent = "No reviewed group has a photo marked for removal."; return; }
+  const blob = new Blob([JSON.stringify(list, null, 1)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = el("a"); link.href = url; link.download = "cleanup.json";
+  document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+  const groups = new Set(list.map((e) => e.group)).size;
+  status.textContent = "Downloaded cleanup.json: " + fmt.format(list.length) + " photos from " + fmt.format(groups) +
+    " groups. Next: photo-emeans albums --cleanup cleanup.json (a dry run; nothing is deleted).";
+});
+document.getElementById("cload").addEventListener("change", async (ev) => {
+  const f = ev.target.files[0];
+  if (!f) return;
+  const status = document.getElementById("status");
+  try {
+    const list = JSON.parse(await f.text());
+    if (!Array.isArray(list)) throw new Error("not a list");
+    const rowOf = new Map();
+    groupOfRow.forEach((x, r) => rowOf.set(P[r][1], r));
+    const hit = new Map();
+    let missing = 0;
+    for (const e of list) {
+      const r = rowOf.get(String(e && e.asset_id));
+      if (r === undefined) { missing++; continue; }
+      const x = groupOfRow.get(r);
+      if (!hit.has(x)) hit.set(x, []);
+      hit.get(x).push(r);
+    }
+    hit.forEach((rows, x) => { x.rm = new Set(rows); x.rev = true; x.touched = true; if (x.el) paintC(x); });
+    saveC(); applyClean();
+    status.textContent = "Loaded " + fmt.format(list.length - missing) + " marks in " + fmt.format(hit.size) + " groups" +
+      (missing ? "; " + missing + " photos in the file are not in this run's groups." : ".") + " Other groups keep their marks.";
+  } catch (e) {
+    status.textContent = "Could not read that file: it must be a cleanup.json from this gallery.";
+  }
+  ev.target.value = "";
+});
+function segC(attr, set) {
+  document.querySelectorAll("[" + attr + "]").forEach((b) => b.addEventListener("click", () => {
+    set(b.getAttribute(attr));
+    document.querySelectorAll("[" + attr + "]").forEach((y) => y.setAttribute("aria-pressed", String(y === b)));
+    applyClean();
+  }));
+}
+segC("data-csec", (v) => { csec = v; });
+segC("data-cshow", (v) => { cshow = v; });
+document.getElementById("csize").addEventListener("change", (e) => { csize = e.target.value; applyClean(); });
+
+let tab = "albums";
+function setTab(t) {
+  tab = C && t === "clean" ? "clean" : "albums";
+  document.querySelectorAll("[data-tab]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tab === tab)));
+  document.getElementById("main").hidden = tab !== "albums";
+  document.getElementById("album-controls").hidden = tab !== "albums";
+  clean.hidden = tab !== "clean";
+  document.getElementById("clean-controls").hidden = tab !== "clean";
+  document.getElementById("status").textContent = "";
+  if (tab === "clean") applyClean();
+  history.replaceState(null, "", tab === "clean" ? "#clean" : "#");
+}
+document.querySelectorAll("[data-tab]").forEach((b) => b.addEventListener("click", () => setTab(b.dataset.tab)));
+document.addEventListener("keydown", (e) => {
+  if (tab !== "clean" || e.metaKey || e.ctrlKey || e.altKey) return;
+  if (/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) return;
+  if (viewer.classList.contains("open")) {
+    if (vExtra && (e.key === "x" || e.key === " ")) {
+      e.preventDefault();
+      const r = vList[vIdx], x = groupOfRow.get(r);
+      if (x) toggle(x, r);
+    }
+    return;
+  }
+  // A focused button keeps its own Enter and Space.
+  if (e.target.tagName === "BUTTON" && (e.key === "Enter" || e.key === " ")) return;
+  const x = shownC[cur];
+  const k = e.key;
+  let done = true;
+  if (k === "j" || k === "ArrowDown") move(1);
+  else if (k === "k" || k === "ArrowUp") move(-1);
+  else if (!x) done = false;
+  else if (k === "h" || k === "ArrowLeft") { sel = Math.max(0, sel - 1); paintCur(false); }
+  else if (k === "l" || k === "ArrowRight") { sel = Math.min(x.G.rows.length - 1, sel + 1); paintCur(false); }
+  else if (k === "x" || k === " ") toggle(x, x.G.rows[sel]);
+  else if (k === "Enter") setGroup(x, x.G.rows.filter((_, j) => j !== sel), true);
+  else if (/^[1-9]$/.test(k) && +k <= x.G.rows.length) setGroup(x, x.G.rows.filter((_, j) => j !== +k - 1), true);
+  else if (k === "a") setGroup(x, [], true);
+  else if (k === "s") setGroup(x, x.G.rows.filter((r) => !x.G.keep.includes(r)));
+  else if (k === "v") openC(x, sel);
+  else done = false;
+  if (done) e.preventDefault();
+});
+
+// ---------------------------------------------------------------- start
+document.title = D.run + " · photo clusters";
+document.getElementById("run").textContent = D.run;
+const parts = [fmt.format(D.n - (D.n_videos || 0)) + " photos"];
+if (D.n_videos) parts.push(fmt.format(D.n_videos) + " videos");
+parts.push(fmt.format(D.cards.length) + " clusters");
+if (D.groups) parts.push(D.groups.length + " groups");
+if (D.stacks) parts.push(fmt.format(D.stacks) + " near-duplicate stacks");
+parts.push(D.created.slice(0, 10));
+document.getElementById("summary").textContent = parts.join("  ·  ");
+build();
+applyFilter();
+updateBar();
+if (C) {
+  document.getElementById("tabs").hidden = false;
+  setTab(location.hash === "#clean" ? "clean" : "albums");
+}
+</script>
+</body>
+</html>

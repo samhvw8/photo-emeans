@@ -1,0 +1,34 @@
+{
+ "impl": "sentence-transformers",
+ "device": "cuda",
+ "dtype": "bf16",
+ "batch": 8,
+ "n": 64,
+ "load_s": 7.335614031999285,
+ "seconds": 6.91918166600226,
+ "images_per_s": 9.249648743068441,
+ "files": [
+  "astronaut.png",
+  "camera.png",
+  "cat.png",
+  "cat_small.png",
+  "coffee.png",
+  "coffee_wide.png",
+  "coins.png",
+  "grass.png",
+  "horse.png",
+  "hubble.png",
+  "logo.png",
+  "page.png",
+  "page_strip.png",
+  "rocket.png",
+  "rocket_tall.png"
+ ],
+ "threads": 32,
+ "versions": {
+  "torch": "2.11.0+cu130",
+  "transformers": "5.22.2",
+  "sentence_transformers": "6.3.0"
+ },
+ "gpu_peak_allocated_bytes": 1585395200
+}

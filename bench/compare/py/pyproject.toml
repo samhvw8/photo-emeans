@@ -1,0 +1,28 @@
+[project]
+name = "emeans-compare"
+version = "0"
+description = "Python side of bench/compare: faiss e-means (NumPy, torch) and sentence-transformers EmbeddingGemma 2"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "numpy==2.*",
+  "scipy>=1.13",
+  "faiss-cpu==1.16.0",
+  "torch==2.11.*",
+  "torchvision==0.26.*",
+  "transformers==5.22.2",
+  "sentence-transformers==6.3.0",
+  "pillow==12.*",
+]
+
+[tool.uv]
+package = false
+
+# Linux: CUDA wheels (bring Triton). macOS: the default PyPI wheels (CPU + MPS).
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu130", marker = "sys_platform == 'linux'" }]
+torchvision = [{ index = "pytorch-cu130", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true

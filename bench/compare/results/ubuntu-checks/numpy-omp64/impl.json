@@ -1,0 +1,65 @@
+{
+ "impl": "py-numpy",
+ "seed": 1,
+ "k": 256,
+ "d": 768,
+ "nepochs": 5,
+ "versions": {
+  "numpy": "2.5.4",
+  "faiss": "1.16.0"
+ },
+ "threads": {
+  "faiss_omp": 64
+ },
+ "load_s": 0.13494800599983137,
+ "warm_s": 0.22535031699953834,
+ "train_s": 7.96428982299949,
+ "n": 100000,
+ "recipe": {
+  "name": "canonical_v1",
+  "batch_law": "throughput",
+  "batch_law_requested": "auto",
+  "batch_law_reason": "d > 16",
+  "batch_size": 8192,
+  "batch_size_requested": null,
+  "alpha0": 1.0,
+  "alpha0_source": "step_law",
+  "nepochs": 5,
+  "steps_per_pass": 13,
+  "total_steps": 65,
+  "epoch_rows": [
+   100000,
+   100000,
+   100000,
+   100000,
+   100000
+  ],
+  "epoch_steps": [
+   13,
+   13,
+   13,
+   13,
+   13
+  ],
+  "tail_policy": "keep",
+  "alpha_min_factor": 0.1,
+  "check_unused_every": 5,
+  "unused_threshold": 0.1,
+  "split_epsilon": 0.0001,
+  "init_usage": 1.52587890625e-05,
+  "seed": 1,
+  "backend": "faiss",
+  "assignment_chunk_size": 65536,
+  "spherical": true,
+  "assignment_score": "represented_inner_product",
+  "objective": "sum(2-2*represented_inner_product)"
+ },
+ "n_splits": 128,
+ "obj": [
+  49237.73395703733,
+  40462.88032670319,
+  39339.38390289247,
+  38431.85873261094,
+  38117.79809565842
+ ]
+}

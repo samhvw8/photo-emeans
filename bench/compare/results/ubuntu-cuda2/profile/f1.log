@@ -1,0 +1,150 @@
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+=== 20:22:14 start, load 0.78 3.44 15.23
+20:22:23 s768_200k k=1024 rs-cuda                s1000 (warm-up): train 0.16s load 0.85s la 0.8 -> ok
+20:22:31 s768_200k k=1024 rs-cuda-bf16           s1000 (warm-up): train 0.10s load 0.87s la 0.9 -> ok
+20:22:36 s768_200k k=1024 py-torch-cuda-triton   s1000 (warm-up): train 0.15s load 2.11s la 1.0 -> ok
+20:22:41 s768_200k k=1024 py-torch-cuda-triton-f32 s1000 (warm-up): train 0.30s load 2.08s la 1.1 -> ok
+20:22:49 s768_200k k=1024 rs-cuda                s1: train 0.16s load 0.86s la 1.1 -> ok
+20:22:58 s768_200k k=1024 rs-cuda-bf16           s1: train 0.10s load 0.91s la 1.2 -> ok
+20:23:03 s768_200k k=1024 py-torch-cuda-triton   s1: train 0.15s load 2.09s la 1.2 -> ok
+20:23:07 s768_200k k=1024 py-torch-cuda-triton-f32 s1: train 0.31s load 2.11s la 1.2 -> ok
+20:23:16 s768_200k k=1024 rs-cuda-bf16           s2: train 0.10s load 0.88s la 1.2 -> ok
+20:23:21 s768_200k k=1024 py-torch-cuda-triton   s2: train 0.15s load 2.13s la 1.3 -> ok
+20:23:26 s768_200k k=1024 py-torch-cuda-triton-f32 s2: train 0.31s load 2.11s la 1.3 -> ok
+20:23:34 s768_200k k=1024 rs-cuda                s2: train 0.16s load 0.88s la 1.3 -> ok
+20:23:39 s768_200k k=1024 py-torch-cuda-triton   s3: train 0.15s load 2.12s la 1.3 -> ok
+20:23:44 s768_200k k=1024 py-torch-cuda-triton-f32 s3: train 0.31s load 2.39s la 1.3 -> ok
+20:23:53 s768_200k k=1024 rs-cuda                s3: train 0.16s load 0.87s la 1.4 -> ok
+20:24:01 s768_200k k=1024 rs-cuda-bf16           s3: train 0.10s load 0.87s la 1.5 -> ok
+20:24:06 s768_200k k=1024 py-torch-cuda-triton-f32 s4: train 0.31s load 2.10s la 1.4 -> ok
+20:24:15 s768_200k k=1024 rs-cuda                s4: train 0.16s load 0.87s la 1.5 -> ok
+20:24:23 s768_200k k=1024 rs-cuda-bf16           s4: train 0.10s load 0.87s la 1.5 -> ok
+20:24:28 s768_200k k=1024 py-torch-cuda-triton   s4: train 0.16s load 2.09s la 1.5 -> ok
+20:24:36 s768_200k k=1024 rs-cuda                s5: train 0.16s load 0.87s la 1.5 -> ok
+20:24:45 s768_200k k=1024 rs-cuda-bf16           s5: train 0.10s load 0.86s la 1.5 -> ok
+20:24:50 s768_200k k=1024 py-torch-cuda-triton   s5: train 0.16s load 2.13s la 1.5 -> ok
+20:24:55 s768_200k k=1024 py-torch-cuda-triton-f32 s5: train 0.31s load 2.11s la 1.4 -> ok
+DONE
+20:25:09 s768_1m k=1024 rs-cuda                s1000 (warm-up): train 0.62s load 4.39s la 1.6 -> ok
+20:25:22 s768_1m k=1024 rs-cuda-bf16           s1000 (warm-up): train 0.39s load 4.33s la 1.6 -> ok
+20:25:29 s768_1m k=1024 py-torch-cuda-triton   s1000 (warm-up): train 0.60s load 3.40s la 1.9 -> ok
+20:25:36 s768_1m k=1024 py-torch-cuda-triton-f32 s1000 (warm-up): train 1.38s load 3.35s la 1.9 -> ok
+20:25:50 s768_1m k=1024 rs-cuda                s1: train 0.63s load 4.22s la 1.9 -> ok
+20:26:03 s768_1m k=1024 rs-cuda-bf16           s1: train 0.39s load 4.31s la 2.0 -> ok
+20:26:10 s768_1m k=1024 py-torch-cuda-triton   s1: train 0.60s load 3.40s la 2.2 -> ok
+20:26:17 s768_1m k=1024 py-torch-cuda-triton-f32 s1: train 1.38s load 3.42s la 2.1 -> ok
+20:26:33 s768_1m k=1024 rs-cuda-bf16           s2: train 0.41s load 4.32s la 2.0 -> ok
+20:26:40 s768_1m k=1024 py-torch-cuda-triton   s2: train 0.60s load 3.41s la 1.9 -> ok
+20:26:47 s768_1m k=1024 py-torch-cuda-triton-f32 s2: train 1.38s load 3.40s la 2.3 -> ok
+20:27:01 s768_1m k=1024 rs-cuda                s2: train 0.62s load 4.31s la 2.2 -> ok
+20:27:07 s768_1m k=1024 py-torch-cuda-triton   s3: train 0.61s load 3.39s la 2.7 -> ok
+20:27:15 s768_1m k=1024 py-torch-cuda-triton-f32 s3: train 1.38s load 3.37s la 2.5 -> ok
+20:27:29 s768_1m k=1024 rs-cuda                s3: train 0.62s load 4.34s la 2.4 -> ok
+20:27:42 s768_1m k=1024 rs-cuda-bf16           s3: train 0.39s load 4.26s la 2.2 -> ok
+20:27:49 s768_1m k=1024 py-torch-cuda-triton-f32 s4: train 1.38s load 3.32s la 2.0 -> ok
+20:28:03 s768_1m k=1024 rs-cuda                s4: train 0.63s load 4.31s la 2.1 -> ok
+20:28:17 s768_1m k=1024 rs-cuda-bf16           s4: train 0.39s load 4.34s la 2.0 -> ok
+20:28:23 s768_1m k=1024 py-torch-cuda-triton   s4: train 0.61s load 3.35s la 1.9 -> ok
+20:28:37 s768_1m k=1024 rs-cuda                s5: train 0.62s load 4.31s la 6.5 -> ok
+20:28:50 s768_1m k=1024 rs-cuda-bf16           s5: train 0.39s load 4.24s la 5.3 -> ok
+20:28:57 s768_1m k=1024 py-torch-cuda-triton   s5: train 0.60s load 3.37s la 4.7 -> ok
+20:29:04 s768_1m k=1024 py-torch-cuda-triton-f32 s5: train 1.38s load 3.36s la 4.4 -> ok
+DONE
+=== 20:29:04 evaluate
+| n | k | impl | objective mean ± sd | train s median (IQR) | load s | peak RSS GiB | peak GPU GiB (Linux) / footprint GiB (macOS) | ARI vs py-numpy | runs |
+|---|---|---|---|---|---|---|---|---|---|
+| 200,000 | 1024 | py-numpy | 0.285224 ± 0.000244 | 13.13 (0.77) | 0.24 | 0.79 | - | 1.0000 ± 0.0000 | 3/3 |
+| 200,000 | 1024 | py-torch-cuda-triton | 0.285043 ± 0.000297 | 0.15 (0.00) | 2.12 | 1.27 | 0.97 | 0.4293 ± 0.0041 | 5/5 |
+| 200,000 | 1024 | py-torch-cuda-triton-f32 | 0.285117 ± 0.000246 | 0.31 (0.00) | 2.11 | 1.27 | 0.93 | 0.4198 ± 0.0035 | 5/5 |
+| 200,000 | 1024 | rs-cuda | 0.284947 ± 0.000321 | 0.16 (0.00) | 0.87 | 1.26 | 1.04 | 0.4259 ± 0.0076 | 5/5 |
+| 200,000 | 1024 | rs-cuda-bf16 | 0.285075 ± 0.000278 | 0.10 (0.00) | 0.87 | 1.26 | 1.04 | 0.4342 ± 0.0082 | 5/5 |
+| 1,000,000 | 1024 | py-numpy | 0.303219 ± 0.001204 | 64.26 (0.20) | 1.19 | 3.37 | - | 1.0000 ± 0.0000 | 3/3 |
+| 1,000,000 | 1024 | py-torch-cuda-triton | 0.300595 ± 0.001040 | 0.60 (0.00) | 3.39 | 3.53 | 3.88 | 0.6792 ± 0.0083 | 5/5 |
+| 1,000,000 | 1024 | py-torch-cuda-triton-f32 | 0.304042 ± 0.001668 | 1.38 (0.00) | 3.37 | 3.53 | 3.69 | 0.6717 ± 0.0058 | 5/5 |
+| 1,000,000 | 1024 | rs-cuda | 0.303453 ± 0.000809 | 0.62 (0.01) | 4.31 | 5.84 | 4.54 | 0.7005 ± 0.0030 | 5/5 |
+| 1,000,000 | 1024 | rs-cuda-bf16 | 0.300873 ± 0.000847 | 0.39 (0.00) | 4.31 | 5.84 | 4.54 | 0.6886 ± 0.0058 | 5/5 |
+
+Train s, median of 5 seeds:
+
+| n | k | py-numpy | py-torch-cuda-triton | py-torch-cuda-triton-f32 | rs-cuda | rs-cuda-bf16 |
+|---|---|---|---|---|---|---|
+| 200,000 | 1024 | 13.13 | 0.15 | 0.31 | 0.16 | 0.10 |
+| 1,000,000 | 1024 | 64.26 | 0.60 | 1.38 | 0.62 | 0.39 |
+
+Objective, mean of 5 seeds:
+
+| n | k | py-numpy | py-torch-cuda-triton | py-torch-cuda-triton-f32 | rs-cuda | rs-cuda-bf16 |
+|---|---|---|---|---|---|---|
+| 200,000 | 1024 | 0.28522 | 0.28504 | 0.28512 | 0.28495 | 0.28507 |
+| 1,000,000 | 1024 | 0.30322 | 0.30060 | 0.30404 | 0.30345 | 0.30087 |
+
+ARI vs py-numpy (same seed), mean of 5 seeds:
+
+| n | k | py-numpy | py-torch-cuda-triton | py-torch-cuda-triton-f32 | rs-cuda | rs-cuda-bf16 |
+|---|---|---|---|---|---|---|
+| 200,000 | 1024 | 1.000 | 0.429 | 0.420 | 0.426 | 0.434 |
+| 1,000,000 | 1024 | 1.000 | 0.679 | 0.672 | 0.701 | 0.689 |
+
+ARI noise floor (py-numpy seed s vs seed s+1, mean of 4 pairs):
+
+| n | k | ARI |
+|---|---|---|
+| 200,000 | 1024 | 0.416 |
+| 1,000,000 | 1024 | 0.674 |
+
+Peak memory GiB, RSS / GPU (Linux, nvidia-smi) or footprint (macOS):
+
+| n | k | py-numpy | py-torch-cuda-triton | py-torch-cuda-triton-f32 | rs-cuda | rs-cuda-bf16 |
+|---|---|---|---|---|---|---|
+| 200,000 | 1024 | 0.79 / - | 1.27 / 0.97 | 1.27 / 0.93 | 1.26 / 1.04 | 1.26 / 1.04 |
+| 1,000,000 | 1024 | 3.37 / - | 3.53 / 3.88 | 3.53 / 3.69 | 5.84 / 4.54 | 5.84 / 4.54 |
+
+| n | k | impl | objective mean ± sd | train s median (IQR) | load s | peak RSS GiB | peak GPU GiB (Linux) / footprint GiB (macOS) | ARI vs py-numpy | runs |
+|---|---|---|---|---|---|---|---|---|---|
+| 200,000 | 1024 | py-numpy | 0.285224 ± 0.000244 | 13.13 (0.77) | 0.24 | 0.79 | - | 1.0000 ± 0.0000 | 3/3 |
+| 200,000 | 1024 | py-torch-cuda-triton | 0.285043 ± 0.000297 | 0.15 (0.00) | 2.12 | 1.27 | 0.97 | 0.4293 ± 0.0041 | 5/5 |
+| 200,000 | 1024 | py-torch-cuda-triton-f32 | 0.285117 ± 0.000246 | 0.31 (0.00) | 2.11 | 1.27 | 0.93 | 0.4198 ± 0.0035 | 5/5 |
+| 200,000 | 1024 | rs-cuda | 0.284947 ± 0.000321 | 0.16 (0.00) | 0.87 | 1.26 | 1.04 | 0.4259 ± 0.0076 | 5/5 |
+| 200,000 | 1024 | rs-cuda-bf16 | 0.285075 ± 0.000278 | 0.10 (0.00) | 0.87 | 1.26 | 1.04 | 0.4342 ± 0.0082 | 5/5 |
+| 1,000,000 | 1024 | py-numpy | 0.303219 ± 0.001204 | 64.26 (0.20) | 1.19 | 3.37 | - | 1.0000 ± 0.0000 | 3/3 |
+| 1,000,000 | 1024 | py-torch-cuda-triton | 0.300595 ± 0.001040 | 0.60 (0.00) | 3.39 | 3.53 | 3.88 | 0.6792 ± 0.0083 | 5/5 |
+| 1,000,000 | 1024 | py-torch-cuda-triton-f32 | 0.304042 ± 0.001668 | 1.38 (0.00) | 3.37 | 3.53 | 3.69 | 0.6717 ± 0.0058 | 5/5 |
+| 1,000,000 | 1024 | rs-cuda | 0.303453 ± 0.000809 | 0.62 (0.01) | 4.31 | 5.84 | 4.54 | 0.7005 ± 0.0030 | 5/5 |
+| 1,000,000 | 1024 | rs-cuda-bf16 | 0.300873 ± 0.000847 | 0.39 (0.00) | 4.31 | 5.84 | 4.54 | 0.6886 ± 0.0058 | 5/5 |
+
+Train s, median of 5 seeds:
+
+| n | k | py-numpy | py-torch-cuda-triton | py-torch-cuda-triton-f32 | rs-cuda | rs-cuda-bf16 |
+|---|---|---|---|---|---|---|
+| 200,000 | 1024 | 13.13 | 0.15 | 0.31 | 0.16 | 0.10 |
+| 1,000,000 | 1024 | 64.26 | 0.60 | 1.38 | 0.62 | 0.39 |
+
+Objective, mean of 5 seeds:
+
+| n | k | py-numpy | py-torch-cuda-triton | py-torch-cuda-triton-f32 | rs-cuda | rs-cuda-bf16 |
+|---|---|---|---|---|---|---|
+| 200,000 | 1024 | 0.28522 | 0.28504 | 0.28512 | 0.28495 | 0.28507 |
+| 1,000,000 | 1024 | 0.30322 | 0.30060 | 0.30404 | 0.30345 | 0.30087 |
+
+ARI vs py-numpy (same seed), mean of 5 seeds:
+
+| n | k | py-numpy | py-torch-cuda-triton | py-torch-cuda-triton-f32 | rs-cuda | rs-cuda-bf16 |
+|---|---|---|---|---|---|---|
+| 200,000 | 1024 | 1.000 | 0.429 | 0.420 | 0.426 | 0.434 |
+| 1,000,000 | 1024 | 1.000 | 0.679 | 0.672 | 0.701 | 0.689 |
+
+ARI noise floor (py-numpy seed s vs seed s+1, mean of 4 pairs):
+
+| n | k | ARI |
+|---|---|---|
+| 200,000 | 1024 | 0.416 |
+| 1,000,000 | 1024 | 0.674 |
+
+Peak memory GiB, RSS / GPU (Linux, nvidia-smi) or footprint (macOS):
+
+| n | k | py-numpy | py-torch-cuda-triton | py-torch-cuda-triton-f32 | rs-cuda | rs-cuda-bf16 |
+|---|---|---|---|---|---|---|
+| 200,000 | 1024 | 0.79 / - | 1.27 / 0.97 | 1.27 / 0.93 | 1.26 / 1.04 | 1.26 / 1.04 |
+| 1,000,000 | 1024 | 3.37 / - | 3.53 / 3.88 | 3.53 / 3.69 | 5.84 / 4.54 | 5.84 / 4.54 |
+DONE

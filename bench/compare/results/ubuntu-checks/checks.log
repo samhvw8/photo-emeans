@@ -1,0 +1,36 @@
+=== bend-cuda SM utilization (100k, k=256, seed 1)
+sm% mean 12.2 max 99 over 11 s
+	Percent of CPU this job got: 2420%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.67
+=== bend gpu=1 with BENDRTS=--gpu off
+	Percent of CPU this job got: 2955%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:09.19
+=== bend-cpu
+No such file or directory
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json;r=json.load(open('results/ubuntu-checks/bend-cuda/report.json'));print('bend-cuda', r['train_ms'], 'ms', r['obj'][-1])
+                            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results/ubuntu-checks/bend-cuda/report.json'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json;r=json.load(open('results/ubuntu-checks/bend-gpuoff/report.json'));print('bend-gpuoff', r['train_ms'], 'ms', r['obj'][-1])
+                            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results/ubuntu-checks/bend-gpuoff/report.json'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json;r=json.load(open('results/ubuntu-checks/bend-cpu/report.json'));print('bend-cpu', r['train_ms'], 'ms', r['obj'][-1])
+                            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results/ubuntu-checks/bend-cpu/report.json'
+=== py-numpy OMP threads (100k, k=256, seed 1)
+omp 64 train_s 7.96
+omp 32 train_s 4.75
+omp 16 train_s 4.01
+=== clippy emeans --features cuda
+error: unused variable: `d`
+   --> crates/emeans/src/assign.rs:446:43
+error: the loop variable `c` is only used to index `dots`
+   --> crates/emeans/src/auto.rs:799:18
+error: the loop variable `g` is used to index `group_rows`
+   --> crates/emeans/src/auto.rs:974:14
+error: could not compile `emeans` (lib) due to 3 previous errors

@@ -1,0 +1,57 @@
+[tools]
+rust = "1.99.1"
+bun = "latest"
+uv = "latest"
+# Bend 2: the second e-means (bend/). The binary finds its bend2/ library
+# beside bin/ in mise's install dir.
+"github:bendlang/bend" = "2.0.40"
+
+[env]
+# Bend checks bend-lang.com for updates once a day; keep it quiet.
+BEND_NO_TELEMETRY = "1"
+# All personal data (photo copies, embeddings, clusters) stays here, outside git.
+EMEANS_DATA = "{{config_root}}/data"
+
+[tasks.check]
+description = "Format check, clippy and tests"
+run = [
+  "cargo fmt --all --check",
+  "cargo clippy --workspace --all-targets -- -D warnings",
+  "cargo test --workspace",
+]
+
+[tasks.test]
+description = "Run the Rust tests"
+run = "cargo test --workspace"
+
+[tasks."bend:build"]
+description = "Build the Bend e-means (C backend; writes bend/build/emeans and its Metal emeans.gpu)"
+dir = "{{config_root}}/bend"
+sources = ["emeans.bend"]
+outputs = ["build/emeans"]
+# `bend -o` exits 0; it still prints SOME PROOFS FAIL for the @unsafe defs
+# (shared-array lanes), which is expected here.
+run = "mkdir -p build && bend emeans.bend -o build/emeans"
+
+[tasks."bend:test"]
+description = "Run the Bend e-means and the faiss reference on the small synthetic sets; fail past a 2% objective gap or a recipe mismatch"
+depends = ["bend:build"]
+run = [
+  "uv run bend/gen_data.py --only small",
+  "uv run bend/compare.py --small",
+]
+
+[tasks."cli:build"]
+description = "Build the photo-emeans CLI (release) into target/run"
+env = { CARGO_TARGET_DIR = "{{config_root}}/target/run" }
+run = "cargo build --release -p photo-emeans"
+
+[tasks.pe]
+description = "Run photo-emeans with the given arguments (mise run pe -- cluster --auto --dedup)"
+depends = ["cli:build"]
+run = "{{config_root}}/target/run/release/photo-emeans"
+
+[tasks.embed]
+description = "Embed every fetched photo not embedded yet (resumable: safe to kill and rerun; reniced)"
+depends = ["cli:build"]
+run = "{{config_root}}/target/run/release/photo-emeans embed"
